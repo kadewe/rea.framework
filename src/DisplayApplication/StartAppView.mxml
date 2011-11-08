@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="1000" height="700" xmlns:DisplayApplication="DisplayApplication.*" xmlns:Components="DisplayApplication.Components.*">
+	<fx:Declarations>
+		<!-- Platzieren Sie nichtvisuelle Elemente (z. B. Dienste, Wertobjekte) hier -->
+	</fx:Declarations>
+	<s:VideoPlayer x="78" y="80" width="587" height="437" id="videoPlayer" dropShadowVisible="true" autoPlay="false" loop="false" muted="false" scaleMode="stretch" skinClass="DisplayApplication.CustomSkins.CustomVideoPlayerSkin">
+		<s:source>
+			<s:DynamicStreamingVideoSource id="videoSource" />
+		</s:source>
+	</s:VideoPlayer>	
+	<Components:StartButton x="780" y="558" label="" id="mainAppStartButton"/>
+	<mx:Image x="734" y="33" source="Assets/BMBF_Logo.png"/>
+</s:Group>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   xmlns:view="DisplayApplication.*"
+			   xmlns:main="MainApplication.*" minWidth="1000" minHeight="700" width="1000" height="700" 
+			   creationComplete="initApp()" viewSourceURL="srcview/index.html" backgroundColor="#F2EEE5">
+	<fx:Style source="DisplayApplication/ItemCss/GlobalStyles.css"/>
+	<fx:Script>
+		<![CDATA[
+			import MainApplication.MainAppManager;
+			
+			import Shared.ErrorDispatcher;
+			
+			import flash.external.*;
+			
+			private var aManager:MainAppManager = new MainAppManager();
+			
+			private function initApp():void
+			{
+					//var s:String;
+					/*definition for adding external values from JS
+					if (ExternalInterface.available) {
+						var wrapperFunction:String = "alert";
+						s = ExternalInterface.call(wrapperFunction,"window.innerHeight");
+					} else {
+						s = "Wrapper not available";
+					}
+					trace("js " + s); 
+					*/
+
+				trace("#[APPLICATION]: init app");
+				aManager.addEventListener(MainAppManager.LOAD_COMPLETE, connectToDisplay);
+				aManager.addEventListener(MainAppManager.MODULE_FINISHED, removeDisplay);
+				dManager.addEventListener(DisplayManager.DISPLAY_TWEENEDOUT, tweenFinished);
+				dManager.setContent(aManager.getView(),true);			
+			}
+			
+			
+			private function connectToDisplay(event:Event):void
+			{
+				trace("#[APPLICATION]: connect view component to DisplayManager");
+				dManager.setContent(aManager.getView(),false);
+			}
+			
+			private function removeDisplay(event:Event):void
+			{
+				dManager.removeContent();
+			}
+			
+			private function tweenFinished(event:Event):void
+			{
+				aManager.sendTweenComplete();
+			}
+		]]>
+	</fx:Script>
+<fx:Declarations>
+	<!--<main:MainAppManager id="aManager" />-->
+</fx:Declarations>
+	<main:DisplayManager  id="dManager" width="1000" height="700" borderWeight="5" borderColor="#DFCAA1" cornerRadius="9" y="0" x="0" styleName="outerFrame">
+	</main:DisplayManager>
+</s:Application>

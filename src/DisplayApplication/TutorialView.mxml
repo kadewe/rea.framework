@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="1000" height="700">
+	<fx:Declarations>
+		<!-- Platzieren Sie nichtvisuelle Elemente (z. B. Dienste, Wertobjekte) hier -->
+	</fx:Declarations>
+	<s:Button x="762" y="509" label="" fontSize="18" focusColor="#1585EE" fontWeight="normal" id="forwardButton" styleName="customButton"  skinClass="DisplayApplication.CustomSkins.CustomButtonSkin" />
+	<mx:ProgressBar id="progressBar" x="400" y="255" label="Fortschritt" minimum="0" maximum="100" indeterminate="false" enabled="true" labelPlacement="top"/>
+	<mx:UIComponent id="vidCOntainer" x="149" y="75" width="703" height="363" />
+</s:Group>

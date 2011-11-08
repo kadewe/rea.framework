@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 xmlns:main="MainApplication.*" width="1000" height="700" currentState="overview" xmlns:DisplayApplication="DisplayApplication.*" xmlns:Components="DisplayApplication.Components.*">
+	<fx:Script>
+		<![CDATA[
+			import Shared.StaticFunctions;
+		]]>
+	</fx:Script>
+	<s:states>
+		<s:State name="overview" enterState="Shared.StaticFunctions.pulseFocus(chooseSubjectSnd)" exitState="Shared.StaticFunctions.stopPulse()"/>
+		<s:State name="levels" enterState="Shared.StaticFunctions.pulseFocus(levelSoundButton)" exitState="Shared.StaticFunctions.stopPulse()"/>
+		<s:State name="itemlist"/>
+	</s:states>
+	<s:Group id="overviewgroup" includeIn="overview" x="100" y="100" width="800" height="100">
+		<s:layout>
+			<s:HorizontalLayout verticalAlign="middle" horizontalAlign="center" />
+		</s:layout>
+		<Components:SoundButton includeIn="overview" id="chooseSubjectSnd" click="Shared.StaticFunctions.stopPulse()"/>
+		<s:Label includeIn="overview" id="chooseSubject"/>
+	</s:Group>
+	<s:Group id="levelgroup" includeIn="levels"  x="100" y="100" width="800" height="100">
+		<s:layout>
+			<s:HorizontalLayout verticalAlign="middle" horizontalAlign="center" />
+		</s:layout>
+		<Components:SoundButton includeIn="levels" id="levelSoundButton" click="Shared.StaticFunctions.stopPulse()"/>
+		<s:Label includeIn="levels" text="" id="whatLevel" maxWidth="{levelgroup.width-levelSoundButton.width+10}" />
+	</s:Group>		
+	<s:Button x="88" y="269" id="button1" includeIn="overview" skinClass="DisplayApplication.CustomSkins.CustomDimesionButtonSkin" styleName="writingButton"/>
+	<s:Button x="296" y="269" id="button0" includeIn="overview" styleName="readingButton" skinClass="DisplayApplication.CustomSkins.CustomDimesionButtonSkin"/>
+	<s:Button x="504" y="269" id="button2" includeIn="overview" styleName="mathButton" skinClass="DisplayApplication.CustomSkins.CustomDimesionButtonSkin"/>
+	<s:Button x="712" y="269" id="button3" includeIn="overview" styleName="languageButton" skinClass="DisplayApplication.CustomSkins.CustomDimesionButtonSkin"/>
+	
+	<s:Group includeIn="overview,levels" x="100" y="489.95" width="800" height="200" id="description" maxWidth="680">
+		<s:layout>
+			<s:HorizontalLayout verticalAlign="middle" horizontalAlign="center" />
+		</s:layout>
+	</s:Group>
+	
+	<s:Group id="levelButtonsContainer" includeIn="levels" x="100" y="257" width="800" height="168">
+		<s:layout>
+			<s:HorizontalLayout verticalAlign="top" horizontalAlign="center" />
+		</s:layout>
+	</s:Group>
+</s:Group>

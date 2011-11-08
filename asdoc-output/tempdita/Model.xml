@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?><apiPackage id="Model"><apiName>Model</apiName><apiDetail/><apiClassifier id="Model:Collection"><apiName>Collection</apiName><shortdesc>
+	 A class representing one testcollection of a dimension / subject.</shortdesc><prolog><asMetadata/></prolog><apiClassifierDetail><apiClassifierDef><apiAccess value="public"/><apiStatic/><apiBaseClassifier>Object</apiBaseClassifier></apiClassifierDef><apiDesc>
+	 A class representing one testcollection of a dimension / subject. 
+	 
+	 </apiDesc></apiClassifierDetail><apiConstructor id="Model:Collection:Collection"><apiName>Collection</apiName><shortdesc>
+		 Constructor.</shortdesc><prolog><asCustoms><soundurl>url to the sound file, related with the description text
+		 </soundurl></asCustoms></prolog><apiConstructorDetail><apiConstructorDef><apiAccess value="public"/><apiParam><apiItemName>_name</apiItemName><apiType value="String"/><apiDesc>the name of the difficulty level
+		 </apiDesc></apiParam><apiParam><apiItemName>des</apiItemName><apiType value="String"/><apiDesc>description of this collection and level
+		 </apiDesc></apiParam><apiParam><apiItemName>soundurl</apiItemName><apiType value="String"/></apiParam></apiConstructorDef><apiDesc>
+		 Constructor.
+		 
+		 </apiDesc></apiConstructorDetail></apiConstructor><apiOperation id="Model:Collection:addItems"><apiName>addItems</apiName><shortdesc>
+		 adds an xmllist of items and excerps the itemnumbers.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>_items</apiItemName><apiType value="XMLList"/></apiParam></apiOperationDef><apiDesc>
+		 adds an xmllist of items and excerps the itemnumbers. Stored in a common array.
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="Model:Collection:getDescription"><apiName>getDescription</apiName><shortdesc>
+		 returns the description text of this collection
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="String"/></apiReturn></apiOperationDef><apiDesc>
+		 returns the description text of this collection
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="Model:Collection:getName"><apiName>getName</apiName><shortdesc>
+		 returns the level of the collection
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="String"/></apiReturn></apiOperationDef><apiDesc>
+		 returns the level of the collection
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="Model:Collection:getSound"><apiName>getSound</apiName><shortdesc>
+		 reutrns the soundurl of this collection
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="String"/></apiReturn></apiOperationDef><apiDesc>
+		 reutrns the soundurl of this collection
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="Model:Collection:returnItemAt"><apiName>returnItemAt</apiName><shortdesc>
+		 reuturns an itemnumber at a specific index.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="String"/></apiReturn><apiParam><apiItemName>index</apiItemName><apiType value="int"/></apiParam></apiOperationDef><apiDesc>
+		 reuturns an itemnumber at a specific index. Usefull if you desire the nth-item of the collection.
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="Model:Collection:returnItems"><apiName>returnItems</apiName><shortdesc>
+		 returns the array of items
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="Array"/></apiReturn></apiOperationDef><apiDesc>
+		 returns the array of items
+		 </apiDesc></apiOperationDetail></apiOperation></apiClassifier><apiClassifier id="Model:Session"><apiName>Session</apiName><shortdesc>
+	 This is a Data Structure, where each session for one item is stored.</shortdesc><prolog><asMetadata/></prolog><apiClassifierDetail><apiClassifierDef><apiAccess value="public"/><apiStatic/><apiBaseInterface>Interfaces:ICustomEventDispatcher</apiBaseInterface><apiBaseClassifier>Shared:EventDispatcher</apiBaseClassifier></apiClassifierDef><apiDesc>
+	 This is a Data Structure, where each session for one item is stored. In detail, it stores the slected dimension, level and item. This ensures, that application always knows, where the user is at the moment.
+	 </apiDesc></apiClassifierDetail><apiConstructor id="Model:Session:Session"><apiName>Session</apiName><shortdesc/><prolog/><apiConstructorDetail><apiConstructorDef><apiAccess value="public"/></apiConstructorDef></apiConstructorDetail></apiConstructor><apiOperation id="Model:Session:updateSession"><apiName>updateSession</apiName><shortdesc/><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>currentDimension</apiItemName><apiType value="int"/></apiParam><apiParam><apiItemName>currentLevel</apiItemName><apiType value="int"/></apiParam><apiParam><apiItemName>currentItem</apiItemName><apiType value="String"/></apiParam></apiOperationDef></apiOperationDetail></apiOperation><apiValue id="Model:Session:dimension:get"><apiName>dimension</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="public"/><apiDynamic/><apiValueAccess value="read"/><apiType value="int"/></apiValueDef></apiValueDetail></apiValue><apiValue id="Model:Session:item:get"><apiName>item</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="public"/><apiDynamic/><apiValueAccess value="read"/><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="Model:Session:level:get"><apiName>level</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="public"/><apiDynamic/><apiValueAccess value="read"/><apiType value="int"/></apiValueDef></apiValueDetail></apiValue><apiValue id="Model:Session:next:get"><apiName>next</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="public"/><apiDynamic/><apiValueAccess value="read"/><apiType value="String"/></apiValueDef></apiValueDetail></apiValue></apiClassifier><apiClassifier id="Model:TestCollection"><apiName>TestCollection</apiName><shortdesc>
+	 This class loads the xml with the contained information about subjects, levels and item IDs and parse it into an XMLLIST.</shortdesc><prolog><asMetadata/></prolog><apiClassifierDetail><apiClassifierDef><apiAccess value="public"/><apiStatic/><apiBaseInterface>Interfaces:ICustomEventDispatcher</apiBaseInterface><apiBaseClassifier>Shared:EventDispatcher</apiBaseClassifier></apiClassifierDef><apiDesc>
+	 This class loads the xml with the contained information about subjects, levels and item IDs and parse it into an XMLLIST. 
+	 <p>The data is read-only and will be written only once when the class will be initialized</p>
+	 <p>To overwirte the data, the class must be unloaded and be instanciated again</p>
+	 
+	 </apiDesc></apiClassifierDetail><apiConstructor id="Model:TestCollection:TestCollection"><apiName>TestCollection</apiName><shortdesc>
+		 constructor, immediately initializes http service and loads the testcollection from the related Url
+		 
+		 </shortdesc><prolog/><apiConstructorDetail><apiConstructorDef><apiAccess value="public"/><apiParam><apiItemName>_relUrl</apiItemName><apiType value="String"/><apiDesc>the relative path to the xml file on the server, will be combined with the url String
+		 </apiDesc></apiParam></apiConstructorDef><apiDesc>
+		 constructor, immediately initializes http service and loads the testcollection from the related Url
+		 
+		 </apiDesc></apiConstructorDetail></apiConstructor><apiOperation id="Model:TestCollection:getALLDimensions"><apiName>getALLDimensions</apiName><shortdesc>
+		 Returns a reference to the data.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>XMLList the testcollection data as an XMLList
+		 </apiDesc><apiType value="XMLList"/></apiReturn></apiOperationDef><apiDesc>
+		 Returns a reference to the data.
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="Model:TestCollection:getDimensionAt"><apiName>getDimensionAt</apiName><shortdesc>
+		 Returns a specific Dimension with all its related levels and items.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>if found it returns the appropiate dimension as a Dimension object, if not it returns an empty Dimension object dummy.
+		 </apiDesc><apiOperationClassifier>Model:Dimension</apiOperationClassifier></apiReturn><apiParam><apiItemName>index</apiItemName><apiType value="int"/><apiDesc>the number of one of the four possible dimensions. See your testcollection xml to determine which number represents which dimension.
+		 
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 Returns a specific Dimension with all its related levels and items.
+		 
+		 </apiDesc></apiOperationDetail><related-links><link href="Model.xml#Dimension"><linktext>Dimension</linktext></link></related-links></apiOperation><apiOperation id="Model:TestCollection:getDimensionByName"><apiName>getDimensionByName</apiName><shortdesc>
+		 Returns a specific Dimension with all its related levels and items, determined by its name.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>if found it returns the appropiate dimension as a Dimension object, if not it returns an empty Dimension object dummy.
+		 </apiDesc><apiOperationClassifier>Model:Dimension</apiOperationClassifier></apiReturn><apiParam><apiItemName>name</apiItemName><apiType value="String"/><apiDesc>the name of one of the four possible dimensions.
+		 
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 Returns a specific Dimension with all its related levels and items, determined by its name.
+		 
+		 </apiDesc></apiOperationDetail><related-links><link href="Model.xml#Dimension"><linktext>Dimension</linktext></link></related-links></apiOperation><apiOperation id="Model:TestCollection:getDimensionName"><apiName>getDimensionName</apiName><shortdesc>
+		 Returns the name of a dimension at a given index.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>String the name of the dimension as a String value
+		 </apiDesc><apiType value="String"/></apiReturn><apiParam><apiItemName>index</apiItemName><apiType value="int"/><apiDesc>the specific index of a dimension, ranges within <codeph>[0..3]</codeph>
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 Returns the name of a dimension at a given index.
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="Model:TestCollection:getLevelName"><apiName>getLevelName</apiName><shortdesc>
+		 Returns the name of a level at a given index.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>String the name of the level as a String value
+		 </apiDesc><apiType value="String"/></apiReturn><apiParam><apiItemName>dindex</apiItemName><apiType value="int"/><apiDesc>the specific index of a dimension, ranges within the amount of levels
+		 </apiDesc></apiParam><apiParam><apiItemName>lindex</apiItemName><apiType value="int"/></apiParam></apiOperationDef><apiDesc>
+		 Returns the name of a level at a given index.
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="Model:TestCollection:searchNextItem"><apiName>searchNextItem</apiName><shortdesc>
+		 Tries to find the item number of the follwer item.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>String if found, the next item id as a String, else null
+		 
+		 </apiDesc><apiType value="String"/></apiReturn><apiParam><apiItemName>currentDimension</apiItemName><apiType value="int"/><apiDesc>the current dimension, usually stored in a session object or sent by a custommodule event
+		 </apiDesc></apiParam><apiParam><apiItemName>currentLevel</apiItemName><apiType value="int"/><apiDesc>	the current level, usually stored in a session object or sent by a custommodule event
+		 </apiDesc></apiParam><apiParam><apiItemName>currentItem</apiItemName><apiType value="String"/><apiDesc>	the current item, usually stored in a session object or sent by a custommodule event
+		 
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 Tries to find the item number of the follwer item. If nothing is found, the actual item was the last one within the current level.
+		 
+		 </apiDesc></apiOperationDetail><related-links><link href="Shared.xml#CustomModuleEvents"><linktext>Shared.CustomModuleEvents</linktext></link><link href="Model.xml#Session"><linktext>Session</linktext></link></related-links></apiOperation><apiValue id="Model:TestCollection:TC_BUILD"><apiName>TC_BUILD</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>tcBuild</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="Model:TestCollection:TC_ERROR"><apiName>TC_ERROR</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>tcError</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue></apiClassifier><apiClassifier id="Model:UserObject"><apiName>UserObject</apiName><shortdesc>
+	 This class represents the login session of a certain user.</shortdesc><prolog><asMetadata/></prolog><apiClassifierDetail><apiClassifierDef><apiAccess value="public"/><apiStatic/><apiBaseClassifier>Shared:EventDispatcher</apiBaseClassifier></apiClassifierDef><apiDesc>
+	 This class represents the login session of a certain user. The information are stored temporarily and usually written in an xml file which will be permanently send to the server.
+	 </apiDesc></apiClassifierDetail><apiConstructor id="Model:UserObject:UserObject"><apiName>UserObject</apiName><shortdesc>
+		 Constructor, initializes the URLLoader but does not call its load() function.</shortdesc><prolog/><apiConstructorDetail><apiConstructorDef><apiAccess value="public"/><apiParam><apiItemName>scriptUrl</apiItemName><apiType value="String"/><apiDesc>the include script (php) on the server
+		 </apiDesc></apiParam><apiParam><apiItemName>_id</apiItemName><apiType value="String"/><apiDesc>the user id from the login
+		 </apiDesc></apiParam><apiParam><apiItemName>navigate2url</apiItemName><apiType value="Boolean"/><apiData>false</apiData><apiDesc>for debugging purposes, opens the navigated url in a new tab or window to enable a view of php echos or error messages
+		 </apiDesc></apiParam></apiConstructorDef><apiDesc>
+		 Constructor, initializes the <codeph>URLLoader</codeph> but does not call its <codeph>load()</codeph> function.
+		 
+		 </apiDesc></apiConstructorDetail></apiConstructor><apiOperation id="Model:UserObject:load"><apiName>load</apiName><shortdesc>
+		 First adds variables to the URLLoader to define the parameter for the include script and the Post variable userid then starts the request.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn></apiOperationDef><apiDesc>
+		 First adds variables to the URLLoader to define the parameter for the include script and the Post variable userid then starts the request.
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="Model:UserObject:setDebug"><apiName>setDebug</apiName><shortdesc/><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>value</apiItemName><apiType value="Boolean"/></apiParam></apiOperationDef></apiOperationDetail></apiOperation><apiOperation id="Model:UserObject:startSession"><apiName>startSession</apiName><shortdesc>
+		 Constructs a new entry for the actual Dimension and level, chosen by the user into.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>itemList</apiItemName><apiType value="Array"/><apiDesc>An array of all item names within the chosen dimension and level
+		 </apiDesc></apiParam><apiParam><apiItemName>dimension</apiItemName><apiType value="String"/><apiDesc>the chosen dimension or sometimes called subject
+		 </apiDesc></apiParam><apiParam><apiItemName>level</apiItemName><apiType value="String"/><apiDesc>the level of difficulty
+		 </apiDesc></apiParam><apiParam><apiItemName>scriptUrl</apiItemName><apiType value="String"/><apiDesc>the directlink to the php script, which will handle the data
+		 
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 Constructs a new entry for the actual Dimension and level, chosen by the user into. Calls the private <codeph>updateUserXML(scriptUrl)</codeph> function, 
+		 to send the updated xml to php.
+		 
+		 </apiDesc></apiOperationDetail><related-links><link href="Model.xml#UserObject/updateUserXML()"><linktext>updateUserXML()</linktext></link></related-links></apiOperation><apiOperation id="Model:UserObject:updateSession"><apiName>updateSession</apiName><shortdesc>
+		 Updates a session by adding an entry at the data attribute of the item tag.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>item</apiItemName><apiType value="String"/></apiParam><apiParam><apiItemName>timestamp</apiItemName><apiType value="String"/></apiParam><apiParam><apiItemName>finalXml</apiItemName><apiType value="XML"/></apiParam><apiParam><apiItemName>scriptUrl</apiItemName><apiType value="String"/></apiParam></apiOperationDef><apiDesc>
+		 Updates a session by adding an entry at the data attribute of the item tag. (After item was completed) The entry consists of the
+		 userName, the timestamp and the itemnumber and the ending <codeph>.xml</codeph>. 
+		 <p>This sequence will also be the name of the immediate path to the completed item xml file, which usually will be placed in the same directory as the user xml file</p>
+		 <p>Calls the private function   <codeph>updateUserXML(scriptUrl)</codeph> to send the data to the server.</p>
+		 </apiDesc></apiOperationDetail></apiOperation><apiValue id="Model:UserObject:CREATION_COMPLETE"><apiName>CREATION_COMPLETE</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>creationComplete</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="Model:UserObject:CREATION_ERROR"><apiName>CREATION_ERROR</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>creationError</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="Model:UserObject:protected:_test"><apiName>_test</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="protected"/><apiDynamic/><apiType value="XMLList"/></apiValueDef></apiValueDetail></apiValue><apiValue id="Model:UserObject:relUrl"><apiName>relUrl</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="public"/><apiDynamic/><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="Model:UserObject:protected:state"><apiName>state</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="protected"/><apiDynamic/><apiData>0</apiData><apiType value="Number"/></apiValueDef></apiValueDetail></apiValue><apiValue id="Model:UserObject:protected:tempTimeStamp"><apiName>tempTimeStamp</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="protected"/><apiDynamic/><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="Model:UserObject:userData"><apiName>userData</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="public"/><apiDynamic/><apiType value="XML"/></apiValueDef></apiValueDetail></apiValue><apiValue id="Model:UserObject:userName"><apiName>userName</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="public"/><apiDynamic/><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="Model:UserObject:_userData:get"><apiName>_userData</apiName><shortdesc>
+		 returns the userdata as an xml object
+		 
+		 </shortdesc><prolog><asCustoms><returns>user data file as an xml object
+		 </returns></asCustoms></prolog><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="public"/><apiDynamic/><apiValueAccess value="read"/><apiType value="XML"/></apiValueDef><apiDesc>
+		 returns the userdata as an xml object
+		 
+		 </apiDesc></apiValueDetail></apiValue></apiClassifier><apiClassifier id="Model:Dimension"><apiName>Dimension</apiName><shortdesc>
+	 This class represents a dimension or subject with all its included data.</shortdesc><prolog><asMetadata/></prolog><apiClassifierDetail><apiClassifierDef><apiAccess value="public"/><apiStatic/><apiBaseClassifier>Object</apiBaseClassifier></apiClassifierDef><apiDesc>
+	 This class represents a dimension or subject with all its included data.
+	 </apiDesc></apiClassifierDetail><apiConstructor id="Model:Dimension:Dimension"><apiName>Dimension</apiName><shortdesc>
+		 Constructor
+		 </shortdesc><prolog/><apiConstructorDetail><apiConstructorDef><apiAccess value="public"/><apiParam><apiItemName>_name</apiItemName><apiType value="String"/></apiParam><apiParam><apiItemName>des</apiItemName><apiType value="String"/></apiParam><apiParam><apiItemName>url</apiItemName><apiType value="String"/></apiParam></apiConstructorDef><apiDesc>
+		 Constructor
+		 </apiDesc></apiConstructorDetail></apiConstructor><apiOperation id="Model:Dimension:addCollectionToList"><apiName>addCollectionToList</apiName><shortdesc>
+		 adds a collection object to the collection list.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>c</apiItemName><apiOperationClassifier>Model:Collection</apiOperationClassifier></apiParam></apiOperationDef><apiDesc>
+		 adds a collection object to the collection list. useful if once the collection is created out of an xmllist.
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="Model:Dimension:addToCollectionList"><apiName>addToCollectionList</apiName><shortdesc>
+		 adds an xmllist to the collection list.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>e</apiItemName><apiType value="XMLList"/></apiParam></apiOperationDef><apiDesc>
+		 adds an xmllist to the collection list. usually a collection is stored as an xml file, so it can be decoded by itering an xmllis.
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="Model:Dimension:getDescription"><apiName>getDescription</apiName><shortdesc>
+		 returns the description of this dimension
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="String"/></apiReturn></apiOperationDef><apiDesc>
+		 returns the description of this dimension
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="Model:Dimension:getName"><apiName>getName</apiName><shortdesc>
+		 returns the name of this dimension 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="String"/></apiReturn></apiOperationDef><apiDesc>
+		 returns the name of this dimension 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="Model:Dimension:getSoundUrl"><apiName>getSoundUrl</apiName><shortdesc>
+		 returns the soundurl of this dimension
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="String"/></apiReturn></apiOperationDef><apiDesc>
+		 returns the soundurl of this dimension
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="Model:Dimension:returnCollectionAt"><apiName>returnCollectionAt</apiName><shortdesc>
+		 returns a specific collection by passing an index number as parameter.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>Collection Object (level)
+		 </apiDesc><apiOperationClassifier>Model:Collection</apiOperationClassifier></apiReturn><apiParam><apiItemName>index</apiItemName><apiType value="int"/><apiDesc>the index of the desired collection
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 returns a specific collection by passing an index number as parameter.
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="Model:Dimension:returnCollection"><apiName>returnCollection</apiName><shortdesc>
+		 returns the entire collectionList as an array
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="Array"/></apiReturn></apiOperationDef><apiDesc>
+		 returns the entire collectionList as an array
+		 </apiDesc></apiOperationDetail></apiOperation></apiClassifier><apiClassifier id="Model:Globals"><apiName>Globals</apiName><shortdesc>
+	 This class is a model for all global settings like paths and labels.</shortdesc><prolog><asMetadata/></prolog><apiClassifierDetail><apiClassifierDef><apiAccess value="public"/><apiStatic/><apiBaseInterface>Interfaces:ICustomEventDispatcher</apiBaseInterface><apiBaseClassifier>Shared:EventDispatcher</apiBaseClassifier></apiClassifierDef><apiDesc>
+	 This class is a model for all global settings like paths and labels.
+	 
+	 <p>The globals.xml file will be analysed and the particular data will be stored in different arrays</p>
+	 </apiDesc></apiClassifierDetail><apiConstructor id="Model:Globals:Globals"><apiName>Globals</apiName><shortdesc>
+		 Constructor.</shortdesc><prolog/><apiConstructorDetail><apiConstructorDef><apiAccess value="public"/></apiConstructorDef><apiDesc>
+		 Constructor. Http Service will be set up.
+		 </apiDesc></apiConstructorDetail></apiConstructor><apiOperation id="Model:Globals:returnLabelValue"><apiName>returnLabelValue</apiName><shortdesc>
+		 returns a specific label by comparing the id of the path.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="String"/></apiReturn><apiParam><apiItemName>id</apiItemName><apiType value="String"/></apiParam></apiOperationDef><apiDesc>
+		 returns a specific label by comparing the id of the path.
+		 Usually it will ba an UrlTypeEnum but it can also be any string.
+		 
+		 </apiDesc></apiOperationDetail><related-links><link href="" invalidHref="enumTypes.UrlTypeEnums.xml"><linktext>enumTypes.UrlTypeEnums</linktext></link></related-links></apiOperation><apiOperation id="Model:Globals:returnPathValue"><apiName>returnPathValue</apiName><shortdesc>
+		 returns a specific path by comparing the id of the path.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="String"/></apiReturn><apiParam><apiItemName>id</apiItemName><apiType value="String"/></apiParam></apiOperationDef><apiDesc>
+		 returns a specific path by comparing the id of the path.
+		 Usually it will ba an UrlTypeEnum but it can also be any string.
+		 
+		 </apiDesc></apiOperationDetail><related-links><link href="" invalidHref="enumTypes.UrlTypeEnums.xml"><linktext>enumTypes.UrlTypeEnums</linktext></link></related-links></apiOperation><apiValue id="Model:Globals:GLOBALS_FAULT"><apiName>GLOBALS_FAULT</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>globalsFault</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="Model:Globals:GLOBALS_LOADED"><apiName>GLOBALS_LOADED</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>globalsLoaded</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="Model:Globals:debugMode:get"><apiName>debugMode</apiName><shortdesc>
+		 returns a boolean value, whether debug is enabled or disabled
+		 </shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="public"/><apiDynamic/><apiValueAccess value="read"/><apiType value="Boolean"/></apiValueDef><apiDesc>
+		 returns a boolean value, whether debug is enabled or disabled
+		 </apiDesc></apiValueDetail></apiValue><apiValue id="Model:Globals:labels:get"><apiName>labels</apiName><shortdesc>
+		 reutns all labels stored in an array 
+		 </shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="public"/><apiDynamic/><apiValueAccess value="readwrite"/><apiType value="Array"/></apiValueDef><apiDesc>
+		 reutns all labels stored in an array 
+		 </apiDesc></apiValueDetail></apiValue><apiValue id="Model:Globals:paths:get"><apiName>paths</apiName><shortdesc>
+		 returns all paths stored in an array
+		 </shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="public"/><apiDynamic/><apiValueAccess value="readwrite"/><apiType value="Array"/></apiValueDef><apiDesc>
+		 returns all paths stored in an array
+		 </apiDesc></apiValueDetail></apiValue><apiValue id="Model:Globals:soundIgnore:get"><apiName>soundIgnore</apiName><shortdesc>
+		 returns a boolean value, whether sound is enabled or disabled
+		 </shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="public"/><apiDynamic/><apiValueAccess value="read"/><apiType value="Boolean"/></apiValueDef><apiDesc>
+		 returns a boolean value, whether sound is enabled or disabled
+		 </apiDesc></apiValueDetail></apiValue></apiClassifier></apiPackage>

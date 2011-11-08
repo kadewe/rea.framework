@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<globals>
+	<!--SET OR CHANGE APPLICATION STATES 0 means false/off 1 means true/on-->
+	<mode debug="0" ignoresound="0" />
+	<!--SERVER PATH-->
+	<paths>
+		<path id="rootUrl" url="http://www.ifeb.uni-bremen.de/otulea/" />
+		<path id="includeScript" url="includes.php" />
+		<path id="loginNewCode" url="includes.php" />
+		<path id="getTCollection" url="testcollections.xml" />
+		<path id="updateUser" url="includes.php" />
+		<path id="writeFinishedItem" url="includes.php" />
+		<!--SECURED AREA-->
+		<path id="itemsPath" url="data/item/" />
+		<path id="userPath" url="data/user/" />
+		<path id="soundPath" url="data/sounds/" />
+		<path id="introVideoFile" url="videos/intro.flv" />
+	</paths>
+	<labels>
+		<!--BUTTON LABELS-->
+		<label id="mainAppStartButton" text="Start"/>
+		<label id="yesButton" text="Ja" sound="Ja.mp3" />
+		<label id="noButton" text="Nein" sound="Nein.mp3" />
+		<label id="backButton" text="Zurück" />
+		<label id="forwardButton" text="Weiter" />
+		<label id="login_submitButton" text="Anmelden" />
+		<label id="levelButton1" text="Geht So" />
+		<label id="levelButton2" text="Gut" />
+		<label id="levelButton3" text="Sehr Gut" />
+		<label id="newTestButton" text="Neuer Test" sound="Neuer_Test.mp3" />
+		<label id="mainAppEndButton" text="Ende" sound="Ende.mp3" />
+		<!--TEXT LABELS-->
+		<label id="testMadeInPast" text="Haben Sie bereits einen Test absolviert?" sound="Haben_Sie_bereits_einen_Test_absolviert.mp3" />
+		<label id="pleaseEnterCode" text="Geben Sie nun bitte ihren Code ein." sound="Geben_Sie_nun_bitte_Ihren_Code_ein.mp3" />
+		<label id="yourNewCode" text="Ihr neuer Code! Merken Sie sich Ihren Code, am besten scheiben Sie ihn sich auf ein Stück Papier. Tragen Sie ihn in die Kästen unten ein und drücken Sie auf 'Anmelden'. Ihr neuer Login Code lautet:" sound="Ihr_neuer_Code.mp3" />
+		<label id="retryInput" text="Hoppla, das war wohl falsch. Bitte geben Sie ihren code erneut ein." sound="Hoppla_das_war_wohl_falsch.mp3" />
+		<label id="chooseSubject" text="Bitte wählen Sie einen Bereich aus." sound="Bitte_waehlen_Sie_einen_Bereich_aus.mp3" />
+		<label id="whatLevel" text="Wie schätzen Sie ihre Kenntnisse ein?" sound="Wie_schaetzen_Sie_ihre_Kenntnisse_ein.mp3" />
+		<label id="congrats" text="Das haben Sie gut gemacht!" sound="Das_haben_Sie_gut_gemacht.mp3" />
+		<label id="youCanPrint" text="Sie können sich Ihr Ergebnis hier ausdrucken." sound="Sie_koennen_sich_Ihr_Ergebnis_hier_ausdrucken.mp3" />
+		<label id="whatNext" text="Was möchten Sie als nächstes tun?" sound="Was_moechten_Sie_als_naechstes_tun.mp3" />
+	</labels>
+</globals>

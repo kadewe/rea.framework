@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx">
+	<fx:Declarations>
+		<!-- Platzieren Sie nichtvisuelle Elemente (z. B. Dienste, Wertobjekte) hier -->
+	</fx:Declarations>
+	<s:layout>
+		<s:HorizontalLayout horizontalAlign="center" gap="100" />
+	</s:layout>
+	<s:Label text="Sorry, the functon you have requested caused an unpredictable error. Please restart the application (F5)." />
+</s:Group>

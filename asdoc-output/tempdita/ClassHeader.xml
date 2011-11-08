@@ -1,0 +1,3060 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<allClasses>
+   <apiPackage id="DisplayApplication.Components">
+      <apiName>DisplayApplication.Components</apiName>
+      <apiDetail/>
+      <apiClassifier id="DisplayApplication.Components:SmallEyeButton">
+         <apiName>SmallEyeButton</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="label"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="SmallEyeButton,DisplayApplication.Components.SmallEyeButton"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Shared:CustomButton</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:CustomButton"/>
+                  <Inherit id="spark.components:Button"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.Components:MiniSoundButton">
+         <apiName>MiniSoundButton</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="label"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="MiniSoundButton,DisplayApplication.Components.MiniSoundButton"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Shared:CustomButton</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:CustomButton"/>
+                  <Inherit id="spark.components:Button"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.Components:SmallSoundButton">
+         <apiName>SmallSoundButton</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="label"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="SmallSoundButton,DisplayApplication.Components.SmallSoundButton"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Shared:CustomButton</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:CustomButton"/>
+                  <Inherit id="spark.components:Button"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.Components:SelectableImage">
+         <apiName>SelectableImage</apiName>
+         <shortdesc>
+	 A simple extension of an image, inmplementing the selectable idea.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="SelectableImage,DisplayApplication.Components.SelectableImage,hoverColor,hovered,reference,selected,selectedColor"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>Interfaces:ICustomSelectable</apiBaseInterface>
+               <apiBaseClassifier>Shared:CustomImage</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 A simple extension of an image, inmplementing the selectable idea. This image can be uses with others to simulate an image based single- or multiple choice construct.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:CustomImage"/>
+                  <Inherit id="mx.controls:Image"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="Interfaces:ICustomSelectable"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.Components:BackButton">
+         <apiName>BackButton</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="label"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords" content="BackButton,DisplayApplication.Components.BackButton"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Shared:CustomButton</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:CustomButton"/>
+                  <Inherit id="spark.components:Button"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.Components:CustomCheckBox">
+         <apiName>CustomCheckBox</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="label"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="CustomCheckBox,DisplayApplication.Components.CustomCheckBox"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>Interfaces:ICustomSelectable</apiBaseInterface>
+               <apiBaseClassifier>spark.components:CheckBox</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.components:CheckBox"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="Interfaces:ICustomSelectable"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.Components:ForwardButton">
+         <apiName>ForwardButton</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="label"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="ForwardButton,DisplayApplication.Components.ForwardButton"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Shared:CustomButton</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:CustomButton"/>
+                  <Inherit id="spark.components:Button"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.Components:StartButton">
+         <apiName>StartButton</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="label"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords" content="StartButton,DisplayApplication.Components.StartButton"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Shared:CustomButton</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:CustomButton"/>
+                  <Inherit id="spark.components:Button"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.Components:CustomDesignButton">
+         <apiName>CustomDesignButton</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="label"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="CustomDesignButton,DisplayApplication.Components.CustomDesignButton,hoverColor,hovered,reference,selected,selectedColor"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Shared:CustomButton</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:CustomButton"/>
+                  <Inherit id="spark.components:Button"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.Components:CustomTextInput">
+         <apiName>CustomTextInput</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="text"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="CustomTextInput,DisplayApplication.Components.CustomTextInput"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>Interfaces:ICustomWritable</apiBaseInterface>
+               <apiBaseClassifier>spark.components:TextInput</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.components:TextInput"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="Interfaces:ICustomWritable"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.Components:SoundButton">
+         <apiName>SoundButton</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="label"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords" content="SoundButton,DisplayApplication.Components.SoundButton"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Shared:CustomButton</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:CustomButton"/>
+                  <Inherit id="spark.components:Button"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.Components:CustomRadioButton">
+         <apiName>CustomRadioButton</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="label"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="CustomRadioButton,DisplayApplication.Components.CustomRadioButton"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>Interfaces:ICustomSelectable</apiBaseInterface>
+               <apiBaseClassifier>spark.components:RadioButton</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.components:RadioButton"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="Interfaces:ICustomSelectable"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+   </apiPackage>
+   <apiPackage id="DisplayApplication.CustomSkins">
+      <apiName>DisplayApplication.CustomSkins</apiName>
+      <apiDetail/>
+      <apiClassifier id="DisplayApplication.CustomSkins:CustomForwardButtonSkin">
+         <apiName>CustomForwardButtonSkin</apiName>
+         <shortdesc>The default skin class for the Spark Button component.</shortdesc>
+         <prolog>
+            <asMetadata>
+               <apiVersion>
+                  <apiLanguage version="3.0"/>
+                  <apiPlatform description="" name="Flash" version="10"/>
+                  <apiPlatform description="" name="AIR" version="1.5"/>
+                  <apiTool description="" name="Flex" version="4"/>
+               </apiVersion>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="CustomForwardButtonSkin,DisplayApplication.CustomSkins.CustomForwardButtonSkin,background,background,clippedGroup,contentGroup,contents,controlBarGroup,currentTimeDisplay,dot,durationDisplay,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,labelDisplay,labelDisplay,labelDisplay,labelDisplay,labelDisplay,playPauseButton,playerControls,scrubBar,textDisplay,textDisplay,titleDisplay,videoDisplay,volumeBar"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.binding:IBindingClient</apiBaseInterface>
+               <apiBaseInterface>mx.core:IStateClient2</apiBaseInterface>
+               <apiBaseClassifier>spark.skins:SparkSkin</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>The default skin class for the Spark Button component.  
+</apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.skins:SparkSkin"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.binding:IBindingClient"/>
+                  <Implement id="mx.core:IStateClient2"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+         <related-links>
+            <link href="" invalidHref="spark.components.Button.xml">
+               <linktext>spark.components.Button</linktext>
+            </link>
+         </related-links>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.CustomSkins:CustomSoundButtonSkin">
+         <apiName>CustomSoundButtonSkin</apiName>
+         <shortdesc>The default skin class for the Spark Button component.</shortdesc>
+         <prolog>
+            <asMetadata>
+               <apiVersion>
+                  <apiLanguage version="3.0"/>
+                  <apiPlatform description="" name="Flash" version="10"/>
+                  <apiPlatform description="" name="AIR" version="1.5"/>
+                  <apiTool description="" name="Flex" version="4"/>
+               </apiVersion>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="CustomSoundButtonSkin,DisplayApplication.CustomSkins.CustomSoundButtonSkin,background,background,clippedGroup,contentGroup,contents,controlBarGroup,currentTimeDisplay,dot,durationDisplay,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,labelDisplay,labelDisplay,labelDisplay,labelDisplay,labelDisplay,playPauseButton,playerControls,scrubBar,textDisplay,textDisplay,titleDisplay,videoDisplay,volumeBar"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.binding:IBindingClient</apiBaseInterface>
+               <apiBaseInterface>mx.core:IStateClient2</apiBaseInterface>
+               <apiBaseClassifier>spark.skins:SparkSkin</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>The default skin class for the Spark Button component.  
+</apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.skins:SparkSkin"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.binding:IBindingClient"/>
+                  <Implement id="mx.core:IStateClient2"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+         <related-links>
+            <link href="" invalidHref="spark.components.Button.xml">
+               <linktext>spark.components.Button</linktext>
+            </link>
+         </related-links>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.CustomSkins:CustomVideoPlayerSkin">
+         <apiName>CustomVideoPlayerSkin</apiName>
+         <shortdesc>The default skin class for the Spark VideoPlayer component.</shortdesc>
+         <prolog>
+            <asMetadata>
+               <apiVersion>
+                  <apiLanguage version="3.0"/>
+                  <apiPlatform description="" name="Flash" version="10"/>
+                  <apiPlatform description="" name="AIR" version="1.5"/>
+                  <apiTool description="" name="Flex" version="4"/>
+               </apiVersion>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="CustomVideoPlayerSkin,DisplayApplication.CustomSkins.CustomVideoPlayerSkin,background,background,clippedGroup,contentGroup,contents,controlBarGroup,currentTimeDisplay,dot,durationDisplay,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,labelDisplay,labelDisplay,labelDisplay,labelDisplay,labelDisplay,playPauseButton,playerControls,scrubBar,textDisplay,textDisplay,titleDisplay,videoDisplay,volumeBar"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.binding:IBindingClient</apiBaseInterface>
+               <apiBaseInterface>mx.core:IStateClient2</apiBaseInterface>
+               <apiBaseClassifier>spark.skins:SparkSkin</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>The default skin class for the Spark VideoPlayer component.  
+     </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.skins:SparkSkin"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.binding:IBindingClient"/>
+                  <Implement id="mx.core:IStateClient2"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+         <related-links>
+            <link href="" invalidHref="spark.components.VideoPlayer.xml">
+               <linktext>spark.components.VideoPlayer</linktext>
+            </link>
+         </related-links>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.CustomSkins:CustomButtonSkin">
+         <apiName>CustomButtonSkin</apiName>
+         <shortdesc>The default skin class for the Spark Button component.</shortdesc>
+         <prolog>
+            <asMetadata>
+               <apiVersion>
+                  <apiLanguage version="3.0"/>
+                  <apiPlatform description="" name="Flash" version="10"/>
+                  <apiPlatform description="" name="AIR" version="1.5"/>
+                  <apiTool description="" name="Flex" version="4"/>
+               </apiVersion>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="CustomButtonSkin,DisplayApplication.CustomSkins.CustomButtonSkin,background,background,clippedGroup,contentGroup,contents,controlBarGroup,currentTimeDisplay,dot,durationDisplay,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,labelDisplay,labelDisplay,labelDisplay,labelDisplay,labelDisplay,playPauseButton,playerControls,scrubBar,textDisplay,textDisplay,titleDisplay,videoDisplay,volumeBar"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.binding:IBindingClient</apiBaseInterface>
+               <apiBaseInterface>mx.core:IStateClient2</apiBaseInterface>
+               <apiBaseClassifier>spark.skins:SparkSkin</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>The default skin class for the Spark Button component.  
+</apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.skins:SparkSkin"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.binding:IBindingClient"/>
+                  <Implement id="mx.core:IStateClient2"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+         <related-links>
+            <link href="" invalidHref="spark.components.Button.xml">
+               <linktext>spark.components.Button</linktext>
+            </link>
+         </related-links>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.CustomSkins:CustomStartButtonSkin">
+         <apiName>CustomStartButtonSkin</apiName>
+         <shortdesc>The default skin class for the Spark Button component.</shortdesc>
+         <prolog>
+            <asMetadata>
+               <apiVersion>
+                  <apiLanguage version="3.0"/>
+                  <apiPlatform description="" name="Flash" version="10"/>
+                  <apiPlatform description="" name="AIR" version="1.5"/>
+                  <apiTool description="" name="Flex" version="4"/>
+               </apiVersion>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="CustomStartButtonSkin,DisplayApplication.CustomSkins.CustomStartButtonSkin,background,background,clippedGroup,contentGroup,contents,controlBarGroup,currentTimeDisplay,dot,durationDisplay,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,labelDisplay,labelDisplay,labelDisplay,labelDisplay,labelDisplay,playPauseButton,playerControls,scrubBar,textDisplay,textDisplay,titleDisplay,videoDisplay,volumeBar"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.binding:IBindingClient</apiBaseInterface>
+               <apiBaseInterface>mx.core:IStateClient2</apiBaseInterface>
+               <apiBaseClassifier>spark.skins:SparkSkin</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>The default skin class for the Spark Button component.  
+</apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.skins:SparkSkin"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.binding:IBindingClient"/>
+                  <Implement id="mx.core:IStateClient2"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+         <related-links>
+            <link href="" invalidHref="spark.components.Button.xml">
+               <linktext>spark.components.Button</linktext>
+            </link>
+         </related-links>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.CustomSkins:CustomDimesionButtonSkin">
+         <apiName>CustomDimesionButtonSkin</apiName>
+         <shortdesc>The default skin class for the Spark Button component.</shortdesc>
+         <prolog>
+            <asMetadata>
+               <apiVersion>
+                  <apiLanguage version="3.0"/>
+                  <apiPlatform description="" name="Flash" version="10"/>
+                  <apiPlatform description="" name="AIR" version="1.5"/>
+                  <apiTool description="" name="Flex" version="4"/>
+               </apiVersion>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="CustomDimesionButtonSkin,DisplayApplication.CustomSkins.CustomDimesionButtonSkin,background,background,clippedGroup,contentGroup,contents,controlBarGroup,currentTimeDisplay,dot,durationDisplay,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,labelDisplay,labelDisplay,labelDisplay,labelDisplay,labelDisplay,playPauseButton,playerControls,scrubBar,textDisplay,textDisplay,titleDisplay,videoDisplay,volumeBar"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.binding:IBindingClient</apiBaseInterface>
+               <apiBaseInterface>mx.core:IStateClient2</apiBaseInterface>
+               <apiBaseClassifier>spark.skins:SparkSkin</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>The default skin class for the Spark Button component.  
+</apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.skins:SparkSkin"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.binding:IBindingClient"/>
+                  <Implement id="mx.core:IStateClient2"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+         <related-links>
+            <link href="" invalidHref="spark.components.Button.xml">
+               <linktext>spark.components.Button</linktext>
+            </link>
+         </related-links>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.CustomSkins:CustomRadioSkin">
+         <apiName>CustomRadioSkin</apiName>
+         <shortdesc>The default skin class for a Spark RadioButton component.</shortdesc>
+         <prolog>
+            <asMetadata>
+               <apiVersion>
+                  <apiLanguage version="3.0"/>
+                  <apiPlatform description="" name="Flash" version="10"/>
+                  <apiPlatform description="" name="AIR" version="1.5"/>
+                  <apiTool description="" name="Flex" version="4"/>
+               </apiVersion>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="CustomRadioSkin,DisplayApplication.CustomSkins.CustomRadioSkin,background,background,clippedGroup,contentGroup,contents,controlBarGroup,currentTimeDisplay,dot,durationDisplay,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,labelDisplay,labelDisplay,labelDisplay,labelDisplay,labelDisplay,playPauseButton,playerControls,scrubBar,textDisplay,textDisplay,titleDisplay,videoDisplay,volumeBar"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.core:IStateClient2</apiBaseInterface>
+               <apiBaseClassifier>spark.skins:SparkSkin</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>The default skin class for a Spark RadioButton component.  
+       </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.skins:SparkSkin"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.core:IStateClient2"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+         <related-links>
+            <link href="" invalidHref="spark.components.RadioButton.xml">
+               <linktext>spark.components.RadioButton</linktext>
+            </link>
+            <link href="" invalidHref="spark.components.RadioButtonGroup.xml">
+               <linktext>spark.components.RadioButtonGroup</linktext>
+            </link>
+         </related-links>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.CustomSkins:CustomBackButtonSkin">
+         <apiName>CustomBackButtonSkin</apiName>
+         <shortdesc>The default skin class for the Spark Button component.</shortdesc>
+         <prolog>
+            <asMetadata>
+               <apiVersion>
+                  <apiLanguage version="3.0"/>
+                  <apiPlatform description="" name="Flash" version="10"/>
+                  <apiPlatform description="" name="AIR" version="1.5"/>
+                  <apiTool description="" name="Flex" version="4"/>
+               </apiVersion>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="CustomBackButtonSkin,DisplayApplication.CustomSkins.CustomBackButtonSkin,background,background,clippedGroup,contentGroup,contents,controlBarGroup,currentTimeDisplay,dot,durationDisplay,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,labelDisplay,labelDisplay,labelDisplay,labelDisplay,labelDisplay,playPauseButton,playerControls,scrubBar,textDisplay,textDisplay,titleDisplay,videoDisplay,volumeBar"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.binding:IBindingClient</apiBaseInterface>
+               <apiBaseInterface>mx.core:IStateClient2</apiBaseInterface>
+               <apiBaseClassifier>spark.skins:SparkSkin</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>The default skin class for the Spark Button component.  
+</apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.skins:SparkSkin"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.binding:IBindingClient"/>
+                  <Implement id="mx.core:IStateClient2"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+         <related-links>
+            <link href="" invalidHref="spark.components.Button.xml">
+               <linktext>spark.components.Button</linktext>
+            </link>
+         </related-links>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.CustomSkins:CustomEyeButtonSkin">
+         <apiName>CustomEyeButtonSkin</apiName>
+         <shortdesc>The default skin class for the Spark Button component.</shortdesc>
+         <prolog>
+            <asMetadata>
+               <apiVersion>
+                  <apiLanguage version="3.0"/>
+                  <apiPlatform description="" name="Flash" version="10"/>
+                  <apiPlatform description="" name="AIR" version="1.5"/>
+                  <apiTool description="" name="Flex" version="4"/>
+               </apiVersion>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="CustomEyeButtonSkin,DisplayApplication.CustomSkins.CustomEyeButtonSkin,background,background,clippedGroup,contentGroup,contents,controlBarGroup,currentTimeDisplay,dot,durationDisplay,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,labelDisplay,labelDisplay,labelDisplay,labelDisplay,labelDisplay,playPauseButton,playerControls,scrubBar,textDisplay,textDisplay,titleDisplay,videoDisplay,volumeBar"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.binding:IBindingClient</apiBaseInterface>
+               <apiBaseInterface>mx.core:IStateClient2</apiBaseInterface>
+               <apiBaseClassifier>spark.skins:SparkSkin</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>The default skin class for the Spark Button component.  
+       </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.skins:SparkSkin"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.binding:IBindingClient"/>
+                  <Implement id="mx.core:IStateClient2"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+         <related-links>
+            <link href="" invalidHref="spark.components.Button.xml">
+               <linktext>spark.components.Button</linktext>
+            </link>
+         </related-links>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.CustomSkins:CustomLoginPanelSkin">
+         <apiName>CustomLoginPanelSkin</apiName>
+         <shortdesc>The default skin class for a Spark Panel container.</shortdesc>
+         <prolog>
+            <asMetadata>
+               <apiVersion>
+                  <apiLanguage version="3.0"/>
+                  <apiPlatform description="" name="Flash" version="10"/>
+                  <apiPlatform description="" name="AIR" version="1.5"/>
+                  <apiTool description="" name="Flex" version="4"/>
+               </apiVersion>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="CustomLoginPanelSkin,DisplayApplication.CustomSkins.CustomLoginPanelSkin,background,background,clippedGroup,contentGroup,contents,controlBarGroup,currentTimeDisplay,dot,durationDisplay,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,labelDisplay,labelDisplay,labelDisplay,labelDisplay,labelDisplay,playPauseButton,playerControls,scrubBar,textDisplay,textDisplay,titleDisplay,videoDisplay,volumeBar"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.binding:IBindingClient</apiBaseInterface>
+               <apiBaseInterface>mx.core:IStateClient2</apiBaseInterface>
+               <apiBaseClassifier>spark.skins:SparkSkin</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>The default skin class for a Spark Panel container.  
+    </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.skins:SparkSkin"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.binding:IBindingClient"/>
+                  <Implement id="mx.core:IStateClient2"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+         <related-links>
+            <link href="" invalidHref="spark.components.Panel.xml">
+               <linktext>spark.components.Panel</linktext>
+            </link>
+         </related-links>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.CustomSkins:CustomTextInputSkin">
+         <apiName>CustomTextInputSkin</apiName>
+         <shortdesc>The default skin class for Spark TextInput component.</shortdesc>
+         <prolog>
+            <asMetadata>
+               <apiVersion>
+                  <apiLanguage version="3.0"/>
+                  <apiPlatform description="" name="Flash" version="10"/>
+                  <apiPlatform description="" name="AIR" version="1.5"/>
+                  <apiTool description="" name="Flex" version="4"/>
+               </apiVersion>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="CustomTextInputSkin,DisplayApplication.CustomSkins.CustomTextInputSkin,background,background,clippedGroup,contentGroup,contents,controlBarGroup,currentTimeDisplay,dot,durationDisplay,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,labelDisplay,labelDisplay,labelDisplay,labelDisplay,labelDisplay,playPauseButton,playerControls,scrubBar,textDisplay,textDisplay,titleDisplay,videoDisplay,volumeBar"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.binding:IBindingClient</apiBaseInterface>
+               <apiBaseInterface>mx.core:IStateClient2</apiBaseInterface>
+               <apiBaseClassifier>spark.skins:SparkSkin</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>The default skin class for Spark TextInput component.  
+     </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.skins:SparkSkin"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.binding:IBindingClient"/>
+                  <Implement id="mx.core:IStateClient2"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+         <related-links>
+            <link href="" invalidHref="spark.components.TextInput.xml">
+               <linktext>spark.components.TextInput</linktext>
+            </link>
+         </related-links>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.CustomSkins:SoundButtonSkin">
+         <apiName>SoundButtonSkin</apiName>
+         <shortdesc>The default skin class for the Spark Button component.</shortdesc>
+         <prolog>
+            <asMetadata>
+               <apiVersion>
+                  <apiLanguage version="3.0"/>
+                  <apiPlatform description="" name="Flash" version="10"/>
+                  <apiPlatform description="" name="AIR" version="1.5"/>
+                  <apiTool description="" name="Flex" version="4"/>
+               </apiVersion>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="SoundButtonSkin,DisplayApplication.CustomSkins.SoundButtonSkin,background,background,clippedGroup,contentGroup,contents,controlBarGroup,currentTimeDisplay,dot,durationDisplay,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,labelDisplay,labelDisplay,labelDisplay,labelDisplay,labelDisplay,playPauseButton,playerControls,scrubBar,textDisplay,textDisplay,titleDisplay,videoDisplay,volumeBar"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.core:IStateClient2</apiBaseInterface>
+               <apiBaseClassifier>spark.skins:SparkSkin</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>The default skin class for the Spark Button component.  
+       </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.skins:SparkSkin"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.core:IStateClient2"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+         <related-links>
+            <link href="" invalidHref="spark.components.Button.xml">
+               <linktext>spark.components.Button</linktext>
+            </link>
+         </related-links>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.CustomSkins:CustomLoginInputSkin">
+         <apiName>CustomLoginInputSkin</apiName>
+         <shortdesc>The default skin class for Spark TextInput component.</shortdesc>
+         <prolog>
+            <asMetadata>
+               <apiVersion>
+                  <apiLanguage version="3.0"/>
+                  <apiPlatform description="" name="Flash" version="10"/>
+                  <apiPlatform description="" name="AIR" version="1.5"/>
+                  <apiTool description="" name="Flex" version="4"/>
+               </apiVersion>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="CustomLoginInputSkin,DisplayApplication.CustomSkins.CustomLoginInputSkin,background,background,clippedGroup,contentGroup,contents,controlBarGroup,currentTimeDisplay,dot,durationDisplay,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,hostComponent,labelDisplay,labelDisplay,labelDisplay,labelDisplay,labelDisplay,playPauseButton,playerControls,scrubBar,textDisplay,textDisplay,titleDisplay,videoDisplay,volumeBar"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.core:IStateClient2</apiBaseInterface>
+               <apiBaseClassifier>spark.skins:SparkSkin</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>The default skin class for Spark TextInput component.  
+     </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.skins:SparkSkin"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.core:IStateClient2"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+         <related-links>
+            <link href="" invalidHref="spark.components.TextInput.xml">
+               <linktext>spark.components.TextInput</linktext>
+            </link>
+         </related-links>
+      </apiClassifier>
+   </apiPackage>
+   <apiPackage id="DisplayApplication.ItemView">
+      <apiName>DisplayApplication.ItemView</apiName>
+      <apiDetail/>
+      <apiClassifier id="DisplayApplication.ItemView:InstructionField">
+         <apiName>InstructionField</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="InstructionField,DisplayApplication.ItemView.InstructionField,instruction"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>spark.components:Group</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.components:Group"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.ItemView:reaBtnNext">
+         <apiName>reaBtnNext</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="label"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords" content="reaBtnNext,DisplayApplication.ItemView.reaBtnNext"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>spark.components:Button</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.components:Button"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.ItemView:reaSoundImg">
+         <apiName>reaSoundImg</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords" content="reaSoundImg,DisplayApplication.ItemView.reaSoundImg"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>mx.controls:Image</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="mx.controls:Image"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.ItemView:reaPanelCom">
+         <apiName>reaPanelCom</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="mxmlContentFactory"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords" content="reaPanelCom,DisplayApplication.ItemView.reaPanelCom"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>spark.components:Panel</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.components:Panel"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication.ItemView:reaBackimg">
+         <apiName>reaBackimg</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords" content="reaBackimg,DisplayApplication.ItemView.reaBackimg"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>mx.controls:Image</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="mx.controls:Image"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+   </apiPackage>
+   <apiPackage id="DisplayApplication">
+      <apiName>DisplayApplication</apiName>
+      <apiDetail/>
+      <apiClassifier id="DisplayApplication:LogInView">
+         <apiName>LogInView</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="LogInView,DisplayApplication.LogInView,FINISHED,PRINT,bgContainer,button0,button1,button2,button3,buttonArea,chooseSubject,chooseSubjectSnd,congrats,congratsContainer,congratsSound,content,description,endReference,forwardButton,innerLayout,input,input1,input2,input3,input4,inputGroup,instrGroup,item_questionWrapperBox,itembgImage,levelButtonsContainer,levelSoundButton,levelgroup,loginInstructionBox,loginSoundButton,login_newCode,login_submitButton,mainAppEndButton,mainAppStartButton,newTReference,newTestButton,newuserSoundButton,noButton,overviewgroup,pleaseEnterCode,preGroup,printIcon,printSound,printTextContainer,registerInstructionBox,registerSoundButton,retryInput,retrylabel,retrysound,testMadeInPast,testedButtons,testedQuestionBox,tile,videoPlayer,videoSource,whatLevel,whatNext,whatNextSound,yesButton,youCanPrint,yourNewCode"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.binding:IBindingClient</apiBaseInterface>
+               <apiBaseInterface>mx.core:IStateClient2</apiBaseInterface>
+               <apiBaseClassifier>spark.components:Group</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.components:Group"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.binding:IBindingClient"/>
+                  <Implement id="mx.core:IStateClient2"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication:StartAppView">
+         <apiName>StartAppView</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="StartAppView,DisplayApplication.StartAppView,FINISHED,PRINT,bgContainer,button0,button1,button2,button3,buttonArea,chooseSubject,chooseSubjectSnd,congrats,congratsContainer,congratsSound,content,description,endReference,forwardButton,innerLayout,input,input1,input2,input3,input4,inputGroup,instrGroup,item_questionWrapperBox,itembgImage,levelButtonsContainer,levelSoundButton,levelgroup,loginInstructionBox,loginSoundButton,login_newCode,login_submitButton,mainAppEndButton,mainAppStartButton,newTReference,newTestButton,newuserSoundButton,noButton,overviewgroup,pleaseEnterCode,preGroup,printIcon,printSound,printTextContainer,registerInstructionBox,registerSoundButton,retryInput,retrylabel,retrysound,testMadeInPast,testedButtons,testedQuestionBox,tile,videoPlayer,videoSource,whatLevel,whatNext,whatNextSound,yesButton,youCanPrint,yourNewCode"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>spark.components:Group</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.components:Group"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication:ErrorView">
+         <apiName>ErrorView</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords" content="ErrorView,DisplayApplication.ErrorView"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>spark.components:Group</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.components:Group"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication:DisplayWrapper">
+         <apiName>DisplayWrapper</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="DisplayWrapper,DisplayApplication.DisplayWrapper,FINISHED,PRINT,bgContainer,button0,button1,button2,button3,buttonArea,chooseSubject,chooseSubjectSnd,congrats,congratsContainer,congratsSound,content,description,endReference,forwardButton,innerLayout,input,input1,input2,input3,input4,inputGroup,instrGroup,item_questionWrapperBox,itembgImage,levelButtonsContainer,levelSoundButton,levelgroup,loginInstructionBox,loginSoundButton,login_newCode,login_submitButton,mainAppEndButton,mainAppStartButton,newTReference,newTestButton,newuserSoundButton,noButton,overviewgroup,pleaseEnterCode,preGroup,printIcon,printSound,printTextContainer,registerInstructionBox,registerSoundButton,retryInput,retrylabel,retrysound,testMadeInPast,testedButtons,testedQuestionBox,tile,videoPlayer,videoSource,whatLevel,whatNext,whatNextSound,yesButton,youCanPrint,yourNewCode"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>spark.components:Group</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.components:Group"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication:Overview">
+         <apiName>Overview</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="Overview,DisplayApplication.Overview,FINISHED,PRINT,bgContainer,button0,button1,button2,button3,buttonArea,chooseSubject,chooseSubjectSnd,congrats,congratsContainer,congratsSound,content,description,endReference,forwardButton,innerLayout,input,input1,input2,input3,input4,inputGroup,instrGroup,item_questionWrapperBox,itembgImage,levelButtonsContainer,levelSoundButton,levelgroup,loginInstructionBox,loginSoundButton,login_newCode,login_submitButton,mainAppEndButton,mainAppStartButton,newTReference,newTestButton,newuserSoundButton,noButton,overviewgroup,pleaseEnterCode,preGroup,printIcon,printSound,printTextContainer,registerInstructionBox,registerSoundButton,retryInput,retrylabel,retrysound,testMadeInPast,testedButtons,testedQuestionBox,tile,videoPlayer,videoSource,whatLevel,whatNext,whatNextSound,yesButton,youCanPrint,yourNewCode"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.binding:IBindingClient</apiBaseInterface>
+               <apiBaseInterface>mx.core:IStateClient2</apiBaseInterface>
+               <apiBaseClassifier>spark.components:Group</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.components:Group"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.binding:IBindingClient"/>
+                  <Implement id="mx.core:IStateClient2"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication:QuestionView">
+         <apiName>QuestionView</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="QuestionView,DisplayApplication.QuestionView,FINISHED,PRINT,bgContainer,button0,button1,button2,button3,buttonArea,chooseSubject,chooseSubjectSnd,congrats,congratsContainer,congratsSound,content,description,endReference,forwardButton,innerLayout,input,input1,input2,input3,input4,inputGroup,instrGroup,item_questionWrapperBox,itembgImage,levelButtonsContainer,levelSoundButton,levelgroup,loginInstructionBox,loginSoundButton,login_newCode,login_submitButton,mainAppEndButton,mainAppStartButton,newTReference,newTestButton,newuserSoundButton,noButton,overviewgroup,pleaseEnterCode,preGroup,printIcon,printSound,printTextContainer,registerInstructionBox,registerSoundButton,retryInput,retrylabel,retrysound,testMadeInPast,testedButtons,testedQuestionBox,tile,videoPlayer,videoSource,whatLevel,whatNext,whatNextSound,yesButton,youCanPrint,yourNewCode"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>spark.components:Group</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.components:Group"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication:ItemViewContainer">
+         <apiName>ItemViewContainer</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="ItemViewContainer,DisplayApplication.ItemViewContainer,FINISHED,PRINT,bgContainer,button0,button1,button2,button3,buttonArea,chooseSubject,chooseSubjectSnd,congrats,congratsContainer,congratsSound,content,description,endReference,forwardButton,innerLayout,input,input1,input2,input3,input4,inputGroup,instrGroup,item_questionWrapperBox,itembgImage,levelButtonsContainer,levelSoundButton,levelgroup,loginInstructionBox,loginSoundButton,login_newCode,login_submitButton,mainAppEndButton,mainAppStartButton,newTReference,newTestButton,newuserSoundButton,noButton,overviewgroup,pleaseEnterCode,preGroup,printIcon,printSound,printTextContainer,registerInstructionBox,registerSoundButton,retryInput,retrylabel,retrysound,testMadeInPast,testedButtons,testedQuestionBox,tile,videoPlayer,videoSource,whatLevel,whatNext,whatNextSound,yesButton,youCanPrint,yourNewCode"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>spark.components:Group</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.components:Group"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="DisplayApplication:TestFinishedView">
+         <apiName>TestFinishedView</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="mxmlContent"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="TestFinishedView,DisplayApplication.TestFinishedView,FINISHED,PRINT,bgContainer,button0,button1,button2,button3,buttonArea,chooseSubject,chooseSubjectSnd,congrats,congratsContainer,congratsSound,content,description,endReference,forwardButton,innerLayout,input,input1,input2,input3,input4,inputGroup,instrGroup,item_questionWrapperBox,itembgImage,levelButtonsContainer,levelSoundButton,levelgroup,loginInstructionBox,loginSoundButton,login_newCode,login_submitButton,mainAppEndButton,mainAppStartButton,newTReference,newTestButton,newuserSoundButton,noButton,overviewgroup,pleaseEnterCode,preGroup,printIcon,printSound,printTextContainer,registerInstructionBox,registerSoundButton,retryInput,retrylabel,retrysound,testMadeInPast,testedButtons,testedQuestionBox,tile,videoPlayer,videoSource,whatLevel,whatNext,whatNextSound,yesButton,youCanPrint,yourNewCode"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.binding:IBindingClient</apiBaseInterface>
+               <apiBaseInterface>mx.core:IStateClient2</apiBaseInterface>
+               <apiBaseClassifier>spark.components:Group</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.components:Group"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.binding:IBindingClient"/>
+                  <Implement id="mx.core:IStateClient2"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+   </apiPackage>
+   <apiPackage id="Interfaces">
+      <apiName>Interfaces</apiName>
+      <apiDetail/>
+      <apiClassifier id="Interfaces:ICustomModule">
+         <apiName>ICustomModule</apiName>
+         <shortdesc>
+	 Defines the minimal criteria for a class to be a module.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="ICustomModule,Interfaces.ICustomModule,debug,referringTo,selected,soundMode,text,visibleReference,getClassDefinition,load,removeAllEventListeners,returnLoadFinishedEvent,returnModuleFinishedEvent,returnView,sendTweenFinished,unload"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiInterface/>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>flash.events:IEventDispatcher</apiBaseInterface>
+               <apiBaseInterface>Interfaces:ICustomEventDispatcher</apiBaseInterface>
+               <apiBaseClassifier/>
+            </apiClassifierDef>
+            <apiDesc>
+	 Defines the minimal criteria for a class to be a module. This makes it possible for the MainAppManager to load any Module with the same abstract sequence of instructions.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface>
+                  <Interface id="flash.events:IEventDispatcher"/>
+                  <Interface id="Interfaces:ICustomEventDispatcher"/>
+               </BaseInterface>
+               <Inheritance>
+                  <Inherit id=""/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="flash.events:IEventDispatcher"/>
+                  <Implement id="Interfaces:ICustomEventDispatcher"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors>
+                  <Implementor id="ItemApplication:ItemObject"/>
+                  <Implementor id="MainApplication:LoginObject"/>
+                  <Implementor id="MainApplication:OverviewObject"/>
+                  <Implementor id="MainApplication:StartAppObject"/>
+                  <Implementor id="MainApplication:TestFinishedObject"/>
+               </Implementors>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Interfaces:IClickableComponent">
+         <apiName>IClickableComponent</apiName>
+         <shortdesc>
+	 Defines the minimum criteria to be clickable and refer to any object, which many of the buttons need in this app.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="IClickableComponent,Interfaces.IClickableComponent,debug,referringTo,selected,soundMode,text,visibleReference"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiInterface/>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.core:IButton</apiBaseInterface>
+               <apiBaseClassifier/>
+            </apiClassifierDef>
+            <apiDesc>
+	 Defines the minimum criteria to be clickable and refer to any object, which many of the buttons need in this app.
+	 
+	 <p>There are many different Types of buttons in this application, many of them have refer to a sound and therefore we need to generalize the 
+	 properties of a button which makes ist possible to play a sound by clickign itr dragging it</p>
+	           </apiDesc>
+            <Inheritancelist>
+               <BaseInterface>
+                  <Interface id="mx.core:IButton"/>
+               </BaseInterface>
+               <Inheritance>
+                  <Inherit id=""/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.core:IButton"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors>
+                  <Implementor id="Shared:CustomButton"/>
+               </Implementors>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Interfaces:ICustomEventDispatcher">
+         <apiName>ICustomEventDispatcher</apiName>
+         <shortdesc>
+	 This interface helps to generalize objects, for example stored runtime in an array or so, to call the very helpful
+	 removeAllEventListeners function.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="ICustomEventDispatcher,Interfaces.ICustomEventDispatcher,getClassDefinition,load,removeAllEventListeners,returnLoadFinishedEvent,returnModuleFinishedEvent,returnView,sendTweenFinished,unload"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiInterface/>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier/>
+            </apiClassifierDef>
+            <apiDesc>
+	 This interface helps to generalize objects, for example stored runtime in an array or so, to call the very helpful
+	 <codeph>removeAllEventListeners</codeph> function.
+	 
+	 <p>It is required to extends Shared.EventDispatcher to implement this interface</p>
+	           </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id=""/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors>
+                  <Implementor id="Shared:CustomButton"/>
+                  <Implementor id="Shared:CustomImage"/>
+                  <Implementor id="Shared:EventDispatcher"/>
+                  <Implementor id="Model:Globals"/>
+                  <Implementor id="ItemApplication:ItemObject"/>
+                  <Implementor id="MainApplication:LoginObject"/>
+                  <Implementor id="Shared:MP3Audio"/>
+                  <Implementor id="MainApplication:OverviewObject"/>
+                  <Implementor id="Model:Session"/>
+                  <Implementor id="MainApplication:StartAppObject"/>
+                  <Implementor id="Model:TestCollection"/>
+                  <Implementor id="MainApplication:TestFinishedObject"/>
+               </Implementors>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Interfaces:ICustomSelectable">
+         <apiName>ICustomSelectable</apiName>
+         <shortdesc>
+	 This interface is for accessing information of any selectable component.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="ICustomSelectable,Interfaces.ICustomSelectable,debug,referringTo,selected,soundMode,text,visibleReference"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiInterface/>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier/>
+            </apiClassifierDef>
+            <apiDesc>
+	 This interface is for accessing information of any selectable component. These components are generally used within questions. It allows the program to iterate the references and look for already selected Objects.
+	 Instead of overwriting the synchronize() function in each new question class, you just have to assure it implements this interface.
+	 
+	 <p>By using this, it is possible to implement a radio button or check box behavior for an image or other visual components, without extending these classes</p>
+	           </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id=""/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors>
+                  <Implementor id="DisplayApplication.Components:CustomCheckBox"/>
+                  <Implementor id="DisplayApplication.Components:CustomRadioButton"/>
+                  <Implementor id="DisplayApplication.Components:SelectableImage"/>
+               </Implementors>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Interfaces:ICustomWritable">
+         <apiName>ICustomWritable</apiName>
+         <shortdesc>
+	 Adds the textvalue to a component.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="ICustomWritable,Interfaces.ICustomWritable,debug,referringTo,selected,soundMode,text,visibleReference"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiInterface/>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier/>
+            </apiClassifierDef>
+            <apiDesc>
+	 Adds the textvalue to a component. Makes possible to implement writable components and access them runtime via arrays or lists or other runtime build references.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id=""/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors>
+                  <Implementor id="DisplayApplication.Components:CustomTextInput"/>
+               </Implementors>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+   </apiPackage>
+   <apiPackage id="ItemApplication.QuestionTypes">
+      <apiName>ItemApplication.QuestionTypes</apiName>
+      <apiDetail/>
+      <apiClassifier id="ItemApplication.QuestionTypes:SelectAndWrite">
+         <apiName>SelectAndWrite</apiName>
+         <shortdesc>
+	 Represents the process of loading, arrangin and displaying data for a selection of images and a textarea.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="SelectAndWrite,ItemApplication.QuestionTypes.SelectAndWrite,answerExists,displayQuestions,displayQuestions,displayQuestions,displayQuestions,displayQuestions,displayQuestions,getAnswerString,getAnswerValue,hasAtLeastOneListener,load,nextQpage,onAnswerLabelUpdate,onMouseOutRadio,onMouseOutRadio,onMouseOverRadio,onMouseOverRadio,playAudio,prevQpage,removeQuestions,returnAnswerList,returnFirstPulseObject,synchronize"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>ItemApplication.QuestionTypes:QuestionsObject</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 Represents the process of loading, arrangin and displaying data for a selection of images and a textarea.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="ItemApplication.QuestionTypes:QuestionsObject"/>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="ItemApplication.QuestionTypes:ScCloud">
+         <apiName>ScCloud</apiName>
+         <shortdesc>
+	 Provides a cloud of radiobuttons and labels to click.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="ScCloud,ItemApplication.QuestionTypes.ScCloud,answerExists,displayQuestions,displayQuestions,displayQuestions,displayQuestions,displayQuestions,displayQuestions,getAnswerString,getAnswerValue,hasAtLeastOneListener,load,nextQpage,onAnswerLabelUpdate,onMouseOutRadio,onMouseOutRadio,onMouseOverRadio,onMouseOverRadio,playAudio,prevQpage,removeQuestions,returnAnswerList,returnFirstPulseObject,synchronize"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>ItemApplication.QuestionTypes:SingleChoice</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 Provides a cloud of radiobuttons and labels to click. The positions within the cloud will be chosen randomly and the cloud can increase its size by having trouble with positioning elements due to limited space.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="ItemApplication.QuestionTypes:SingleChoice"/>
+                  <Inherit id="ItemApplication.QuestionTypes:QuestionsObject"/>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="ItemApplication.QuestionTypes:SingleChoice">
+         <apiName>SingleChoice</apiName>
+         <shortdesc>
+	 Representing the process of loading, arranging and displaying data within a single choice item.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="SingleChoice,ItemApplication.QuestionTypes.SingleChoice,answerExists,displayQuestions,displayQuestions,displayQuestions,displayQuestions,displayQuestions,displayQuestions,getAnswerString,getAnswerValue,hasAtLeastOneListener,load,nextQpage,onAnswerLabelUpdate,onMouseOutRadio,onMouseOutRadio,onMouseOverRadio,onMouseOverRadio,playAudio,prevQpage,removeQuestions,returnAnswerList,returnFirstPulseObject,synchronize"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>ItemApplication.QuestionTypes:QuestionsObject</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 Representing the process of loading, arranging and displaying data within a single choice item. The data model is a radiobutton group, whcih allows only one choice per question.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="ItemApplication.QuestionTypes:QuestionsObject"/>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses>
+                  <class id="ItemApplication.QuestionTypes:ScCloud"/>
+               </Subclasses>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="ItemApplication.QuestionTypes:QuestionsObject">
+         <apiName>QuestionsObject</apiName>
+         <shortdesc>
+	 Defines the basic structure and bahvior of a question object.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="QuestionsObject,ItemApplication.QuestionTypes.QuestionsObject,_listeners,_moduleState,_qpState,allAnswers,answers,debug,firstPulseObject,ignoreSound,moduleState,qView,qpState,references,relUrl,scriptUrl,source,answerExists,displayQuestions,displayQuestions,displayQuestions,displayQuestions,displayQuestions,displayQuestions,getAnswerString,getAnswerValue,hasAtLeastOneListener,load,nextQpage,onAnswerLabelUpdate,onMouseOutRadio,onMouseOutRadio,onMouseOverRadio,onMouseOverRadio,playAudio,prevQpage,removeQuestions,returnAnswerList,returnFirstPulseObject,synchronize"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Shared:EventDispatcher</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 Defines the basic structure and bahvior of a question object. The detailed behavior like load and display data is defined in each of the extending quesion classes.
+	 
+	 <p>A special feature is the load content by page behavior. All Data will be loaded immediately after calling the specific questionspage and will be unloaded
+	 by calling another questionpage. This frees memory and enables a fluid application.</p>
+	           </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses>
+                  <class id="ItemApplication.QuestionTypes:SelectAndWrite"/>
+                  <class id="ItemApplication.QuestionTypes:SingleChoice"/>
+                  <class id="ItemApplication.QuestionTypes:Cloze"/>
+                  <class id="ItemApplication.QuestionTypes:MultipleChoice"/>
+               </Subclasses>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="ItemApplication.QuestionTypes:Cloze">
+         <apiName>Cloze</apiName>
+         <shortdesc>
+	 Representing the loading, arranging and displaying data for a cloze text.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="Cloze,ItemApplication.QuestionTypes.Cloze,answerExists,displayQuestions,displayQuestions,displayQuestions,displayQuestions,displayQuestions,displayQuestions,getAnswerString,getAnswerValue,hasAtLeastOneListener,load,nextQpage,onAnswerLabelUpdate,onMouseOutRadio,onMouseOutRadio,onMouseOverRadio,onMouseOverRadio,playAudio,prevQpage,removeQuestions,returnAnswerList,returnFirstPulseObject,synchronize"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>ItemApplication.QuestionTypes:QuestionsObject</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 Representing the loading, arranging and displaying data for a cloze text.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="ItemApplication.QuestionTypes:QuestionsObject"/>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="ItemApplication.QuestionTypes:MultipleChoice">
+         <apiName>MultipleChoice</apiName>
+         <shortdesc>
+	 Represents the process of loading, arranging and displaying data within a multiple choice item.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="MultipleChoice,ItemApplication.QuestionTypes.MultipleChoice,answerExists,displayQuestions,displayQuestions,displayQuestions,displayQuestions,displayQuestions,displayQuestions,getAnswerString,getAnswerValue,hasAtLeastOneListener,load,nextQpage,onAnswerLabelUpdate,onMouseOutRadio,onMouseOutRadio,onMouseOverRadio,onMouseOverRadio,playAudio,prevQpage,removeQuestions,returnAnswerList,returnFirstPulseObject,synchronize"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>ItemApplication.QuestionTypes:QuestionsObject</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 Represents the process of loading, arranging and displaying data within a multiple choice item. The data model is a checkbox group, which allows one or many or all selected choices as an answer.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="ItemApplication.QuestionTypes:QuestionsObject"/>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+   </apiPackage>
+   <apiPackage id="ItemApplication">
+      <apiName>ItemApplication</apiName>
+      <apiDetail/>
+      <apiClassifier id="ItemApplication:ItemEvent">
+         <apiName>ItemEvent</apiName>
+         <shortdesc>
+	 Defines a set of events realted to the item object and its children.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="ItemEvent,ItemApplication.ItemEvent,DATA_RECEIVED,DATA_SENT,ITEM_FINISHED,ITEM_ONLOAD,LOAD_COMPLETE,PAGE_CHANGED,QPAGE_FINISHED,QPAGE_LOADED,_dataObject,currentTime,debug,n_abilities,n_answers,n_correctResponse,n_instruction,n_itemCreation,n_itemNumber,n_marking,n_metaItem,n_nextitem,n_preScreen,n_presets,n_questions,n_time,n_userNumber,nextItem,obData,relUrl,soundMode,userNumber,view,xload,xmlResult,addEventListener,alertXMLError,clone,dispatchEvent,getClassDefinition,hasEventListener,isPreScreen,load,removeEventListener,returnLoadFinishedEvent,returnModuleFinishedEvent,returnView,sendTweenFinished,set_value,unload,updateSeconds,willTrigger"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>flash.events:Event</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 Defines a set of events realted to the item object and its children. Also stores the result xml of the actual item, in order to pass it to other handlers.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="flash.events:Event"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="ItemApplication:ItemObject">
+         <apiName>ItemObject</apiName>
+         <shortdesc>
+	 Represents a handler for all item releated actions.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="ItemObject,ItemApplication.ItemObject,DATA_RECEIVED,DATA_SENT,ITEM_FINISHED,ITEM_ONLOAD,LOAD_COMPLETE,PAGE_CHANGED,QPAGE_FINISHED,QPAGE_LOADED,_dataObject,currentTime,debug,n_abilities,n_answers,n_correctResponse,n_instruction,n_itemCreation,n_itemNumber,n_marking,n_metaItem,n_nextitem,n_preScreen,n_presets,n_questions,n_time,n_userNumber,nextItem,obData,relUrl,soundMode,userNumber,view,xload,xmlResult,addEventListener,alertXMLError,clone,dispatchEvent,getClassDefinition,hasEventListener,isPreScreen,load,removeEventListener,returnLoadFinishedEvent,returnModuleFinishedEvent,returnView,sendTweenFinished,set_value,unload,updateSeconds,willTrigger"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>Interfaces:ICustomModule</apiBaseInterface>
+               <apiBaseInterface>Interfaces:ICustomEventDispatcher</apiBaseInterface>
+               <apiBaseClassifier>Shared:EventDispatcher</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 Represents a handler for all item releated actions.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="Interfaces:ICustomModule"/>
+                  <Implement id="Interfaces:ICustomEventDispatcher"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="ItemApplication:xmlLoader">
+         <apiName>xmlLoader</apiName>
+         <shortdesc>
+	 XML Loader Class
+	 
+	 Version: 	0.1.6
+	 DOC: 		02.11.2010
+	 Author: 	Jan Küster
+	 
+	 Last Update: 09.11.2010
+	 </shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="xmlLoader,ItemApplication.xmlLoader,DATA_RECEIVED,DATA_SENT,ITEM_FINISHED,ITEM_ONLOAD,LOAD_COMPLETE,PAGE_CHANGED,QPAGE_FINISHED,QPAGE_LOADED,_dataObject,currentTime,debug,n_abilities,n_answers,n_correctResponse,n_instruction,n_itemCreation,n_itemNumber,n_marking,n_metaItem,n_nextitem,n_preScreen,n_presets,n_questions,n_time,n_userNumber,nextItem,obData,relUrl,soundMode,userNumber,view,xload,xmlResult,addEventListener,alertXMLError,clone,dispatchEvent,getClassDefinition,hasEventListener,isPreScreen,load,removeEventListener,returnLoadFinishedEvent,returnModuleFinishedEvent,returnView,sendTweenFinished,set_value,unload,updateSeconds,willTrigger"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>flash.events:IEventDispatcher</apiBaseInterface>
+               <apiBaseClassifier>Object</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 XML Loader Class
+	 
+	 Version: 	0.1.6
+	 DOC: 		02.11.2010
+	 Author: 	Jan Küster
+	 
+	 Last Update: 09.11.2010
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Object"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="flash.events:IEventDispatcher"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+   </apiPackage>
+   <apiPackage id="MainApplication">
+      <apiName>MainApplication</apiName>
+      <apiDetail/>
+      <apiClassifier id="MainApplication:OverviewObject">
+         <apiName>OverviewObject</apiName>
+         <shortdesc>
+	 the handler class for an overview, where users will choose their next testcollection by choosing a dimension and the corresponding level.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="OverviewObject,MainApplication.OverviewObject,DISPLAY_ERROR,DISPLAY_TWEENEDOUT,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOGIN_FAULT,LOGIN_SUCCESS,MODULE_FINISHED,REQUEST_ERROR,USERDATA_RECEIVED,data,debug,debug,debug,debug,inheritedObj,loginState,soundMode,soundMode,soundMode,soundMode,view,view,getClassDefinition,getClassDefinition,getClassDefinition,getClassDefinition,getNext2Load,getView,load,load,load,load,removeContent,requestData,returnLoadFinishedEvent,returnLoadFinishedEvent,returnLoadFinishedEvent,returnLoadFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnUserData,returnView,returnView,returnView,returnView,sendTweenComplete,sendTweenFinished,sendTweenFinished,sendTweenFinished,sendTweenFinished,setContent,unload,unload,unload,unload"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>Interfaces:ICustomModule</apiBaseInterface>
+               <apiBaseInterface>Interfaces:ICustomEventDispatcher</apiBaseInterface>
+               <apiBaseClassifier>Shared:EventDispatcher</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 the handler class for an overview, where users will choose their next testcollection by choosing a dimension and the corresponding level.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="Interfaces:ICustomModule"/>
+                  <Implement id="Interfaces:ICustomEventDispatcher"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="MainApplication:StartAppObject">
+         <apiName>StartAppObject</apiName>
+         <shortdesc>
+	 First module, loaded after initialization of the application.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="StartAppObject,MainApplication.StartAppObject,DISPLAY_ERROR,DISPLAY_TWEENEDOUT,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOGIN_FAULT,LOGIN_SUCCESS,MODULE_FINISHED,REQUEST_ERROR,USERDATA_RECEIVED,data,debug,debug,debug,debug,inheritedObj,loginState,soundMode,soundMode,soundMode,soundMode,view,view,getClassDefinition,getClassDefinition,getClassDefinition,getClassDefinition,getNext2Load,getView,load,load,load,load,removeContent,requestData,returnLoadFinishedEvent,returnLoadFinishedEvent,returnLoadFinishedEvent,returnLoadFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnUserData,returnView,returnView,returnView,returnView,sendTweenComplete,sendTweenFinished,sendTweenFinished,sendTweenFinished,sendTweenFinished,setContent,unload,unload,unload,unload"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>Interfaces:ICustomModule</apiBaseInterface>
+               <apiBaseInterface>Interfaces:ICustomEventDispatcher</apiBaseInterface>
+               <apiBaseClassifier>Shared:EventDispatcher</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	              <p>First module, loaded after initialization of the application. Includes a VideoPlayer for introducing the applications funcionalities.</p> 
+	           </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="Interfaces:ICustomModule"/>
+                  <Implement id="Interfaces:ICustomEventDispatcher"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="MainApplication:MainAppManager">
+         <apiName>MainAppManager</apiName>
+         <shortdesc>
+	 The core controller class.</shortdesc>
+         <prolog>
+            <author>Jan Küster
+	 
+	 </author>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="MainAppManager,MainApplication.MainAppManager,DISPLAY_ERROR,DISPLAY_TWEENEDOUT,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOGIN_FAULT,LOGIN_SUCCESS,MODULE_FINISHED,REQUEST_ERROR,USERDATA_RECEIVED,data,debug,debug,debug,debug,inheritedObj,loginState,soundMode,soundMode,soundMode,soundMode,view,view,getClassDefinition,getClassDefinition,getClassDefinition,getClassDefinition,getNext2Load,getView,load,load,load,load,removeContent,requestData,returnLoadFinishedEvent,returnLoadFinishedEvent,returnLoadFinishedEvent,returnLoadFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnUserData,returnView,returnView,returnView,returnView,sendTweenComplete,sendTweenFinished,sendTweenFinished,sendTweenFinished,sendTweenFinished,setContent,unload,unload,unload,unload"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>flash.events:EventDispatcher</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 The core controller class.
+	 Manages the loading and unloading of the modules as well as the communication between them and the model related data.
+	 Modules a loaded by name, their functions are accessed via <codeph>ICustomModule</codeph> interface.
+	 The view component of the modules get connected with the <codeph>DisplayManager</codeph>
+	 
+	           </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+         <related-links>
+            <link href="" invalidHref="Interfaces.ICustomModule;.xml">
+               <linktext>Interfaces.ICustomModule;</linktext>
+            </link>
+            <link href="MainApplication.xml#DisplayManager">
+               <linktext>MainApplication.DisplayManager</linktext>
+            </link>
+         </related-links>
+      </apiClassifier>
+      <apiClassifier id="MainApplication:TestFinishedObject">
+         <apiName>TestFinishedObject</apiName>
+         <shortdesc>
+	 After finishing a test, this Class is loaded to provide functions for printing the evaluation and choosing the further activities.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="TestFinishedObject,MainApplication.TestFinishedObject,DISPLAY_ERROR,DISPLAY_TWEENEDOUT,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOGIN_FAULT,LOGIN_SUCCESS,MODULE_FINISHED,REQUEST_ERROR,USERDATA_RECEIVED,data,debug,debug,debug,debug,inheritedObj,loginState,soundMode,soundMode,soundMode,soundMode,view,view,getClassDefinition,getClassDefinition,getClassDefinition,getClassDefinition,getNext2Load,getView,load,load,load,load,removeContent,requestData,returnLoadFinishedEvent,returnLoadFinishedEvent,returnLoadFinishedEvent,returnLoadFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnUserData,returnView,returnView,returnView,returnView,sendTweenComplete,sendTweenFinished,sendTweenFinished,sendTweenFinished,sendTweenFinished,setContent,unload,unload,unload,unload"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>Interfaces:ICustomModule</apiBaseInterface>
+               <apiBaseInterface>Interfaces:ICustomEventDispatcher</apiBaseInterface>
+               <apiBaseClassifier>Shared:EventDispatcher</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 After finishing a test, this Class is loaded to provide functions for printing the evaluation and choosing the further activities.
+	 
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="Interfaces:ICustomModule"/>
+                  <Implement id="Interfaces:ICustomEventDispatcher"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="MainApplication:DisplayManager">
+         <apiName>DisplayManager</apiName>
+         <shortdesc>
+	 The DisplayManager is one of the core classes to provide a management all visual components.</shortdesc>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="mxmlContentFactory"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="DisplayManager,MainApplication.DisplayManager,DISPLAY_ERROR,DISPLAY_TWEENEDOUT,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOGIN_FAULT,LOGIN_SUCCESS,MODULE_FINISHED,REQUEST_ERROR,USERDATA_RECEIVED,data,debug,debug,debug,debug,inheritedObj,loginState,soundMode,soundMode,soundMode,soundMode,view,view,getClassDefinition,getClassDefinition,getClassDefinition,getClassDefinition,getNext2Load,getView,load,load,load,load,removeContent,requestData,returnLoadFinishedEvent,returnLoadFinishedEvent,returnLoadFinishedEvent,returnLoadFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnUserData,returnView,returnView,returnView,returnView,sendTweenComplete,sendTweenFinished,sendTweenFinished,sendTweenFinished,sendTweenFinished,setContent,unload,unload,unload,unload"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>spark.components:BorderContainer</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 The DisplayManager is one of the core classes to provide a management all visual components.
+	 This allows the <codeph>MainAppmanager</codeph> to include or remove specific view components of a module.
+	 
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.components:BorderContainer"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+         <related-links>
+            <link href="MainApplication.xml#MainAppManager">
+               <linktext>MainApplication.MainAppManager</linktext>
+            </link>
+         </related-links>
+      </apiClassifier>
+      <apiClassifier id="MainApplication:LoginObject">
+         <apiName>LoginObject</apiName>
+         <shortdesc>
+	 Represents a login form handler.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="LoginObject,MainApplication.LoginObject,DISPLAY_ERROR,DISPLAY_TWEENEDOUT,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOAD_COMPLETE,LOGIN_FAULT,LOGIN_SUCCESS,MODULE_FINISHED,REQUEST_ERROR,USERDATA_RECEIVED,data,debug,debug,debug,debug,inheritedObj,loginState,soundMode,soundMode,soundMode,soundMode,view,view,getClassDefinition,getClassDefinition,getClassDefinition,getClassDefinition,getNext2Load,getView,load,load,load,load,removeContent,requestData,returnLoadFinishedEvent,returnLoadFinishedEvent,returnLoadFinishedEvent,returnLoadFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnUserData,returnView,returnView,returnView,returnView,sendTweenComplete,sendTweenFinished,sendTweenFinished,sendTweenFinished,sendTweenFinished,setContent,unload,unload,unload,unload"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>Interfaces:ICustomModule</apiBaseInterface>
+               <apiBaseInterface>Interfaces:ICustomEventDispatcher</apiBaseInterface>
+               <apiBaseClassifier>Shared:EventDispatcher</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 Represents a login form handler. User input will be sent to the server, server evaluates and answers with a value. The value influences the state of the handler and
+	 either a login is performed or fault or a new user code is requestet.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="Interfaces:ICustomModule"/>
+                  <Implement id="Interfaces:ICustomEventDispatcher"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="MainApplication:LoaderManagement">
+         <apiName>LoaderManagement</apiName>
+         <shortdesc>
+	 A static class, representing a sequence to arrange the required modules in a predefined order.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="LoaderManagement,MainApplication.LoaderManagement,getClassDefinition,getClassDefinition,getClassDefinition,getClassDefinition,getNext2Load,getView,load,load,load,load,removeContent,requestData,returnLoadFinishedEvent,returnLoadFinishedEvent,returnLoadFinishedEvent,returnLoadFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnModuleFinishedEvent,returnUserData,returnView,returnView,returnView,returnView,sendTweenComplete,sendTweenFinished,sendTweenFinished,sendTweenFinished,sendTweenFinished,setContent,unload,unload,unload,unload"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Object</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 A static class, representing a sequence to arrange the required modules in a predefined order.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Object"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+   </apiPackage>
+   <apiPackage id="Model">
+      <apiName>Model</apiName>
+      <apiDetail/>
+      <apiClassifier id="Model:Collection">
+         <apiName>Collection</apiName>
+         <shortdesc>
+	 A class representing one testcollection of a dimension / subject.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="Collection,Model.Collection,addCollectionToList,addItems,addToCollectionList,getALLDimensions,getDescription,getDescription,getDimensionAt,getDimensionByName,getDimensionName,getLevelName,getName,getName,getSound,getSoundUrl,load,returnCollection,returnCollectionAt,returnItemAt,returnItems,returnLabelValue,returnPathValue,searchNextItem,setDebug,startSession,updateSession,updateSession"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Object</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 A class representing one testcollection of a dimension / subject. 
+	 
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Object"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Model:Session">
+         <apiName>Session</apiName>
+         <shortdesc>
+	 This is a Data Structure, where each session for one item is stored.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="Session,Model.Session,CREATION_COMPLETE,CREATION_ERROR,GLOBALS_FAULT,GLOBALS_LOADED,TC_BUILD,TC_ERROR,_test,_userData,debugMode,dimension,item,labels,level,next,paths,relUrl,soundIgnore,state,tempTimeStamp,userData,userName,addCollectionToList,addItems,addToCollectionList,getALLDimensions,getDescription,getDescription,getDimensionAt,getDimensionByName,getDimensionName,getLevelName,getName,getName,getSound,getSoundUrl,load,returnCollection,returnCollectionAt,returnItemAt,returnItems,returnLabelValue,returnPathValue,searchNextItem,setDebug,startSession,updateSession,updateSession"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>Interfaces:ICustomEventDispatcher</apiBaseInterface>
+               <apiBaseClassifier>Shared:EventDispatcher</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 This is a Data Structure, where each session for one item is stored. In detail, it stores the slected dimension, level and item. This ensures, that application always knows, where the user is at the moment.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="Interfaces:ICustomEventDispatcher"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Model:TestCollection">
+         <apiName>TestCollection</apiName>
+         <shortdesc>
+	 This class loads the xml with the contained information about subjects, levels and item IDs and parse it into an XMLLIST.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="TestCollection,Model.TestCollection,CREATION_COMPLETE,CREATION_ERROR,GLOBALS_FAULT,GLOBALS_LOADED,TC_BUILD,TC_ERROR,_test,_userData,debugMode,dimension,item,labels,level,next,paths,relUrl,soundIgnore,state,tempTimeStamp,userData,userName,addCollectionToList,addItems,addToCollectionList,getALLDimensions,getDescription,getDescription,getDimensionAt,getDimensionByName,getDimensionName,getLevelName,getName,getName,getSound,getSoundUrl,load,returnCollection,returnCollectionAt,returnItemAt,returnItems,returnLabelValue,returnPathValue,searchNextItem,setDebug,startSession,updateSession,updateSession"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>Interfaces:ICustomEventDispatcher</apiBaseInterface>
+               <apiBaseClassifier>Shared:EventDispatcher</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 This class loads the xml with the contained information about subjects, levels and item IDs and parse it into an XMLLIST. 
+	 <p>The data is read-only and will be written only once when the class will be initialized</p>
+	              <p>To overwirte the data, the class must be unloaded and be instanciated again</p>
+	 
+	           </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="Interfaces:ICustomEventDispatcher"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Model:UserObject">
+         <apiName>UserObject</apiName>
+         <shortdesc>
+	 This class represents the login session of a certain user.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="UserObject,Model.UserObject,CREATION_COMPLETE,CREATION_ERROR,GLOBALS_FAULT,GLOBALS_LOADED,TC_BUILD,TC_ERROR,_test,_userData,debugMode,dimension,item,labels,level,next,paths,relUrl,soundIgnore,state,tempTimeStamp,userData,userName,addCollectionToList,addItems,addToCollectionList,getALLDimensions,getDescription,getDescription,getDimensionAt,getDimensionByName,getDimensionName,getLevelName,getName,getName,getSound,getSoundUrl,load,returnCollection,returnCollectionAt,returnItemAt,returnItems,returnLabelValue,returnPathValue,searchNextItem,setDebug,startSession,updateSession,updateSession"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Shared:EventDispatcher</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 This class represents the login session of a certain user. The information are stored temporarily and usually written in an xml file which will be permanently send to the server.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Model:Dimension">
+         <apiName>Dimension</apiName>
+         <shortdesc>
+	 This class represents a dimension or subject with all its included data.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="Dimension,Model.Dimension,addCollectionToList,addItems,addToCollectionList,getALLDimensions,getDescription,getDescription,getDimensionAt,getDimensionByName,getDimensionName,getLevelName,getName,getName,getSound,getSoundUrl,load,returnCollection,returnCollectionAt,returnItemAt,returnItems,returnLabelValue,returnPathValue,searchNextItem,setDebug,startSession,updateSession,updateSession"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Object</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 This class represents a dimension or subject with all its included data.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Object"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Model:Globals">
+         <apiName>Globals</apiName>
+         <shortdesc>
+	 This class is a model for all global settings like paths and labels.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="Globals,Model.Globals,CREATION_COMPLETE,CREATION_ERROR,GLOBALS_FAULT,GLOBALS_LOADED,TC_BUILD,TC_ERROR,_test,_userData,debugMode,dimension,item,labels,level,next,paths,relUrl,soundIgnore,state,tempTimeStamp,userData,userName,addCollectionToList,addItems,addToCollectionList,getALLDimensions,getDescription,getDescription,getDimensionAt,getDimensionByName,getDimensionName,getLevelName,getName,getName,getSound,getSoundUrl,load,returnCollection,returnCollectionAt,returnItemAt,returnItems,returnLabelValue,returnPathValue,searchNextItem,setDebug,startSession,updateSession,updateSession"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>Interfaces:ICustomEventDispatcher</apiBaseInterface>
+               <apiBaseClassifier>Shared:EventDispatcher</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 This class is a model for all global settings like paths and labels.
+	 
+	 <p>The globals.xml file will be analysed and the particular data will be stored in different arrays</p>
+	           </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="Interfaces:ICustomEventDispatcher"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+   </apiPackage>
+   <apiPackage id="Shared">
+      <apiName>Shared</apiName>
+      <apiDetail/>
+      <apiClassifier id="Shared:UserEvent">
+         <apiName>UserEvent</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="UserEvent,Shared.UserEvent,BYTES_CONVERTED,CREATION_COMPLETE,ENDTEST_CHOSEN,FINISHED_PLAYING,INIT_COMPLETE,ITEM_FINISHED,ITEM_FINISHED,ITEM_PLUS,LOAD_COMPLETE,MODULE_FINISHED,NEWTEST_CHOSEN,OBJECT_FADE_IN,OBJECT_FADE_OUT,OBJECT_RESIZED,ONLOAD_ERROR,PAUSE_PLAYING,QPAGE_BACK,QPAGE_FORWARD,START_APPLICATION,START_ITEM,START_PLAYING,STOPPED_PLAYING,SUBJ_AND_LEVEL_CHOSEN,USERDATA_RECEIVED,WRITE_DATA,_currentItem,_dimension,_isNext,_itemString,_level,_level,_nextitem,_subject,_timeStamp,_timeStamp,_updatedXML,_userData,_userDataUrl,alpha,currentItem,horizontalGap,id,lineHeightInPixel,lineHeightSource,nextItem,paddingBottom,paddingLeft,paddingRight,paddingTop,parent,referringTo,result,service,sizeX,staticDispatcher,target,targets,timeStamp,tweenObj,verticalAlign,verticalGap,verticalLayoutInLine,visibleReference,addEventListener,addEventListener,addEventListener,check_exists,clone,clone,clone,convertToString,decode,fadeOutSound,getDropSh,getGloFil,getRandomSquarePosition,hasAtLeastOneListener,hasAtLeastOneListener,makeVisible,measure,pause,playAudio,processNewError,pulseFocus,removeAllEventListeners,removeAllEventListeners,removeAllEventListeners,removeEventListener,removeEventListener,removeEventListener,removeStringTabs,reset,resize,returnIsPlaying,returnProgress,send_httpReq,send_urlReq,setDebug,setDebug,square2squareHit,stop,stopPulse,toByteArray,tweenAlpha,unload,updateDisplayList,xtrace"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>flash.events:Event</apiBaseClassifier>
+            </apiClassifierDef>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="flash.events:Event"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Shared:XMLWriter">
+         <apiName>XMLWriter</apiName>
+         <shortdesc>
+	 
+	 XML writer Class
+	 Version: 	0.1.2
+	  DOC: 		09.11.2010
+	 Author: 	Jan Küster
+	  Last Update: 12.01.2011
+	  Description:
+	 Similar to XLoader, this Class is made for connecting to php but sending data instead of retreiving data.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="XMLWriter,Shared.XMLWriter,addEventListener,addEventListener,addEventListener,check_exists,clone,clone,clone,convertToString,decode,fadeOutSound,getDropSh,getGloFil,getRandomSquarePosition,hasAtLeastOneListener,hasAtLeastOneListener,makeVisible,measure,pause,playAudio,processNewError,pulseFocus,removeAllEventListeners,removeAllEventListeners,removeAllEventListeners,removeEventListener,removeEventListener,removeEventListener,removeStringTabs,reset,resize,returnIsPlaying,returnProgress,send_httpReq,send_urlReq,setDebug,setDebug,square2squareHit,stop,stopPulse,toByteArray,tweenAlpha,unload,updateDisplayList,xtrace"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Object</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 
+	 XML writer Class
+	 Version: 	0.1.2
+	  DOC: 		09.11.2010
+	 Author: 	Jan Küster
+	  Last Update: 12.01.2011
+	  Description:
+	 Similar to XLoader, this Class is made for connecting to php but sending data instead of retreiving data.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Object"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Shared:MP3Audio">
+         <apiName>MP3Audio</apiName>
+         <shortdesc>
+	 Creates a new wrapper for loaded mp3 files.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="MP3Audio,Shared.MP3Audio,BYTES_CONVERTED,CREATION_COMPLETE,ENDTEST_CHOSEN,FINISHED_PLAYING,INIT_COMPLETE,ITEM_FINISHED,ITEM_FINISHED,ITEM_PLUS,LOAD_COMPLETE,MODULE_FINISHED,NEWTEST_CHOSEN,OBJECT_FADE_IN,OBJECT_FADE_OUT,OBJECT_RESIZED,ONLOAD_ERROR,PAUSE_PLAYING,QPAGE_BACK,QPAGE_FORWARD,START_APPLICATION,START_ITEM,START_PLAYING,STOPPED_PLAYING,SUBJ_AND_LEVEL_CHOSEN,USERDATA_RECEIVED,WRITE_DATA,_currentItem,_dimension,_isNext,_itemString,_level,_level,_nextitem,_subject,_timeStamp,_timeStamp,_updatedXML,_userData,_userDataUrl,alpha,currentItem,horizontalGap,id,lineHeightInPixel,lineHeightSource,nextItem,paddingBottom,paddingLeft,paddingRight,paddingTop,parent,referringTo,result,service,sizeX,staticDispatcher,target,targets,timeStamp,tweenObj,verticalAlign,verticalGap,verticalLayoutInLine,visibleReference,addEventListener,addEventListener,addEventListener,check_exists,clone,clone,clone,convertToString,decode,fadeOutSound,getDropSh,getGloFil,getRandomSquarePosition,hasAtLeastOneListener,hasAtLeastOneListener,makeVisible,measure,pause,playAudio,processNewError,pulseFocus,removeAllEventListeners,removeAllEventListeners,removeAllEventListeners,removeEventListener,removeEventListener,removeEventListener,removeStringTabs,reset,resize,returnIsPlaying,returnProgress,send_httpReq,send_urlReq,setDebug,setDebug,square2squareHit,stop,stopPulse,toByteArray,tweenAlpha,unload,updateDisplayList,xtrace"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>Interfaces:ICustomEventDispatcher</apiBaseInterface>
+               <apiBaseClassifier>Shared:EventDispatcher</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 Creates a new wrapper for loaded mp3 files. Can handle all required events for a common mp3 player like play, pause, stop etc. The underlying data structure is a Sound Object.
+	 
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="Interfaces:ICustomEventDispatcher"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+         <related-links>
+            <link href="" invalidHref="flash.media.Sound.xml">
+               <linktext>flash.media.Sound</linktext>
+            </link>
+            <link href="" invalidHref="flash.media.SoundChannel.xml">
+               <linktext>flash.media.SoundChannel</linktext>
+            </link>
+         </related-links>
+      </apiClassifier>
+      <apiClassifier id="Shared:ErrorDispatcher">
+         <apiName>ErrorDispatcher</apiName>
+         <shortdesc>
+	 Static class.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="ErrorDispatcher,Shared.ErrorDispatcher,addEventListener,addEventListener,addEventListener,check_exists,clone,clone,clone,convertToString,decode,fadeOutSound,getDropSh,getGloFil,getRandomSquarePosition,hasAtLeastOneListener,hasAtLeastOneListener,makeVisible,measure,pause,playAudio,processNewError,pulseFocus,removeAllEventListeners,removeAllEventListeners,removeAllEventListeners,removeEventListener,removeEventListener,removeEventListener,removeStringTabs,reset,resize,returnIsPlaying,returnProgress,send_httpReq,send_urlReq,setDebug,setDebug,square2squareHit,stop,stopPulse,toByteArray,tweenAlpha,unload,updateDisplayList,xtrace"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Object</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 Static class. Prepares a custom error type to be send to server which writes an error log
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Object"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Shared:HorizontalMultilineLayout">
+         <apiName>HorizontalMultilineLayout</apiName>
+         <shortdesc>
+	 Lays out elements the same way as text area positions words: putting them in
+	 one line and going to next line when there is no space for new word.</shortdesc>
+         <prolog>
+            <asMetadata/>
+            <asCustoms>
+               <tzi.de>
+	 Modification: Layout-in-Row --&gt; Text can be aligned into middle, top or bottom align in each line,
+	 Text can be aligned by the measurements of a source element (e.g. an image) in each line, Text can be aligned by a fixed
+	 pixel value in each line. 
+	 </tzi.de>
+            </asCustoms>
+         </prolog>
+            <meta name="keywords"
+               content="HorizontalMultilineLayout,Shared.HorizontalMultilineLayout,BYTES_CONVERTED,CREATION_COMPLETE,ENDTEST_CHOSEN,FINISHED_PLAYING,INIT_COMPLETE,ITEM_FINISHED,ITEM_FINISHED,ITEM_PLUS,LOAD_COMPLETE,MODULE_FINISHED,NEWTEST_CHOSEN,OBJECT_FADE_IN,OBJECT_FADE_OUT,OBJECT_RESIZED,ONLOAD_ERROR,PAUSE_PLAYING,QPAGE_BACK,QPAGE_FORWARD,START_APPLICATION,START_ITEM,START_PLAYING,STOPPED_PLAYING,SUBJ_AND_LEVEL_CHOSEN,USERDATA_RECEIVED,WRITE_DATA,_currentItem,_dimension,_isNext,_itemString,_level,_level,_nextitem,_subject,_timeStamp,_timeStamp,_updatedXML,_userData,_userDataUrl,alpha,currentItem,horizontalGap,id,lineHeightInPixel,lineHeightSource,nextItem,paddingBottom,paddingLeft,paddingRight,paddingTop,parent,referringTo,result,service,sizeX,staticDispatcher,target,targets,timeStamp,tweenObj,verticalAlign,verticalGap,verticalLayoutInLine,visibleReference,addEventListener,addEventListener,addEventListener,check_exists,clone,clone,clone,convertToString,decode,fadeOutSound,getDropSh,getGloFil,getRandomSquarePosition,hasAtLeastOneListener,hasAtLeastOneListener,makeVisible,measure,pause,playAudio,processNewError,pulseFocus,removeAllEventListeners,removeAllEventListeners,removeAllEventListeners,removeEventListener,removeEventListener,removeEventListener,removeStringTabs,reset,resize,returnIsPlaying,returnProgress,send_httpReq,send_urlReq,setDebug,setDebug,square2squareHit,stop,stopPulse,toByteArray,tweenAlpha,unload,updateDisplayList,xtrace"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>spark.layouts.supportClasses:LayoutBase</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 Lays out elements the same way as text area positions words: putting them in
+	 one line and going to next line when there is no space for new word.
+	 
+	 copyright: Maxim Kachurovskiy
+	 http://cookbooks.adobe.com/post_Horizontal_Multiline_Layout-17807.html
+	 
+	 Code is modified by Jan Kuester, University of bremen jank87</apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.layouts.supportClasses:LayoutBase"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Shared:CustomImage">
+         <apiName>CustomImage</apiName>
+         <shortdesc>
+	 Basic class which automatically loads an image from url and catches errors as well as allows a dynamic adding or removing of eventlisteners.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="CustomImage,Shared.CustomImage,BYTES_CONVERTED,CREATION_COMPLETE,ENDTEST_CHOSEN,FINISHED_PLAYING,INIT_COMPLETE,ITEM_FINISHED,ITEM_FINISHED,ITEM_PLUS,LOAD_COMPLETE,MODULE_FINISHED,NEWTEST_CHOSEN,OBJECT_FADE_IN,OBJECT_FADE_OUT,OBJECT_RESIZED,ONLOAD_ERROR,PAUSE_PLAYING,QPAGE_BACK,QPAGE_FORWARD,START_APPLICATION,START_ITEM,START_PLAYING,STOPPED_PLAYING,SUBJ_AND_LEVEL_CHOSEN,USERDATA_RECEIVED,WRITE_DATA,_currentItem,_dimension,_isNext,_itemString,_level,_level,_nextitem,_subject,_timeStamp,_timeStamp,_updatedXML,_userData,_userDataUrl,alpha,currentItem,horizontalGap,id,lineHeightInPixel,lineHeightSource,nextItem,paddingBottom,paddingLeft,paddingRight,paddingTop,parent,referringTo,result,service,sizeX,staticDispatcher,target,targets,timeStamp,tweenObj,verticalAlign,verticalGap,verticalLayoutInLine,visibleReference,addEventListener,addEventListener,addEventListener,check_exists,clone,clone,clone,convertToString,decode,fadeOutSound,getDropSh,getGloFil,getRandomSquarePosition,hasAtLeastOneListener,hasAtLeastOneListener,makeVisible,measure,pause,playAudio,processNewError,pulseFocus,removeAllEventListeners,removeAllEventListeners,removeAllEventListeners,removeEventListener,removeEventListener,removeEventListener,removeStringTabs,reset,resize,returnIsPlaying,returnProgress,send_httpReq,send_urlReq,setDebug,setDebug,square2squareHit,stop,stopPulse,toByteArray,tweenAlpha,unload,updateDisplayList,xtrace"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>Interfaces:ICustomEventDispatcher</apiBaseInterface>
+               <apiBaseClassifier>mx.controls:Image</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 Basic class which automatically loads an image from url and catches errors as well as allows a dynamic adding or removing of eventlisteners. Be aware, that it requires the data as a base64 string.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="mx.controls:Image"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="Interfaces:ICustomEventDispatcher"/>
+               </Implements>
+               <Subclasses>
+                  <class id="DisplayApplication.Components:SelectableImage"/>
+               </Subclasses>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Shared:CustomButton">
+         <apiName>CustomButton</apiName>
+         <shortdesc>
+	 An extended Button class, implementing the minimum criteria for linking to other objects and removeAllEventListeners function.</shortdesc>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="label"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="CustomButton,Shared.CustomButton,BYTES_CONVERTED,CREATION_COMPLETE,ENDTEST_CHOSEN,FINISHED_PLAYING,INIT_COMPLETE,ITEM_FINISHED,ITEM_FINISHED,ITEM_PLUS,LOAD_COMPLETE,MODULE_FINISHED,NEWTEST_CHOSEN,OBJECT_FADE_IN,OBJECT_FADE_OUT,OBJECT_RESIZED,ONLOAD_ERROR,PAUSE_PLAYING,QPAGE_BACK,QPAGE_FORWARD,START_APPLICATION,START_ITEM,START_PLAYING,STOPPED_PLAYING,SUBJ_AND_LEVEL_CHOSEN,USERDATA_RECEIVED,WRITE_DATA,_currentItem,_dimension,_isNext,_itemString,_level,_level,_nextitem,_subject,_timeStamp,_timeStamp,_updatedXML,_userData,_userDataUrl,alpha,currentItem,horizontalGap,id,lineHeightInPixel,lineHeightSource,nextItem,paddingBottom,paddingLeft,paddingRight,paddingTop,parent,referringTo,result,service,sizeX,staticDispatcher,target,targets,timeStamp,tweenObj,verticalAlign,verticalGap,verticalLayoutInLine,visibleReference,addEventListener,addEventListener,addEventListener,check_exists,clone,clone,clone,convertToString,decode,fadeOutSound,getDropSh,getGloFil,getRandomSquarePosition,hasAtLeastOneListener,hasAtLeastOneListener,makeVisible,measure,pause,playAudio,processNewError,pulseFocus,removeAllEventListeners,removeAllEventListeners,removeAllEventListeners,removeEventListener,removeEventListener,removeEventListener,removeStringTabs,reset,resize,returnIsPlaying,returnProgress,send_httpReq,send_urlReq,setDebug,setDebug,square2squareHit,stop,stopPulse,toByteArray,tweenAlpha,unload,updateDisplayList,xtrace"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>Interfaces:ICustomEventDispatcher</apiBaseInterface>
+               <apiBaseInterface>Interfaces:IClickableComponent</apiBaseInterface>
+               <apiBaseClassifier>spark.components:Button</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 An extended Button class, implementing the minimum criteria for linking to other objects and removeAllEventListeners function.
+	 <p>Most buttons in this Application will extend this</p>
+	           </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.components:Button"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="Interfaces:ICustomEventDispatcher"/>
+                  <Implement id="Interfaces:IClickableComponent"/>
+               </Implements>
+               <Subclasses>
+                  <class id="DisplayApplication.Components:SmallEyeButton"/>
+                  <class id="DisplayApplication.Components:MiniSoundButton"/>
+                  <class id="DisplayApplication.Components:SmallSoundButton"/>
+                  <class id="DisplayApplication.Components:BackButton"/>
+                  <class id="DisplayApplication.Components:ForwardButton"/>
+                  <class id="DisplayApplication.Components:StartButton"/>
+                  <class id="DisplayApplication.Components:CustomDesignButton"/>
+                  <class id="DisplayApplication.Components:SoundButton"/>
+               </Subclasses>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Shared:StaticFunctions">
+         <apiName>StaticFunctions</apiName>
+         <shortdesc>
+	 This Class contains a set of static functions which will be called by any class in the project.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="StaticFunctions,Shared.StaticFunctions,BYTES_CONVERTED,CREATION_COMPLETE,ENDTEST_CHOSEN,FINISHED_PLAYING,INIT_COMPLETE,ITEM_FINISHED,ITEM_FINISHED,ITEM_PLUS,LOAD_COMPLETE,MODULE_FINISHED,NEWTEST_CHOSEN,OBJECT_FADE_IN,OBJECT_FADE_OUT,OBJECT_RESIZED,ONLOAD_ERROR,PAUSE_PLAYING,QPAGE_BACK,QPAGE_FORWARD,START_APPLICATION,START_ITEM,START_PLAYING,STOPPED_PLAYING,SUBJ_AND_LEVEL_CHOSEN,USERDATA_RECEIVED,WRITE_DATA,_currentItem,_dimension,_isNext,_itemString,_level,_level,_nextitem,_subject,_timeStamp,_timeStamp,_updatedXML,_userData,_userDataUrl,alpha,currentItem,horizontalGap,id,lineHeightInPixel,lineHeightSource,nextItem,paddingBottom,paddingLeft,paddingRight,paddingTop,parent,referringTo,result,service,sizeX,staticDispatcher,target,targets,timeStamp,tweenObj,verticalAlign,verticalGap,verticalLayoutInLine,visibleReference,addEventListener,addEventListener,addEventListener,check_exists,clone,clone,clone,convertToString,decode,fadeOutSound,getDropSh,getGloFil,getRandomSquarePosition,hasAtLeastOneListener,hasAtLeastOneListener,makeVisible,measure,pause,playAudio,processNewError,pulseFocus,removeAllEventListeners,removeAllEventListeners,removeAllEventListeners,removeEventListener,removeEventListener,removeEventListener,removeStringTabs,reset,resize,returnIsPlaying,returnProgress,send_httpReq,send_urlReq,setDebug,setDebug,square2squareHit,stop,stopPulse,toByteArray,tweenAlpha,unload,updateDisplayList,xtrace"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Shared:EventDispatcher</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 This Class contains a set of static functions which will be called by any class in the project.
+	 Its a kind of collection of generic functions. 
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Shared:StaticMath">
+         <apiName>StaticMath</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="StaticMath,Shared.StaticMath,addEventListener,addEventListener,addEventListener,check_exists,clone,clone,clone,convertToString,decode,fadeOutSound,getDropSh,getGloFil,getRandomSquarePosition,hasAtLeastOneListener,hasAtLeastOneListener,makeVisible,measure,pause,playAudio,processNewError,pulseFocus,removeAllEventListeners,removeAllEventListeners,removeAllEventListeners,removeEventListener,removeEventListener,removeEventListener,removeStringTabs,reset,resize,returnIsPlaying,returnProgress,send_httpReq,send_urlReq,setDebug,setDebug,square2squareHit,stop,stopPulse,toByteArray,tweenAlpha,unload,updateDisplayList,xtrace"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Object</apiBaseClassifier>
+            </apiClassifierDef>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Object"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Shared:MyBase64Decoder">
+         <apiName>MyBase64Decoder</apiName>
+         <shortdesc>
+	 A utility class to decode a Base64 encoded String to a ByteArray.</shortdesc>
+         <prolog>
+            <asMetadata>
+               <apiVersion>
+                  <apiLanguage version="3.0"/>
+                  <apiPlatform description="" name="Flash" version="9"/>
+                  <apiPlatform description="" name="AIR" version="1.1"/>
+                  <apiTool description="" name="Flex" version="3"/>
+               </apiVersion>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="MyBase64Decoder,Shared.MyBase64Decoder,BYTES_CONVERTED,CREATION_COMPLETE,ENDTEST_CHOSEN,FINISHED_PLAYING,INIT_COMPLETE,ITEM_FINISHED,ITEM_FINISHED,ITEM_PLUS,LOAD_COMPLETE,MODULE_FINISHED,NEWTEST_CHOSEN,OBJECT_FADE_IN,OBJECT_FADE_OUT,OBJECT_RESIZED,ONLOAD_ERROR,PAUSE_PLAYING,QPAGE_BACK,QPAGE_FORWARD,START_APPLICATION,START_ITEM,START_PLAYING,STOPPED_PLAYING,SUBJ_AND_LEVEL_CHOSEN,USERDATA_RECEIVED,WRITE_DATA,_currentItem,_dimension,_isNext,_itemString,_level,_level,_nextitem,_subject,_timeStamp,_timeStamp,_updatedXML,_userData,_userDataUrl,alpha,currentItem,horizontalGap,id,lineHeightInPixel,lineHeightSource,nextItem,paddingBottom,paddingLeft,paddingRight,paddingTop,parent,referringTo,result,service,sizeX,staticDispatcher,target,targets,timeStamp,tweenObj,verticalAlign,verticalGap,verticalLayoutInLine,visibleReference,addEventListener,addEventListener,addEventListener,check_exists,clone,clone,clone,convertToString,decode,fadeOutSound,getDropSh,getGloFil,getRandomSquarePosition,hasAtLeastOneListener,hasAtLeastOneListener,makeVisible,measure,pause,playAudio,processNewError,pulseFocus,removeAllEventListeners,removeAllEventListeners,removeAllEventListeners,removeEventListener,removeEventListener,removeEventListener,removeStringTabs,reset,resize,returnIsPlaying,returnProgress,send_httpReq,send_urlReq,setDebug,setDebug,square2squareHit,stop,stopPulse,toByteArray,tweenAlpha,unload,updateDisplayList,xtrace"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>flash.events:IEventDispatcher</apiBaseInterface>
+               <apiBaseClassifier>flash.events:EventDispatcher</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 A utility class to decode a Base64 encoded String to a ByteArray. Extends Shared.EventDispatcher to dispatch and remove events dynamically
+	 
+	  
+	  </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="flash.events:IEventDispatcher"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Shared:ItemEvent">
+         <apiName>ItemEvent</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="ItemEvent,Shared.ItemEvent,BYTES_CONVERTED,CREATION_COMPLETE,ENDTEST_CHOSEN,FINISHED_PLAYING,INIT_COMPLETE,ITEM_FINISHED,ITEM_FINISHED,ITEM_PLUS,LOAD_COMPLETE,MODULE_FINISHED,NEWTEST_CHOSEN,OBJECT_FADE_IN,OBJECT_FADE_OUT,OBJECT_RESIZED,ONLOAD_ERROR,PAUSE_PLAYING,QPAGE_BACK,QPAGE_FORWARD,START_APPLICATION,START_ITEM,START_PLAYING,STOPPED_PLAYING,SUBJ_AND_LEVEL_CHOSEN,USERDATA_RECEIVED,WRITE_DATA,_currentItem,_dimension,_isNext,_itemString,_level,_level,_nextitem,_subject,_timeStamp,_timeStamp,_updatedXML,_userData,_userDataUrl,alpha,currentItem,horizontalGap,id,lineHeightInPixel,lineHeightSource,nextItem,paddingBottom,paddingLeft,paddingRight,paddingTop,parent,referringTo,result,service,sizeX,staticDispatcher,target,targets,timeStamp,tweenObj,verticalAlign,verticalGap,verticalLayoutInLine,visibleReference,addEventListener,addEventListener,addEventListener,check_exists,clone,clone,clone,convertToString,decode,fadeOutSound,getDropSh,getGloFil,getRandomSquarePosition,hasAtLeastOneListener,hasAtLeastOneListener,makeVisible,measure,pause,playAudio,processNewError,pulseFocus,removeAllEventListeners,removeAllEventListeners,removeAllEventListeners,removeEventListener,removeEventListener,removeEventListener,removeStringTabs,reset,resize,returnIsPlaying,returnProgress,send_httpReq,send_urlReq,setDebug,setDebug,square2squareHit,stop,stopPulse,toByteArray,tweenAlpha,unload,updateDisplayList,xtrace"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>flash.events:Event</apiBaseClassifier>
+            </apiClassifierDef>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="flash.events:Event"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Shared:CustomModuleEvents">
+         <apiName>CustomModuleEvents</apiName>
+         <shortdesc>
+	 An event class for passing session related values via event.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="CustomModuleEvents,Shared.CustomModuleEvents,BYTES_CONVERTED,CREATION_COMPLETE,ENDTEST_CHOSEN,FINISHED_PLAYING,INIT_COMPLETE,ITEM_FINISHED,ITEM_FINISHED,ITEM_PLUS,LOAD_COMPLETE,MODULE_FINISHED,NEWTEST_CHOSEN,OBJECT_FADE_IN,OBJECT_FADE_OUT,OBJECT_RESIZED,ONLOAD_ERROR,PAUSE_PLAYING,QPAGE_BACK,QPAGE_FORWARD,START_APPLICATION,START_ITEM,START_PLAYING,STOPPED_PLAYING,SUBJ_AND_LEVEL_CHOSEN,USERDATA_RECEIVED,WRITE_DATA,_currentItem,_dimension,_isNext,_itemString,_level,_level,_nextitem,_subject,_timeStamp,_timeStamp,_updatedXML,_userData,_userDataUrl,alpha,currentItem,horizontalGap,id,lineHeightInPixel,lineHeightSource,nextItem,paddingBottom,paddingLeft,paddingRight,paddingTop,parent,referringTo,result,service,sizeX,staticDispatcher,target,targets,timeStamp,tweenObj,verticalAlign,verticalGap,verticalLayoutInLine,visibleReference,addEventListener,addEventListener,addEventListener,check_exists,clone,clone,clone,convertToString,decode,fadeOutSound,getDropSh,getGloFil,getRandomSquarePosition,hasAtLeastOneListener,hasAtLeastOneListener,makeVisible,measure,pause,playAudio,processNewError,pulseFocus,removeAllEventListeners,removeAllEventListeners,removeAllEventListeners,removeEventListener,removeEventListener,removeEventListener,removeStringTabs,reset,resize,returnIsPlaying,returnProgress,send_httpReq,send_urlReq,setDebug,setDebug,square2squareHit,stop,stopPulse,toByteArray,tweenAlpha,unload,updateDisplayList,xtrace"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>flash.events:Event</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 An event class for passing session related values via event. Especially useful if you want to avoid to code this into an interface (and therefore into all other module classes).
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="flash.events:Event"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Shared:EventDispatcher">
+         <apiName>EventDispatcher</apiName>
+         <shortdesc>
+	 This class overrides the eventdispatcher to allow a removal of all eventListeners of an Object.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="EventDispatcher,Shared.EventDispatcher,addEventListener,addEventListener,addEventListener,check_exists,clone,clone,clone,convertToString,decode,fadeOutSound,getDropSh,getGloFil,getRandomSquarePosition,hasAtLeastOneListener,hasAtLeastOneListener,makeVisible,measure,pause,playAudio,processNewError,pulseFocus,removeAllEventListeners,removeAllEventListeners,removeAllEventListeners,removeEventListener,removeEventListener,removeEventListener,removeStringTabs,reset,resize,returnIsPlaying,returnProgress,send_httpReq,send_urlReq,setDebug,setDebug,square2squareHit,stop,stopPulse,toByteArray,tweenAlpha,unload,updateDisplayList,xtrace"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>Interfaces:ICustomEventDispatcher</apiBaseInterface>
+               <apiBaseClassifier>flash.events:EventDispatcher</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 This class overrides the eventdispatcher to allow a removal of all eventListeners of an Object.
+	 Idea and concept by Justin Shacklette, Copyright holds Justin Shacklette www.saturnboy.com
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="Interfaces:ICustomEventDispatcher"/>
+               </Implements>
+               <Subclasses>
+                  <class id="ItemApplication.QuestionTypes:QuestionsObject"/>
+                  <class id="ItemApplication:ItemObject"/>
+                  <class id="MainApplication:OverviewObject"/>
+                  <class id="MainApplication:StartAppObject"/>
+                  <class id="MainApplication:TestFinishedObject"/>
+                  <class id="MainApplication:LoginObject"/>
+                  <class id="Model:Session"/>
+                  <class id="Model:TestCollection"/>
+                  <class id="Model:UserObject"/>
+                  <class id="Model:Globals"/>
+                  <class id="Shared:MP3Audio"/>
+                  <class id="Shared:StaticFunctions"/>
+                  <class id="Shared:XLoader"/>
+               </Subclasses>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="Shared:XLoader">
+         <apiName>XLoader</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="XLoader,Shared.XLoader,BYTES_CONVERTED,CREATION_COMPLETE,ENDTEST_CHOSEN,FINISHED_PLAYING,INIT_COMPLETE,ITEM_FINISHED,ITEM_FINISHED,ITEM_PLUS,LOAD_COMPLETE,MODULE_FINISHED,NEWTEST_CHOSEN,OBJECT_FADE_IN,OBJECT_FADE_OUT,OBJECT_RESIZED,ONLOAD_ERROR,PAUSE_PLAYING,QPAGE_BACK,QPAGE_FORWARD,START_APPLICATION,START_ITEM,START_PLAYING,STOPPED_PLAYING,SUBJ_AND_LEVEL_CHOSEN,USERDATA_RECEIVED,WRITE_DATA,_currentItem,_dimension,_isNext,_itemString,_level,_level,_nextitem,_subject,_timeStamp,_timeStamp,_updatedXML,_userData,_userDataUrl,alpha,currentItem,horizontalGap,id,lineHeightInPixel,lineHeightSource,nextItem,paddingBottom,paddingLeft,paddingRight,paddingTop,parent,referringTo,result,service,sizeX,staticDispatcher,target,targets,timeStamp,tweenObj,verticalAlign,verticalGap,verticalLayoutInLine,visibleReference"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Shared:EventDispatcher</apiBaseClassifier>
+            </apiClassifierDef>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Shared:EventDispatcher"/>
+                  <Inherit id="flash.events:EventDispatcher"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+   </apiPackage>
+   <apiPackage id="__Global__">
+      <apiName>__Global__</apiName>
+      <apiDetail/>
+      <apiClassifier id="globalClassifier:_7c6d34871b0ac0ad4b3a036660ab5f8c11c45c9128172b6580088b7d06e67c87_mx_core_FlexModuleFactory">
+         <apiName>_7c6d34871b0ac0ad4b3a036660ab5f8c11c45c9128172b6580088b7d06e67c87_mx_core_FlexModuleFactory</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="_7c6d34871b0ac0ad4b3a036660ab5f8c11c45c9128172b6580088b7d06e67c87_mx_core_FlexModuleFactory,globalClassifier._7c6d34871b0ac0ad4b3a036660ab5f8c11c45c9128172b6580088b7d06e67c87_mx_core_FlexModuleFactory,dManager,preloadedRSLs,allowDomain,allowDomainInRSL,allowInsecureDomain,allowInsecureDomainInRSL,callInContext,create,info"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>mx.core:IFlexModuleFactory</apiBaseInterface>
+               <apiBaseInterface>flashx.textLayout.compose:ISWFContext</apiBaseInterface>
+               <apiBaseClassifier>flash.display:Sprite</apiBaseClassifier>
+            </apiClassifierDef>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="flash.display:Sprite"/>
+               </Inheritance>
+               <Implements>
+                  <Implement id="mx.core:IFlexModuleFactory"/>
+                  <Implement id="flashx.textLayout.compose:ISWFContext"/>
+               </Implements>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="globalClassifier:xmlTest">
+         <apiName>xmlTest</apiName>
+         <shortdesc/>
+         <prolog>
+            <asMetadata>
+               <DefaultProperty name="mxmlContentFactory"/>
+            </asMetadata>
+         </prolog>
+            <meta name="keywords"
+               content="xmlTest,globalClassifier.xmlTest,dManager,preloadedRSLs"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>spark.components:Application</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc/>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="spark.components:Application"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+   </apiPackage>
+   <apiPackage id="enumTypes">
+      <apiName>enumTypes</apiName>
+      <apiDetail/>
+      <apiClassifier id="enumTypes:ErrorTypeEnum">
+         <apiName>ErrorTypeEnum</apiName>
+         <shortdesc>
+	 Enumeration of error types to indicate the number and the type of the error.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="ErrorTypeEnum,enumTypes.ErrorTypeEnum,CANNOT_LOAD_MODULE,CANNOT_PLAY_AUDIO_ERROR,CREATE_NEW_USER,GET_AUDIO,GET_IMAGE,GET_ITEM_DATA,GET_USERDATA,INCLUDE_SCRIPT,ITEM,LOGIN,NULLREFERENCE,ROOT,SEND_ERROR_MESSAGE,SEND_FINAL_XML,SOUNDS,UPDATE_USER,URL_INVALID_ERROR,USER,_list,list,list,list,ordinal,value,getNumber,getValue,selectByValue,selectByValue,selectByValue"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>enumTypes:BasicEnumeration</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 Enumeration of error types to indicate the number and the type of the error.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="enumTypes:BasicEnumeration"/>
+                  <Inherit id="Object"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="enumTypes:PHPParameterTypeEnum">
+         <apiName>PHPParameterTypeEnum</apiName>
+         <shortdesc>
+	 Collection of enumeration ids, to access php parameters.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="PHPParameterTypeEnum,enumTypes.PHPParameterTypeEnum,CANNOT_LOAD_MODULE,CANNOT_PLAY_AUDIO_ERROR,CREATE_NEW_USER,GET_AUDIO,GET_IMAGE,GET_ITEM_DATA,GET_USERDATA,INCLUDE_SCRIPT,ITEM,LOGIN,NULLREFERENCE,ROOT,SEND_ERROR_MESSAGE,SEND_FINAL_XML,SOUNDS,UPDATE_USER,URL_INVALID_ERROR,USER,_list,list,list,list,ordinal,value,getNumber,getValue,selectByValue,selectByValue,selectByValue"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>enumTypes:BasicEnumeration</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 Collection of enumeration ids, to access php parameters. They are hardcoded, so changes in this file will require changes in the include php file and vice versa.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="enumTypes:BasicEnumeration"/>
+                  <Inherit id="Object"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="enumTypes:UrlTypeEnum">
+         <apiName>UrlTypeEnum</apiName>
+         <shortdesc>
+	 Collection of enumeration ids, to access globals parameters.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="UrlTypeEnum,enumTypes.UrlTypeEnum,CANNOT_LOAD_MODULE,CANNOT_PLAY_AUDIO_ERROR,CREATE_NEW_USER,GET_AUDIO,GET_IMAGE,GET_ITEM_DATA,GET_USERDATA,INCLUDE_SCRIPT,ITEM,LOGIN,NULLREFERENCE,ROOT,SEND_ERROR_MESSAGE,SEND_FINAL_XML,SOUNDS,UPDATE_USER,URL_INVALID_ERROR,USER,_list,list,list,list,ordinal,value,getNumber,getValue,selectByValue,selectByValue,selectByValue"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>enumTypes:BasicEnumeration</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 Collection of enumeration ids, to access globals parameters. They are hardcoded, so changes in this file will require changes in the globals file and vice versa.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="enumTypes:BasicEnumeration"/>
+                  <Inherit id="Object"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses/>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+      <apiClassifier id="enumTypes:BasicEnumeration">
+         <apiName>BasicEnumeration</apiName>
+         <shortdesc>
+	 Basic grid of an enumeration.</shortdesc>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+            <meta name="keywords"
+               content="BasicEnumeration,enumTypes.BasicEnumeration,CANNOT_LOAD_MODULE,CANNOT_PLAY_AUDIO_ERROR,CREATE_NEW_USER,GET_AUDIO,GET_IMAGE,GET_ITEM_DATA,GET_USERDATA,INCLUDE_SCRIPT,ITEM,LOGIN,NULLREFERENCE,ROOT,SEND_ERROR_MESSAGE,SEND_FINAL_XML,SOUNDS,UPDATE_USER,URL_INVALID_ERROR,USER,_list,list,list,list,ordinal,value,getNumber,getValue,selectByValue,selectByValue,selectByValue"/>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Object</apiBaseClassifier>
+            </apiClassifierDef>
+            <apiDesc>
+	 Basic grid of an enumeration.
+	 </apiDesc>
+            <Inheritancelist>
+               <BaseInterface/>
+               <Inheritance>
+                  <Inherit id="Object"/>
+               </Inheritance>
+               <Implements/>
+               <Subclasses>
+                  <class id="enumTypes:ErrorTypeEnum"/>
+                  <class id="enumTypes:PHPParameterTypeEnum"/>
+                  <class id="enumTypes:UrlTypeEnum"/>
+               </Subclasses>
+               <Implementors/>
+               <Excludes/>
+            </Inheritancelist>
+         </apiClassifierDetail>
+      </apiClassifier>
+   </apiPackage>
+</allClasses>

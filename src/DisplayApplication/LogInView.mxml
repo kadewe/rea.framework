@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="1000" height="700" currentState="newuser" xmlns:MainApplication="MainApplication.*" rollOverColor.newuser="#FFFFFF" xmlns:DisplayApplication="DisplayApplication.*" xmlns:Components="DisplayApplication.Components.*">
+	<fx:Script>
+		<![CDATA[
+			import DisplayApplication.CustomSkins.CustomButtonSkin;
+			
+			import Shared.StaticFunctions;
+		]]>
+	</fx:Script>
+
+	
+	
+	<s:states>
+		<mx:State name="login" enterState="Shared.StaticFunctions.pulseFocus(loginSoundButton)" exitState="Shared.StaticFunctions.stopPulse()"/>
+		<mx:State name="loggedin"/>
+		<mx:State name="newuser" enterState="Shared.StaticFunctions.pulseFocus(newuserSoundButton)" exitState="Shared.StaticFunctions.stopPulse()"/>
+		<mx:State name="register" enterState="Shared.StaticFunctions.pulseFocus(registerSoundButton)" exitState="Shared.StaticFunctions.stopPulse()"/>
+	</s:states>
+	
+	
+	<s:Group id="innerLayout" width="100%" height="100%" y="50">
+		<s:layout>
+			<s:VerticalLayout horizontalAlign="center" verticalAlign="middle" gap="50" />
+		</s:layout>
+		<!-- First Screen: Have you tested alrady? -->
+		<s:Group includeIn="newuser" id="testedQuestionBox" width="600" height="100">
+			<s:layout>
+				<s:HorizontalLayout verticalAlign="middle" horizontalAlign="center" />
+			</s:layout>
+			<Components:SoundButton includeIn="newuser" id="newuserSoundButton"/>
+			<s:Label includeIn="newuser" text="Schon mal getestet?" fontWeight="normal" id="testMadeInPast" styleName=".Text-1" maxWidth="{testedQuestionBox.width}" />
+		</s:Group>
+		<s:HGroup includeIn="newuser" id="testedButtons" gap="50">
+			<s:Button includeIn="newuser" x="250" y="350" label="JA" click="currentState=&quot;login&quot;" id="yesButton" styleName="yesButton" skinClass="DisplayApplication.CustomSkins.CustomButtonSkin" chromeColor="#00A0E3" focusColor="#F5F5F5"/>
+			<s:Button includeIn="newuser" x="586" y="350" label="Nein" id="noButton" styleName="noButton" skinClass="DisplayApplication.CustomSkins.CustomButtonSkin"/>
+		</s:HGroup>
+		
+		<!-- Login Screen: Please enter your valid code -->
+		<s:Group includeIn="login" id="loginInstructionBox" width="600" >
+			<s:layout>
+				<s:HorizontalLayout verticalAlign="middle" horizontalAlign="center" />
+			</s:layout>
+			<Components:SoundButton includeIn="login" id="loginSoundButton" click="Shared.StaticFunctions.stopPulse()"/>
+			<s:Label includeIn="login" text="Geben Sie ihren Code ein:" fontWeight="normal" id="pleaseEnterCode" styleName=".Text-1" maxWidth="{loginInstructionBox.width}"  />
+		</s:Group>
+		
+		
+		<!-- Registration screen: new code and login -->
+		<s:Group includeIn="register" id="registerInstructionBox" width="600">
+			<s:layout>
+				<s:VerticalLayout verticalAlign="top" horizontalAlign="center" />
+			</s:layout>
+			<s:HGroup verticalAlign="top" horizontalAlign="center">
+				<Components:SoundButton includeIn="register" id="registerSoundButton" click="Shared.StaticFunctions.stopPulse()" />
+				<s:Label includeIn="register" text="Ihr Login Code lautet" fontWeight="normal" id="yourNewCode" styleName="Text-large" maxWidth="{registerInstructionBox.width}"/>
+			</s:HGroup>
+			<s:Label text="newCode" fontWeight="normal" id="login_newCode" styleName="Text-large" includeIn="register" />
+		</s:Group>
+		
+		<!-- Input TextinputFields -->
+		<s:Group id="inputGroup" width="600">
+			<s:layout>
+				<s:HorizontalLayout horizontalAlign="center" />
+			</s:layout>
+			<s:TextInput id="input" includeIn="login,register" height="87" width="87" maxChars="1" fontSize="36" fontWeight="normal" borderVisible="true"  styleName="loginInputArea" skinClass="spark.skins.spark.ComboBoxTextInputSkin" focusColor="#716159" skinClass.login="spark.skins.spark.ComboBoxTextInputSkin"/>
+			<s:TextInput  height="87" width="87" fontSize="36" maxChars="1" fontWeight="normal" borderVisible="true" id="input1"  styleName="loginInputArea" includeIn="login,register" focusColor="#716159"/>
+			<s:TextInput  height="87" width="87" fontSize="36" maxChars="1" fontWeight="normal" borderVisible="true" id="input2"  styleName="loginInputArea" includeIn="login,register" skinClass="spark.skins.spark.ComboBoxTextInputSkin" focusColor="#716159"/>
+			<s:TextInput  height="87" width="87" fontSize="36" maxChars="1" fontWeight="normal" borderVisible="true" id="input3"  styleName="loginInputArea" includeIn="login,register" skinClass="spark.skins.spark.ComboBoxTextInputSkin" focusColor="#716159" fontStyle="normal"/>
+			<s:TextInput  height="87" width="87" fontSize="36" maxChars="1" fontWeight="normal" borderVisible="true" id="input4"  styleName="loginInputArea" includeIn="login,register" focusColor="#716159"/>
+		</s:Group>
+		
+		
+		<s:Group id="retryInput" includeIn="register,login" x="67" y="509"  height="247" maxWidth="667" visible="false" width="667">
+			<Components:SmallSoundButton id="retrysound" />
+			<s:Label left="{retrysound.width+10}" top="10" id="retrylabel" maxWidth="500"/>
+		</s:Group>
+	</s:Group>
+	<s:Button includeIn="login,register" x="762" y="509" label="" fontSize="18" focusColor="#1585EE" fontWeight="normal" id="login_submitButton" styleName="customButton"  skinClass="DisplayApplication.CustomSkins.CustomButtonSkin" skinClass.login="DisplayApplication.CustomSkins.CustomButtonSkin" styleName.login="startApplicationButton" skinClass.register="DisplayApplication.CustomSkins.CustomButtonSkin" styleName.register="testedButton"/>
+</s:Group>
