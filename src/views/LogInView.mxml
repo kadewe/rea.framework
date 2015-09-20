@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+
+"Rich E-Assesment (REA) Framework"
+A software framework for the use within the domain of e-assessment.
+
+Copyright (C) 2014  University of Bremen, 
+Working Group education media | media education 
+
+Prof. Dr. Karsten Wolf, wolf@uni-bremen.de
+Dipl.-Päd. Ilka Koppel, ikoppel@uni-bremen.de
+Dipl.-Math. Kai Schwedes, kais@zait.uni-bremen.de
+B.Sc. Jan Küster, jank87@tzi.de
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+-->
+<views:AbstractView xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="1000" height="700" currentState="newuser" 
+		 xmlns:MainApplication="MainApplication.*" 
+		 rollOverColor.newuser="#FFFFFF" 
+		 xmlns:display="display.*" 
+		 xmlns:SkinnedComponents="components.SkinnedComponents.*"
+		 xmlns:components="components.*" stateChangeComplete="onViewStateChanged(event)" xmlns:utils="utils.*" xmlns:views="views.*" >
+	<fx:Script>
+		<![CDATA[
+			import components.CustomSkins.CustomButtonSkin;
+			import components.factories.DisplayFactory;
+			
+			import mx.events.FlexEvent;
+			
+			import utils.ReaVisualUtils;
+			
+
+			public static const CODE_SEND:String ="login_send";
+			
+			public static const CODE_REQUEST:String="code_request";
+			
+			protected function onViewStateChanged(event:FlexEvent):void
+			{
+				// TODO Auto-generated method stub
+				switch(currentState)
+				{
+					case "help":
+						help_wrapper.addElement(DisplayFactory.helpDisplay("LoginModule",last_state, forwardButton));
+						break;
+					default:
+						last_state = currentState;
+						break;
+				}
+			}		
+			
+			public function cleanupLogin():void
+			{
+				input.text ="";
+				input1.text ="";
+				input2.text ="";
+				input3.text ="";
+				input4.text ="";
+			}
+			
+			
+			public function getLoginCode():String
+			{
+				return input.text + input1.text + input2.text + input3.text + input4.text;
+			}
+			
+			
+			
+			private function keyHandler(event:KeyboardEvent):void
+			{
+				
+				
+				if(event.keyCode==Keyboard.BACKSPACE || Number(event.charCode) >=48 && Number(event.charCode) <= 122)
+				{
+					var txt:String = String.fromCharCode(event.charCode);
+					switch(event.currentTarget.id.toString())
+					{		
+						case("input"):
+							if(event.keyCode==Keyboard.BACKSPACE)break;
+							input.text = txt.toUpperCase();
+							input1.setFocus();
+							break;
+						case("input1"):
+							if(event.keyCode==Keyboard.BACKSPACE)
+							{
+								input.text = "";
+								input.setFocus();
+								break;
+							}
+							input1.text = txt.toUpperCase();
+							input2.setFocus();
+							break;
+						case("input2"):
+							if(event.keyCode==Keyboard.BACKSPACE)
+							{
+								input1.text = "";
+								input1.setFocus();
+								break;
+							}
+							input2.text = txt.toUpperCase();
+							input3.setFocus();
+							break;
+						case("input3"):
+							if(event.keyCode==Keyboard.BACKSPACE)
+							{
+								input2.text = "";
+								input2.setFocus();
+								break;
+							}
+							input3.text = txt.toUpperCase();
+							input4.setFocus();
+							break;
+						case("input4"):
+							if(event.keyCode==Keyboard.BACKSPACE)
+							{
+								input3.text = "";
+								input3.setFocus();
+								break;
+							}
+
+							input4.text = txt.toUpperCase();
+							utils.ReaVisualUtils.stopPulse();
+							utils.ReaVisualUtils.pulseFocus( login_submitButton);
+							login_submitButton.setFocus()
+							break;
+					}	
+				}
+				
+			}
+			
+			override public function unload():void
+			{
+				removeAllEventListeners();
+				removeAllElements();
+			}
+		]]>
+	</fx:Script>
+
+	
+	
+	<views:states>
+		<mx:State name="login" enterState="utils.ReaVisualUtils.pulseFocus(loginSoundButton)" exitState="utils.ReaVisualUtils.stopPulse()"/>
+		<mx:State name="loggedin"/>
+		<mx:State name="newuser" enterState="utils.ReaVisualUtils.pulseFocus(newuserSoundButton)" exitState="utils.ReaVisualUtils.stopPulse()"/>
+		<mx:State name="register" enterState="utils.ReaVisualUtils.pulseFocus(registerSoundButton)" exitState="utils.ReaVisualUtils.stopPulse()"/>
+		<s:State  name="fault"/>
+		<s:State  name="help" />	
+	</views:states>
+	
+		
+	
+	<!-- ======================================= -->
+	<!--  HEADER GROUP FOR GLOBAL NAVIGATION     -->
+	<!-- ======================================= -->
+	<s:VGroup width="100%">
+		<s:HGroup id="header_group" includeIn="login,loggedin,newuser, register, fault" width="100%" height="32" verticalAlign="middle" horizontalAlign="left" paddingLeft="10" paddingRight="10">
+			<s:HGroup id="header_navigation" width="100%" height="100%" horizontalAlign="right" verticalAlign="middle">
+				<SkinnedComponents:HelpButton id="help_button"		playHover="true" fontSize="22" height="24" width="24" click="setCurrentState('help')" 		label="?" />
+			</s:HGroup>
+		</s:HGroup>
+
+	</s:VGroup>
+
+	
+	<!-- ======================================= -->
+	<!--  HELP GROUP    -->
+	<!-- ======================================= -->
+	
+	<s:VGroup id="help_group" includeIn="help" width="100%" height="100%" verticalAlign="middle" horizontalAlign="center" >
+		<s:Group id="help_wrapper" width="80%" height="65%" />
+		
+		<s:HGroup horizontalAlign="right" verticalAlign="middle" width="100%" height="20%" paddingRight="45">
+			<SkinnedComponents:ForwardButton id="forwardButton"   click="setCurrentState(last_state)" />
+		</s:HGroup>
+	</s:VGroup>
+	
+	
+	<s:Group id="innerLayout" includeIn="loggedin,login,newuser,register" y="50" width="100%"
+			 height="100%"
+			 x.login="70" width.login="930">
+		<s:layout>
+			<s:VerticalLayout horizontalAlign.login="left" horizontalAlign.register="center" horizontalAlign.newuser="center" verticalAlign="middle" gap.login="70" gap.newuser="70" gap.register="40" />
+		</s:layout>
+		
+		<!-- First Screen: Have you tested alrady? -->
+			
+		<s:Group includeIn="newuser" id="testedQuestionBox" width="765" height="100">
+			<s:layout>
+				<s:HorizontalLayout verticalAlign="middle" horizontalAlign="center" gap="10" />
+			</s:layout>
+			
+			
+			<SkinnedComponents:SoundButton id="newuserSoundButton" referringTo="{testMadeInPast}" playClick="true" />
+			<s:Line id="newUserLine" height="100%">
+				<s:stroke>
+					<s:SolidColorStroke color="0x000000" weight="2" alpha="0.2" joints="bevel" />
+				</s:stroke>
+			</s:Line>
+			<s:Label fontWeight="normal" id="testMadeInPast" styleName=".Text-1" width="100%" />
+		</s:Group>
+		<s:HGroup includeIn="newuser" id="testedButtons" gap="50">
+			<components:BasicSoundButton  id="yesButton" styleName="yesButton" skinClass="components.CustomSkins.CustomButtonSkin"  playHover="true" click="setCurrentState('login')" />
+			<components:BasicSoundButton  id="noButton"  styleName="noButton"  skinClass="components.CustomSkins.CustomButtonSkin" playHover="true" click="dispatchEvent(new Event(CODE_REQUEST));setCurrentState('register');" />
+		</s:HGroup>
+		
+		
+		
+		<!-- Login Screen: Please enter your valid code -->
+	
+		<s:Group includeIn="login" id="loginInstructionBox" width="600">
+			<s:layout>
+				<s:HorizontalLayout verticalAlign="middle" horizontalAlign="left" gap="10" />
+			</s:layout>
+			<SkinnedComponents:SoundButton id="loginSoundButton" playClick="true" click="utils.ReaVisualUtils.stopPulse()" referringTo="{pleaseEnterCode}"/>
+			<s:Line id="loginInstructionLine" height="100%">
+				<s:stroke>
+					<s:SolidColorStroke color="0x000000" weight="2" alpha="0.2" joints="bevel" />
+				</s:stroke>
+			</s:Line>
+			<s:Label fontWeight="normal" id="pleaseEnterCode" styleName=".Text-1" maxWidth="{loginInstructionBox.width}"  />
+		</s:Group>
+		
+		
+		<!-- Registration screen: new code and login -->
+
+		<s:Group includeIn="register" id="registerInstructionBox" width="760">
+			<s:layout>
+				<s:VerticalLayout verticalAlign="top" horizontalAlign="left" />
+			</s:layout>
+			<s:HGroup verticalAlign="middle" horizontalAlign="center" width="100%">
+				<SkinnedComponents:SoundButton id="registerSoundButton" click="utils.ReaVisualUtils.stopPulse()" referringTo="{yourNewCode}" />
+				<s:Line id="yourNewCodeLine" height="100%">
+					<s:stroke>
+						<s:SolidColorStroke color="0x000000" weight="2" alpha="0.2" joints="bevel" />
+					</s:stroke>
+				</s:Line>
+				<s:Label id="yourNewCode" width="100%" fontWeight="normal" styleName="Text-INSTR-22"/>
+			</s:HGroup>
+		</s:Group>
+		<s:Label text="newCode" fontWeight="normal" includeIn="register" id="login_newCode" styleName="Text-large"/>
+		
+		<!-- Input TextinputFields -->
+		<s:Group id="inputGroup" width="100%"
+				 width.login="926">
+			<s:layout>
+				<s:HorizontalLayout horizontalAlign="center" gap="20" />
+			</s:layout>
+			<s:TextInput keyUp="keyHandler(event)" id="input" includeIn="login,register" height="87" width="87" maxChars="1" fontSize="36" fontWeight="normal" borderVisible="true"  styleName="loginInputArea" skinClass="spark.skins.spark.ComboBoxTextInputSkin" focusColor="#716159" skinClass.login="spark.skins.spark.ComboBoxTextInputSkin"/>
+			<s:TextInput keyUp="keyHandler(event)" height="87" width="87" fontSize="36" maxChars="1" fontWeight="normal" borderVisible="true" id="input1"  styleName="loginInputArea" includeIn="login,register" focusColor="#716159"/>
+			<s:TextInput keyUp="keyHandler(event)" height="87" width="87" fontSize="36" maxChars="1" fontWeight="normal" borderVisible="true" id="input2"  styleName="loginInputArea" includeIn="login,register" skinClass="spark.skins.spark.ComboBoxTextInputSkin" focusColor="#716159"/>
+			<s:TextInput keyUp="keyHandler(event)" height="87" width="87" fontSize="36" maxChars="1" fontWeight="normal" borderVisible="true" id="input3"  styleName="loginInputArea" includeIn="login,register" skinClass="spark.skins.spark.ComboBoxTextInputSkin" focusColor="#716159" fontStyle="normal"/>
+			<s:TextInput keyUp="keyHandler(event)" height="87" width="87" fontSize="36" maxChars="1" fontWeight="normal" borderVisible="true" id="input4"  styleName="loginInputArea" includeIn="login,register" focusColor="#716159"/>
+		</s:Group>
+		
+		
+		<s:Group id="retryInput" includeIn="register,login" visible="false" width="667" height="247"
+				 maxWidth="667" height.login="213"
+				 width.register="760" height.register="135">
+		<s:layout>
+			<s:VerticalLayout verticalAlign.login="middle" verticalAlign.register="top" horizontalAlign="left" gap="45" />
+		</s:layout>
+			<s:HGroup id="retryElementsGroup" verticalAlign="middle" horizontalAlign="left" gap="10">
+				<SkinnedComponents:SmallSoundButton id="retrySoundButton"  />
+				<s:Line id="retryLine" height="100%">
+					<s:stroke>
+						<s:SolidColorStroke color="0x000000" weight="2" alpha="0.2" joints="bevel" />
+					</s:stroke>
+				</s:Line>
+				<s:Label id="retrylabel" width="100%"/>	
+			</s:HGroup>
+			<SkinnedComponents:ForgotCodeButton includeIn="login" id="forgotCodeButton" playHover="true" click="dispatchEvent(new Event(CODE_REQUEST));setCurrentState('register');" />
+		</s:Group>
+	</s:Group>
+	<components:BasicSoundButton id="login_submitButton" includeIn="login,register" x="762" y="509"
+								 label="" fontSize="18" fontWeight="normal"
+								 skinClass="components.CustomSkins.CustomStartButtonSkin"
+								 styleName="startApplicationButton"
+								 click="dispatchEvent(new Event(CODE_SEND));"
+								 playHover="true"
+								 />
+	<s:Label includeIn="fault" x="465" y="187" text="ERROR!"/>
+	
+
+</views:AbstractView>

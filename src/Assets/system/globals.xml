@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!--
+
+"Rich E-Assesment (REA) Framework"
+A software framework for the use within the domain of e-assessment.
+
+Copyright (C) 2014  University of Bremen, 
+Working Group education media | media education 
+
+Prof. Dr. Karsten Wolf, wolf@uni-bremen.de
+Dipl.-Päd. Ilka Koppel, ikoppel@uni-bremen.de
+Dipl.-Math. Kai Schwedes, kais@zait.uni-bremen.de
+B.Sc. Jan Küster, jank87@tzi.de
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<globals>
+	<!-- ================================================================ -->
+	<!-- APPLICATION STATES 											  -->
+	<!--  		0 means false/off 1 means true/on						  -->
+	<!-- ================================================================ -->
+	<settings>
+		<setting id="debug" type="boolean" value="0" />
+		<setting id="ignoresound" type="boolean" value="0" />
+		<setting id="showcurrentsession" type="boolean" value="0" />
+		<setting id="nextItemButton" type="boolean" value="0" />
+		<setting id="skipTweenButoon" type="boolean" value="0" />
+		<setting id="trackInput" type="boolean" value="0" />
+		<setting id="scaffolding" type="boolean" value="1" />
+		<setting id="writingFromColor" type="uint" value="0x9ad18c" />
+		<setting id="writingToColor" type="uint" value="0xcaefca"/>
+		<setting id="readingFromColor" type="uint" value="0x88cabc" />
+		<setting id="readingToColor" type="uint" value="0xbeeae9" />
+		<setting id="mathFromColor" type="uint" value="0xe0bb71" />
+		<setting id="mathToColor" type="uint" value="0xf7e1b9" />
+		<setting id="languageFromColor" type="uint" value="0xd8d586" />
+		<setting id="languageToColor" type="uint" value="0xf2f2c8" />
+	</settings>
+	<!-- ================================================================ -->
+	<!-- Paths on the server environment -->
+	<!--   THIS IS UP TO YOU! The structure can be modified towards your  -->
+	<!--   environment specific needs.    								  -->
+	<!-- ================================================================ -->
+	<paths>
+		<path id="rootUrl" type="string" url="http://localhost/reaframework/wwwroot/" />
+		<path id="includeScript" type="string" url="includes.php" />
+		<path id="loginNewCode" type="string" url="includes.php" />
+		<path id="getTCollection" type="string" url="data/testcollections.xml" />
+		<path id="updateUser" type="string" url="includes.php" />
+		<path id="writeFinishedItem" type="string" url="includes.php" />
+		<!--SECURED AREA-->
+		<path id="itemsPath" type="string" url="data/item/" />
+		<path id="userPath" type="string" url="data/user/" />
+		<path id="soundPath" type="string" url="data/sounds/application/" />
+		<!--Public Assets-->
+		<path id="videos" type="string" url="videos/" />
+		<path id="endAppRedirect" type="string" url="http://localhost/reaframework/wwwroot/redirect.html" />
+		<!--FEEDBACK AREA-->
+		<path id="feedbackSounds" type="string" url="data/sounds/feedback/" />
+		<path id="feedbackList" type="string" url="data/item/alphalevel/alphalist.XML" />
+	</paths>
+	<labels>
+		<!-- ================================================================ 	-->
+		<!-- BUTTON LABELS 														-->
+		<!--  This part connects the application-wide buttons with labels and 	-->
+		<!--  sounds of your choice.											-->
+		<!--  Sounds and labels for buttons in items are declared in their own  -->
+		<!--  files.															-->
+		<!-- ================================================================ 	-->
+		
+		<!-- start / end -->
+		<label id="startButton" type="string" text="Start" sound="Einstiegsseiten_Start.mp3"/>
+		<label id="mainAppStartButton" type="string" text="Start" sound="Einstiegsseiten_Start.mp3"/>
+		<label id="mainAppEndButton" type="string" text="Ende" sound="Einstiegsseiten-Ende_b.mp3" />
+		<label id="endButton" type="string" text="Ende" sound="Einstiegsseiten-Ende_b.mp3" />
+		
+		<!-- yes / no -->
+		<label id="yesButton" type="string" text="Ja" sound="Einstiegsseiten-ja.mp3" />
+		<label id="noButton" type="string" text="Nein" sound="Einstiegsseiten-nein.mp3" />
+		
+		<!-- forward / back -->
+		<label id="backButton" type="string" text="Zurück" sound="Einstiegsseiten-zurueck.mp3" />
+		<label id="forwardButton" type="string" text="Weiter" sound="Einstiegsseiten-weiter.mp3"/>
+		
+		<!-- login -->
+		<label id="login_submitButton" type="string" text="Anmelden" sound="Einstiegsseiten-anmelden.mp3" />
+		<label id="adminLoginSend" type="string" text="Anmelden" sound="Einstiegsseiten-anmelden.mp3" />
+		<label id="newTestButton" type="string" text="Neuer Test" sound="Einstiegsseiten-neuer-Test.mp3" />
+		<label id="closeHelpButton" type="string" text="Weiter" sound="Einstiegsseiten-weiter.mp3" />
+		<label id="forgotCodeButton" type="string" text="Code vergessen" sound="" />
+		
+		<!-- restart / continue -->
+		<label id="restart_collection_button" text="Neustart" sound="neuertest.mp3" />
+		<label id="continue_collection_button" text="Fortsetzen" sound="Einstiegsseiten-weiter.mp3" />
+		
+		<!-- global navigation bar -->
+		<label id="evaluation_button" text="" sound="ZurAuswertung.mp3" />
+		<label id="abort_button" text="" sound="ZurAufgabenauswahl.mp3" />
+		<label id="help_button" text="?" sound="Hilfe.mp3" />
+		
+		<!-- ================================================================ -->
+		<!--  -->
+		<!--		TEXT LABELS 		-->
+		<!--  -->
+		<!-- ================================================================ -->
+		
+		<!-- LOGIN -->
+		<label id="introductionLabel" type="String" text="Willkommen im Rich E-Assessment Framework" />
+		<label id="testMadeInPast" type="string" text="Hier können Sie angeben, ob Sie bereits einen Test absolviert haben. Wenn Sie bereits teilgenommen haben, klicken Sie auf ja. Falls Sie zum ersten mal hier sind, klicken Sie bitte auf nein. " sound="Einstiegsseiten-bereits-Test-absolviert.mp3" />
+		<label id="pleaseEnterCode" type="string" text="Bitte geben Sie Ihren Code ein." sound="Einstiegsseiten-Bitte-Code-eingeben.mp3" />
+		<label id="yourNewCode" type="string" text="Hier können Sie sich anmelden. Wenn Sie zum ersten mal hier sind, bekommen Sie auf dieser Seite Ihren persönlichen Code. Sie können sich mit diesem Code immer wieder anmelden. Um den Code nicht zu vergessen haben Sie folgende Möglichkeiten: Sie können sich den Code notieren, Sie können sich den Code nach der Befragung ausdrucken oder Sie können sich den Code mit dem Handy abfotografieren."
+		 sound="Einstiegsseiten-Anmeldung.mp3" />
+		<label id="retryInput" type="string" text="Bitte geben Sie Ihren Code erneut ein." sound="Einstiegsseiten-Bitte-Code-erneut-eingeben.mp3" />
+		<label id="chooseSubject" type="string" text="Bitte wählen Sie eine Kategorie aus." sound="Einstiegsseiten-Kategorie-auswählen.mp3"/>
+		<label id="whatLevel" type="string" text="Wir möchten die Aufgaben für Sie möglichst passend zusammenstellen. Bitte schätzen Sie hier Ihre Fähigkeiten ein. Wenn Sie mit dem Mauszeiger über die Schaltflächen fahren, werden Ihnen Beispiele genannt. Bitte klicken Sie mit der linken Maustaste die Schaltfläche an, die Ihre Fähigkeiten am ehesten beschreibt." sound="Einstiegsseiten-Selbsteinschaetzung.mp3" />
+		<label id="youCanContinue" type="String" text="Sie haben den letzten Durchlauf unterbrochen. Möchten Sie dort weitermachen, wo Sie beim letzten mal unterbrochen haben?" sound="Weitermachen.mp3" />
+		
+		<!-- GLOBAL ITEM LABELS -->
+		<label id="confirmAbort" type="string" text="Sind Sie sicher, dass sie den aktuellen Durchlauf vorzeitig beenden möchten?" sound="TestumgebungVerlassen2.mp3" />
+		
+		<!-- TEST BEENDET -->
+		<label id="congrats" type="string" text="Schön, dass Sie teilgenommen haben." sound="Einstiegsseiten-Schön-Teilnahme.mp3" />
+		<label id="candoLabel" type="string" text="Das kann ich!" sound="kannich.mp3" />
+		<label id="improveLabel" type="string" text="Das kann ich bald, wenn ich noch ein wenig übe." sound="kannichbald.mp3" />
+
+		<!-- NEXT LEVELS -->
+		<label id="nextLevelLabel0"  type="string" text="Sehr gut, Sie haben alle Aufgaben gelöst. Machen Sie weiter mit dem mittleren Niveau." sound="geloest_einfach.mp3" />
+		<label id="nextLevelLabel1"  type="string" text="Sehr gut, Sie haben alle Aufgaben gelöst. Machen Sie weiter mit dem schwierigen Niveau." sound="geloest_mittel.mp3" />
+		<label id="nextLevelLabel2"  type="string" text="Sehr gut, Sie haben alle Aufgaben gelöst." sound="geloest_schwer.mp3" />
+		
+ 		<label id="youCanPrint" type="string" text="Sie können Ihr Ergebnis hier ausdrucken." sound="Einstiegsseiten-Ergebnis-drucken.mp3" />
+		<label id="youCanSave" type="string" text="Sie können Ihr Ergennis hier speichern." sound="ergebnis_speichern.mp3" />
+		<label id="youCanWatch" type="string" text="Sie können sich Ihr Ergebnis hier ansehen." sound="Einstiegsseiten-Ergebnis-einsehen.mp3" />
+		<label id="whatNext" type="string" text="Was möchten Sie als nächstes tun?" sound="Einstiegsseiten-Was-als-naechstes-tun.mp3" />
+		
+		
+		<!-- FALLBACK LABELS -->
+
+		<label id="dimensionDisabled" type="string" text="" sound="" /><!-- to be implemented -->
+	</labels>
+	<videos>
+		<video module="StartAppModule" type="string" state="Standard" url="Screencast_Einstiegsseite.mp4" />
+		<video module="StartAppModule" type="string" state="intro" url="1_11_IntroVideo.mp4" />
+		<video module="LoginModule" type="string" state="login" url="Screencast_Anmeldung.mp4" />
+		<video module="LoginModule" type="string" state="register" url="Screencast_Neuanmeldung.mp4" />
+		<video module="LoginModule" type="string" state="newuser" url="Screencast-bereits-Test-absolviert.mp4" />
+		<video module="OverviewModule" type="string" state="overview" url="Screencast_Dimensionsauswahl.mp4" />
+		<video module="OverviewModule" type="string" state="levels" url="Screencast_Selbsteinschaetzung.mov.mp4" />
+
+		<!-- ITEM VIDEOS -->
+		<video module="ItemModule" type="string" state="selectandwrite" url="Tutorial_neu2014.mp4" />
+		<video module="ItemModule" type="string" state="mchoice" url="Tutorial_neu2014.mp4" />
+		<video module="ItemModule" type="string" state="rmchoice" url="Tutorial_neu2014.mp4" />
+		<video module="ItemModule" type="string" state="cloze" url="Tutorial_neu2014.mp4" />
+		<video module="ItemModule" type="string" state="sccloud" url="Tutorial_neu2014.mp4" />
+		<video module="ItemModule" type="string" state="prescreen" url="Screencast_Prescreen.mp4" />
+		<video module="ItemModule" type="string" state="evaluation" url="Screencast_rueckmeldung.mp4" />
+		
+		
+		<!-- AFTER TEST VIDEOS -->
+		<video module="TestFinishedObject" type="string" state="result_page" url="Screencast_rueckmeldung.mp4" />
+		<video module="TestFinishedObject" type="string" state="choose_next_acitivity" url="Screencast_Ende.mp4" />
+		<video module="TestFinishedObject" type="string" state="save_print_resutls" url="Screencast_Speichern.mp4" />
+	</videos>
+</globals>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<testcollections>
+<dimension dname="Lesen" description="" sound="Einstiegsseiten-Lesen.mp3">
+	<testcollection tname="Einfach" description="Ich kann bereits kurze, einfache Wörter lesen." sound="Einstiegsseiten-Selbsteinschaetzung_kurze-Woerter-lesen.mp3">
+		<item iname="1.2.1" />
+	</testcollection>
+	<testcollection tname="Mittel" description="Ich kann längere Wörter und einfache Sätze lesen und deren Sinn verstehen." sound="Einstiegsseiten-Selbsteinschaetzung_lesen-Sinn-verstehen.mp3">
+		<item iname="1.4.1" />
+	</testcollection>
+	<testcollection tname="Schwer" description="Ich kann ganze Texte lesen und einzelne Informationen heraussuchen." sound="Einstiegsseiten-Selbsteinschaetzung_Texte-lesen.mp3">
+		<item iname="1.4.9" />
+	</testcollection>
+</dimension>	
+<dimension dname="Schreiben" description="" sound="Einstiegsseiten-Schreiben.mp3">
+	<testcollection tname="Einfach" description="Ich kann einige Buchstaben erkennen, aber mir fällt es schwer ganze Wörter zu schreiben." sound="Einstiegsseiten-Selbsteinschaetzung_Buchstaben-erkennen.mp3">
+		<item iname="2.1.01" />
+	</testcollection>
+<testcollection tname="Mittel" description="Ich kann ganze Wörter schreiben, habe aber immer noch ein wenig Schwierigkeiten mit der Rechtschreibung." sound="Einstiegsseiten-Selbsteinschaetzung_Woerter-schreiben.mp3">
+		<item iname="2.3.01_I" />
+	</testcollection>
+	<testcollection tname="Schwer" description="Ich kann ganze Wörter richtig schreiben. Nur das Schreiben zusammenhängender Sätze fällt mir schwer." sound="Einstiegsseiten-Selbsteinschaetzung-ganze-Woerter.mp3">
+		<item iname="2.4.01_I" />
+	</testcollection>
+</dimension>
+<dimension dname="Rechnen" description="" sound="Einstiegsseiten-Rechnen.mp3">
+	<testcollection tname="Einfach" description="Ich kann Ziffern bis eintausend erkennen." sound="Einstiegsseiten-Selbsteinschaetzung-Ziffern-bis-1000.mp3">
+		<item iname="4.1.1" />
+	</testcollection>
+	<testcollection tname="Mittel" description="Ich kann Zahlen bis eintausend schriftlich zusammenzählen oder voneinander abziehen." sound="Einstiegsseiten-Selbsteinschaetzung-Zahlen-bis-1000.mp3">
+		<item iname="4.4.1" />
+	</testcollection>
+	<testcollection tname="Schwer" description="Ich kann Zahlen schriftliche miteinander mal nehmen oder teilen." sound="Einstiegsseiten-Selbsteinschaetzung-Zahlen-bis-1000_b.mp3">
+		<item iname="4.8.1" />
+	</testcollection>
+</dimension>
+<dimension dname="Sprache" description="" sound="Einstiegsseiten-Sprache.mp3">
+	<testcollection tname="Einfach" description="Ich erkenne, ob einfache Sätze richtig formuliert sind." sound="Einstiegsseiten-Selbsteinschaetzung_Sprachempfinden_einfache-Saetze.mp3">
+		<item iname="3.1.1" />
+	</testcollection>
+	<testcollection tname="Mittel" description="Ich erkenne, ob Sätze richtig gesprochen sind, die etwas über die Vergangenheit aussagen." sound="Einstiegsseiten-Selbsteinschaetzung_Sprachempfinden_Saetze-Vergangenheit.mp3">
+		<item iname="3.2.3" />
+	</testcollection>
+	<testcollection tname="Schwer" description="Ich kann erkennen, ob zwei Sätze inhaltlich zusammenhängen." sound="Einstiegsseiten-Selbsteinschaetzung_Sprachempfinden_zusammehaengende-Saetze.mp3">
+		<item iname="3.4.1" />
+	</testcollection>
+</dimension>	
+</testcollections>	

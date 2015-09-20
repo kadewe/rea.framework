@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+"Rich E-Assesment (REA) Framework"
+A software framework for the use within the domain of e-assessment.
+
+Copyright (C) 2014  University of Bremen, 
+Working Group education media | media education 
+
+Prof. Dr. Karsten Wolf, wolf@uni-bremen.de
+Dipl.-Päd. Ilka Koppel, ikoppel@uni-bremen.de
+Dipl.-Math. Kai Schwedes, kais@zait.uni-bremen.de
+B.Sc. Jan Küster, jank87@tzi.de
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<view:CustomViewGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
+					xmlns:s="library://ns.adobe.com/flex/spark"
+					xmlns:mx="library://ns.adobe.com/flex/mx"
+					xmlns:da="components.*"
+					width="1000" height="700" currentState="login" xmlns:views="views.*" xmlns:components="components.*" xmlns:view="administration.view.*">
+	
+	<view:layout>
+		<s:VerticalLayout horizontalAlign="center" verticalAlign="middle" gap="25" />		
+	</view:layout>
+
+	<view:states>
+		<s:State name="login"/>
+		<s:State name="superuser"/>
+		<s:State name="teacher"/>
+	</view:states>
+
+	<fx:Declarations>
+		<!-- Platzieren Sie nichtvisuelle Elemente (z. B. Dienste, Wertobjekte) hier -->
+		<s:ArrayCollection id="urlarray" />
+		<s:ArrayCollection id="labelsarray" />
+		<s:ArrayCollection id="settingsarray" />
+		<s:DataGrid id="urlgrid" width="850" height="300" dataProvider="{urlarray}" fontSize="14" />
+		<s:DataGrid id="labelsgrid" width="850" height="300" dataProvider="{labelsarray}" fontSize="14" />
+		<s:DataGrid id="settingsgrid" width="850" height="300" dataProvider="{settingsarray}" fontSize="14" />
+	</fx:Declarations>
+	
+	<s:Label includeIn="login" text="Admninistration"/>
+	
+	<s:VGroup id="logingroup" includeIn="login" left="35" top="35" gap="10">
+		<s:HGroup>
+			<s:TextInput id="userName" maxChars="15" widthInChars="15" />
+			<s:Label text="user name" />
+		</s:HGroup>
+		<s:HGroup>
+			<s:TextInput id="password" maxChars="15" widthInChars="15" />
+			<s:Label text="password" />
+		</s:HGroup>
+		<s:Button id="send" label="login" />
+	</s:VGroup>
+	
+	
+	<!-- TEACHERS REPORT VIEW -->
+	<s:HGroup id="teachersmenu" width="900" gap="10" fontSize="16" includeIn="teacher">
+		<s:Label id="menuLabel" text="Administration: Teacher" />
+ 		<s:Button id="report" label="User Report" fontSize="16" />
+		<s:Button id="tcmenu" label="Testcollections" fontSize="16" />
+	</s:HGroup>
+		
+	<s:Group includeIn="teacher" width="953" id="teacherscontent">
+		
+	</s:Group>
+	
+
+	
+</view:CustomViewGroup>

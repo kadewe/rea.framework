@@ -1,62 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
-<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
-			   xmlns:s="library://ns.adobe.com/flex/spark" 
+<!--
+
+"Rich E-Assesment (REA) Framework"
+A software framework for the use within the domain of e-assessment.
+
+Copyright (C) 2014  University of Bremen, 
+Working Group education media | media education 
+
+Prof. Dr. Karsten Wolf, wolf@uni-bremen.de
+Dipl.-Päd. Ilka Koppel, ikoppel@uni-bremen.de
+Dipl.-Math. Kai Schwedes, kais@zait.uni-bremen.de
+B.Sc. Jan Küster, jank87@tzi.de
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!--- Application Root. Starts application and connects manager with display. -->
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
 			   xmlns:mx="library://ns.adobe.com/flex/mx"
-			   xmlns:view="DisplayApplication.*"
-			   xmlns:main="MainApplication.*" minWidth="1000" minHeight="700" width="1000" height="700" 
-			   creationComplete="initApp()" viewSourceURL="srcview/index.html" backgroundColor="#F2EEE5">
-	<fx:Style source="DisplayApplication/ItemCss/GlobalStyles.css"/>
+			   xmlns:views="views.*"
+			   xmlns:main="MainApplication.*"
+			   width="1000" height="700" minWidth="1000" minHeight="700" 
+			   creationComplete="initApp()" viewSourceURL="srcview/index.html" addedToStage="addedToStageHandler(event)">
+	
+	<!--- @private PLEASE UNCOMMENT IF ASDOC IS TO BE RUN. OTHERWISE ASDOC WILL FAIL! -->
+	<fx:Style source="Assets/ItemCss/GlobalStyles.css"/>
+	
+	
 	<fx:Script>
 		<![CDATA[
+			
 			import MainApplication.MainAppManager;
 			
-			import Shared.ErrorDispatcher;
+			import events.TrackingEvent;
 			
-			import flash.external.*;
+			import spark.components.Group;
 			
-			private var aManager:MainAppManager = new MainAppManager();
+			import trackers.InputTracker;
+			import trackers.TrackingTypes;
 			
+			import utils.ExtendedTweener;
+			
+			//----------------------------------------------
+			//
+			//	CONSTANTS / VARIABLES
+			//
+			//----------------------------------------------
+			
+
+			/**
+			 * Main Application Manager Class.
+			 * @see MainApplication.MainAppManager
+			 */
+			protected var appManager:MainAppManager = new MainAppManager();
+
+			
+			//----------------------------------------------
+			//
+			//	INITAIALIZATION: APP STARTS HERE
+			//
+			//----------------------------------------------
+			
+			
+			/**
+			 * @private initialize application
+			 */
 			private function initApp():void
 			{
-					//var s:String;
-					/*definition for adding external values from JS
-					if (ExternalInterface.available) {
-						var wrapperFunction:String = "alert";
-						s = ExternalInterface.call(wrapperFunction,"window.innerHeight");
-					} else {
-						s = "Wrapper not available";
-					}
-					trace("js " + s); 
-					*/
+				
+				// customize contextmenu
+				var version:ContextMenuItem = new ContextMenuItem("otu.lea BETA build 0.9.9.17 (stable)");
+				var c:ContextMenu = new ContextMenu();
+					c.hideBuiltInItems()
+					c.customItems.push(version);
+				this.contextMenu =  c;
 
-				trace("#[APPLICATION]: init app");
-				aManager.addEventListener(MainAppManager.LOAD_COMPLETE, connectToDisplay);
-				aManager.addEventListener(MainAppManager.MODULE_FINISHED, removeDisplay);
-				dManager.addEventListener(DisplayManager.DISPLAY_TWEENEDOUT, tweenFinished);
-				dManager.setContent(aManager.getView(),true);			
+				
+				
+				
+				//connect application manager display events
+				appManager.addEventListener(MainAppManager.LOAD_COMPLETE, connectViewToDisplayManager);
+				appManager.addEventListener(MainAppManager.DISPLAY_UPDATE, updateDisplayManagerView);
+				appManager.addEventListener(MainAppManager.MODULE_FINISHED, removeDisplayManagerView);
+				displayManager.applyView(appManager.getView(),true);
+				
+				
+				//connect tracking events if active
+				if(appManager.track)
+				{
+					displayManager.addEventListener(TrackingEvent.INPUT_OCCURED, onGlobalInputTracking);
+					displayManager.startDisplayTracking();
+				}
+				
+		
+
+				
+				
+				//tween out title
+				ExtendedTweener.tween(titleImage,1,{alpha:0}, onTweenComplete,2);
 			}
 			
-			
-			private function connectToDisplay(event:Event):void
+			protected function onTweenComplete():void
 			{
-				trace("#[APPLICATION]: connect view component to DisplayManager");
-				dManager.setContent(aManager.getView(),false);
+				titleImage.visible = false;
+				appManager.sendTweenComplete();
 			}
 			
-			private function removeDisplay(event:Event):void
+			//----------------------------------------------
+			//
+			//	DISPLAY EVENTS
+			//
+			//----------------------------------------------
+			
+			/**
+			 * @private
+			 */
+			private function connectViewToDisplayManager(event:Event):void
 			{
-				dManager.removeContent();
+				displayManager.applyView(appManager.getView(),false);
+				appManager.sendTweenComplete();
 			}
 			
-			private function tweenFinished(event:Event):void
+			/**
+			 * @private
+			 */
+			private function removeDisplayManagerView(event:Event):void
 			{
-				aManager.sendTweenComplete();
+				displayManager.removeView();
 			}
+
+			
+			/**
+			 * @private
+			 */
+			private function updateDisplayManagerView(event:Event):void
+			{
+
+				var g:Group = appManager.getView();
+				if( g!=null)
+				{
+					displayManager.removeView();
+					displayManager.applyView(g, false);
+				}
+				appManager.sendTweenComplete();
+			}
+			
+
+			
+			//----------------------------------------------
+			//
+			//	TRACKING INPUT EVENTS
+			//
+			//----------------------------------------------
+			
+			/**
+			 * @private buffer reference to last view state on screen
+			 */
+			private var viewBuffer:String="";
+			
+			
+			/**
+			 * @private
+			 */
+			private function onGlobalInputTracking(event:TrackingEvent):void
+			{
+				
+				var eventtype:String;
+				var eventtarget:String;
+				var currentView:String = appManager.getCurrentViewState();
+				if(currentView != viewBuffer)
+				{
+					InputTracker.newView(currentView,
+						displayManager.screenshot());
+					viewBuffer = currentView;
+				}
+				
+				try
+				{
+					eventtarget= String(event.eventTarget.id);
+				} 
+				catch(error:Error) 
+				{
+					eventtarget = String(event.eventTarget);
+				}
+				
+				if(event.moved)
+				{
+					eventtype=TrackingTypes.MOUSEMOVED;
+				}
+					
+				if(event.clicked)
+				{
+					eventtype=TrackingTypes.MOUSECLICK;
+				}
+					
+				if(event.keyPressed)
+				{
+					eventtype=TrackingTypes.KEYPRESSED_OK;
+					eventtarget=String(event.key);
+				}
+					
+				
+				
+				InputTracker.logEvent(
+					currentView,
+					event.mouseX,
+					event.mouseY,
+					eventtype,
+					eventtarget
+					);
+			}
+			
+			protected function addedToStageHandler(event:Event):void
+			{
+				removeEventListener(Event.ADDED_TO_STAGE, addedToStageHandler);
+				stage.scaleMode = StageScaleMode.SHOW_ALL;
+			}
+			
 		]]>
 	</fx:Script>
 <fx:Declarations>
-	<!--<main:MainAppManager id="aManager" />-->
 </fx:Declarations>
-	<main:DisplayManager  id="dManager" width="1000" height="700" borderWeight="5" borderColor="#DFCAA1" cornerRadius="9" y="0" x="0" styleName="outerFrame">
-	</main:DisplayManager>
+	<!--- Handles views from different modules. 
+	@see MainApplication.DisplayManager -->
+	<main:DisplayManager  id="displayManager" width="1000" height="700" borderWeight="8" borderColor="0x4f4f4f" cornerRadius="1" />
+	
+	<!--- Static Image showing the title and gets tweened out. -->
+	<s:Image id="titleImage"  scaleMode="letterbox" source="Assets/title.png" />
 </s:Application>

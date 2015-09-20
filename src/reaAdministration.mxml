@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+"Rich E-Assesment (REA) Framework"
+A software framework for the use within the domain of e-assessment.
+
+Copyright (C) 2014  University of Bremen, 
+Working Group education media | media education 
+
+Prof. Dr. Karsten Wolf, wolf@uni-bremen.de
+Dipl.-Päd. Ilka Koppel, ikoppel@uni-bremen.de
+Dipl.-Math. Kai Schwedes, kais@zait.uni-bremen.de
+B.Sc. Jan Küster, jank87@tzi.de
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   xmlns:administration="administration.*"
+			   xmlns:MainApplication="MainApplication.*"
+			   minWidth="1000" minHeight="700" creationComplete="initApp()">
+	<fx:Style source="Assets/ItemCss/GlobalStyles.css"/>	
+	<fx:Script>
+		<![CDATA[
+			
+
+			
+			private function initApp():void
+			{
+				var c:ContextMenu = new ContextMenu();
+				var version:ContextMenuItem = new ContextMenuItem("otu.lea administration 0.78 (scoresum corrected)");
+					c.customItems.push(version);
+				this.contextMenu =  c;
+				
+				
+				adManager.addEventListener(AdministrationManager.LOAD_COMPLETE, connectToDisplay);
+				adManager.addEventListener(AdministrationManager.DISPLAY_UPDATE, updateDisplay);
+				adManager.addEventListener(AdministrationManager.MODULE_FINISHED, removeDisplay);
+				
+				
+				try
+				{
+					dMan.applyView(adManager.returnView(),true);	
+				} 
+				catch(error:Error) 
+				{
+					
+				}		
+			}
+			
+			private function connectToDisplay(event:Event):void
+			{
+				dMan.applyView(adManager.returnView(),true);
+			}
+			
+			private function updateDisplay(event:Event):void
+			{
+				dMan.removeView();
+				dMan.applyView(adManager.returnView(),true);
+			}
+			
+			private function removeDisplay(event:Event):void
+			{
+				dMan.removeView();
+			}
+			
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Platzieren Sie nichtvisuelle Elemente (z. B. Dienste, Wertobjekte) hier -->
+		<administration:AdministrationManager id="adManager" />
+	</fx:Declarations>
+	<MainApplication:DisplayManager id="dMan"  width="1000" height="700" borderVisible="false" y="0" x="0" />
+</s:Application>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+
+"Rich E-Assesment (REA) Framework"
+A software framework for the use within the domain of e-assessment.
+
+Copyright (C) 2014  University of Bremen, 
+Working Group education media | media education 
+
+Prof. Dr. Karsten Wolf, wolf@uni-bremen.de
+Dipl.-Päd. Ilka Koppel, ikoppel@uni-bremen.de
+Dipl.-Math. Kai Schwedes, kais@zait.uni-bremen.de
+B.Sc. Jan Küster, jank87@tzi.de
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+-->
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" enterFrame="waitcircle_enterFrameHandler(event)"  creationComplete="waitcircle_creationCompleteHandler(event)" width="100" height="100" resize="waitcircle_resizeHandler(event)">
+
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			import mx.events.ResizeEvent;
+			
+			/**
+			 * Flag for rendering circle every second frame.
+			 */
+			protected var half:Boolean=false;
+
+			/**
+			 * Cycle delta for animating the moving points
+			 */
+			protected var delta:int=0;
+			
+			//------------------------------------------------------------
+			// NUMBER OF POINTS
+			//------------------------------------------------------------
+			protected var _numPoints:int = 1;
+
+			/**
+			 * Number of points to draw the circle.
+			 * @default 1
+			 */
+			public function get numPoints():int
+			{
+				return _numPoints;
+			}
+
+			/**
+			 * @private
+			 */
+			public function set numPoints(value:int):void
+			{
+				if(_numPoints == value)return;
+				_numPoints = value;
+				updateSizes();
+			}
+
+			
+			//------------------------------------------------------------
+			// RADIUS
+			//------------------------------------------------------------
+			protected var _radius:int = 1;
+
+			/**
+			 * Radius of the circle
+			 */
+			public function get radius():int
+			{
+				return _radius;
+			}
+
+			/**
+			 * @private
+			 */
+			public function set radius(value:int):void
+			{
+				if(_radius == value)return;
+				_radius = value;
+				updateSizes();
+			}
+			
+			
+			//------------------------------------------------------------
+			// ANGLE
+			//------------------------------------------------------------
+			protected var _angle:Number=  MathUtils.TWO_PI / numPoints;
+
+			/**
+			 * Angle for drawing the points in a circular order
+			 */
+			public function get angle():Number
+			{
+				return _angle;
+			}
+
+			/**
+			 * @private
+			 */
+			public function set angle(value:Number):void
+			{
+				if(_angle==value)return;
+				_angle = value;
+				updateSizes();
+			}
+			
+			
+			//------------------------------------------------------------
+			// COLOR FILL
+			//------------------------------------------------------------
+			protected var _color:uint = 0x000000;
+
+			/**
+			 * Color fill of the points
+			 */
+			public function get color():uint
+			{
+				return _color;
+			}
+
+			/**
+			 * @private
+			 */
+			public function set color(value:uint):void
+			{
+				_color = value;
+			}
+
+			//------------------------------------------------------------
+			// Label inside the circle
+			//------------------------------------------------------------
+			
+			public function set label(text:String):void
+			{
+				textlabel.visible=true;
+				textlabel.text = text;
+			}
+			
+			//------------------------------------------------------------
+			// UPDATE SIZES
+			//------------------------------------------------------------
+			
+			public function updateSizes():void
+			{
+				numPoints = int(width/10);
+				radius = int(width/2);
+				angle = MathUtils.TWO_PI / numPoints;
+			}
+			
+			
+			
+			
+			//------------------------------------------------------------
+			//	EVERY FRAME DO...
+			//------------------------------------------------------------
+			
+			protected function waitcircle_enterFrameHandler(event:Event):void
+			{
+				half=!half;
+				if(half)return;
+				
+				graphics.clear();
+				
+				//debug position
+				//graphics.lineStyle(1,0x000000,1);
+				//graphics.drawRect(0,0,width,height);
+				
+				delta = delta == numPoints*2 ? 0 : delta+1;	//one cycle + waits one cycle
+				for(var i:int=0;i<numPoints;i++)
+				{
+					var size:Number = 0;
+					for (var j:int = 0; j < numPoints; j++) 
+					{
+						if(delta==i+j)size=numPoints*0.75/(0.5*j+1);
+					}
+					graphics.beginFill(color);
+					graphics.drawCircle(width/2+radius*Math.sin(angle*i),height/2+radius*Math.cos(angle*i),size);
+					graphics.endFill();
+				}
+				
+			}
+			
+			
+			//------------------------------------------------------------
+			// CREATION COMPLETE
+			//------------------------------------------------------------
+			
+			protected function waitcircle_creationCompleteHandler(event:FlexEvent):void
+			{
+				updateSizes();
+			}
+			
+			
+			//------------------------------------------------------------
+			// RESIZE COMPLETE
+			//------------------------------------------------------------
+			
+			
+			protected function waitcircle_resizeHandler(event:ResizeEvent):void
+			{
+				updateSizes();
+			}
+			
+		]]>
+	</fx:Script>
+	<s:VGroup width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+		<s:Label id="textlabel" width="70%" visible="false" textAlign="center" verticalAlign="middle"/>	
+	</s:VGroup>
+	
+
+</s:Group>

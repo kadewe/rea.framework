@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+
+"Rich E-Assesment (REA) Framework"
+A software framework for the use within the domain of e-assessment.
+
+Copyright (C) 2014  University of Bremen, 
+Working Group education media | media education 
+
+Prof. Dr. Karsten Wolf, wolf@uni-bremen.de
+Dipl.-Päd. Ilka Koppel, ikoppel@uni-bremen.de
+Dipl.-Math. Kai Schwedes, kais@zait.uni-bremen.de
+B.Sc. Jan Küster, jank87@tzi.de
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+-->
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 xmlns:views="views.*" width="1000" height="700">
+	<fx:Declarations>
+		<!-- Platzieren Sie nichtvisuelle Elemente (z. B. Dienste, Wertobjekte) hier -->
+	</fx:Declarations>
+	<s:BorderContainer x="454.3" y="8" width="540" height="690" id="item_questionWrapperBox" cornerRadius="20" borderWeight="5" contentBackgroundColor="#FFFFFF" borderVisible="true" borderColor="#716159">
+	</s:BorderContainer>
+	<s:Button x="762" y="509" label="" fontSize="18" focusColor="#1585EE" fontWeight="normal" id="forwardButton" styleName="customButton"  skinClass="components.CustomSkins.CustomButtonSkin" />
+	<s:Group x="107" y="62" width="786" height="411" id="center">
+		<s:layout>
+			<s:HorizontalLayout horizontalAlign="center" verticalAlign="middle" />
+		</s:layout>
+		<s:VideoDisplay id="videoDisplay"
+			width="200%" height="200%"
+			horizontalCenter="0" verticalCenter="0"
+			complete="event.currentTarget.play()" />
+	</s:Group>
+</s:Group>

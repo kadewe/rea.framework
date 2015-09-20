@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+
+"Rich E-Assesment (REA) Framework"
+A software framework for the use within the domain of e-assessment.
+
+Copyright (C) 2014  University of Bremen, 
+Working Group education media | media education 
+
+Prof. Dr. Karsten Wolf, wolf@uni-bremen.de
+Dipl.-Päd. Ilka Koppel, ikoppel@uni-bremen.de
+Dipl.-Math. Kai Schwedes, kais@zait.uni-bremen.de
+B.Sc. Jan Küster, jank87@tzi.de
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+-->
+<s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		  xmlns:s="library://ns.adobe.com/flex/spark" 
+		  xmlns:mx="library://ns.adobe.com/flex/mx" creationComplete="vgroup1_creationCompleteHandler(event)" width="100%" height="100%" xmlns:SkinnedComponents="components.SkinnedComponents.*" xmlns:utils="utils.*">
+	<fx:Script>
+		<![CDATA[
+			import components.factories.ComplexComponentsFactory;
+			
+			import components.SkinnedComponents.SmallSoundButton;
+			
+			import models.Globals;
+			
+			import mx.events.FlexEvent;
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+			
+			import report.ReportHandler;
+			
+			import spark.components.HGroup;
+			import spark.components.Label;
+			
+			
+			
+			protected function vgroup1_creationCompleteHandler(event:FlexEvent):void
+			{
+				//display please wait
+				candoLabel.text = Globals.instance().returnLabelValue("candoLabel");
+				candoSound.source = Globals.instance().returnSoundUrl("candoLabel");
+				
+				
+				
+				improveLabel.text = Globals.instance().returnLabelValue("improveLabel");
+				improveSound.source = Globals.instance().returnSoundUrl("improveLabel");
+			}
+			
+			
+			public function load(dimension:String,scriptUrl:String,userid:String,feedbackUrl:String, progress:Number,report:Boolean = true):void
+			{
+				this.progress = progress;
+				this.scriptUrl = scriptUrl;
+				this._feedback_url = feedbackUrl;
+				
+				improveSound.scriptUrl = scriptUrl;
+				candoSound.scriptUrl = scriptUrl;
+				
+				if( !report )
+				{
+					return;
+				}
+				var rh:ReportHandler = new ReportHandler();
+					rh.addEventListener(ResultEvent.RESULT, onResult);
+					rh.addEventListener(FaultEvent.FAULT, onFault);
+					rh.prepare(scriptUrl);
+					rh.callReport(userid,100,dimension,3,false);
+			}
+			
+			protected var _result:XML;
+
+			public function get result():XML
+			{
+				return _result;
+			}
+
+			
+			protected var _feedback_url:String;
+			
+			protected var scriptUrl:String;
+			
+			protected var progress:Number;
+			
+			
+			public static const REPORT_GENERATION_COMPLETE:String="reportComplete";
+			
+			protected function onResult(event:ResultEvent):void
+			{
+				// TODO Auto-generated method stub
+				
+				event.target.removeEventListener(ResultEvent.RESULT, onResult);
+				event.target.removeEventListener(FaultEvent.FAULT, onFault);
+
+
+				process_result(String(event.result));
+				
+			}
+			
+			public function process_result(res:String):void
+			{
+				
+				var event_result:String = res;
+				removeElement(waitcircle);
+
+				if(event_result == null || event_result == "" || event_result.indexOf("error")>-1 )
+				{
+					return;
+				}
+				try
+				{
+					_result = XML(event_result);
+				} 
+				catch(error:Error) 
+				{
+					return;
+				}
+				result_group.visible=result_group.includeInLayout=true;
+				try
+				{
+					display_xml(_result);
+				} 
+				catch(error:Error) 
+				{
+					result_group.visible=result_group.includeInLayout=false;
+					removeElement(waitcircle);
+					dispatchEvent(new Event(REPORT_GENERATION_FAULT));
+				} 
+				dispatchEvent(new Event(REPORT_GENERATION_COMPLETE));
+
+			}
+			
+			
+			public static const REPORT_GENERATION_FAULT:String="fault";
+			
+			protected function onFault(event:FaultEvent):void
+			{
+				result_group.visible=result_group.includeInLayout=false;
+				removeElement(waitcircle);
+				dispatchEvent(new Event(REPORT_GENERATION_FAULT));
+			}
+			
+			/* 									//wrapper
+			var entry:HGroup = new HGroup();
+			entry.percentWidth = 100;
+			entry.verticalAlign="middle";
+			
+			var left:HGroup = new HGroup();
+			left.percentWidth=60;
+			left.verticalAlign="middle";
+			
+			
+			var cnsnd:MP3Audio = new MP3Audio(scriptUrl,_feedback_url+"KB_TN_"+String(node.@alphaID)+".mp3");
+			var cnsndbtn:SmallSoundButton = new SmallSoundButton();
+			cnsndbtn.referringTo = cnsnd;
+			cnsndbtn.addEventListener(MouseEvent.CLICK, cnsnd.playAudio);
+			
+			left.addElement(cnsndbtn);
+			
+			var l:Label = new Label();
+			l.percentWidth=100;
+			l.text=node.@alphaID+": "+node.@userdescription;
+			left.addElement(l);
+			
+			
+			
+			var ex:Label = new Label();
+			ex.percentWidth=40;
+			ex.text=node.@example;
+			
+			
+			entry.addElement(left);
+			entry.addElement(ex); */
+			
+			
+			//wrapper
+			/* 		var _entry:HGroup = new HGroup();
+			_entry.percentWidth = 100;
+			_entry.verticalAlign="middle";
+			
+			var _left:HGroup = new HGroup();
+			_left.percentWidth=60;
+			_left.verticalAlign="middle";
+			
+			
+			var _cnsnd:MP3Audio = new MP3Audio(scriptUrl,_feedback_url+"KB_TN_"+String(_node.@alphaID)+".mp3");
+			var _cnsndbtn:SmallSoundButton = new SmallSoundButton();
+			_cnsndbtn.referringTo = _cnsnd;
+			_cnsndbtn.addEventListener(MouseEvent.CLICK, _cnsnd.playAudio);
+			trace(_left);
+			trace(_cnsndbtn);
+			_left.addElement(cnsndbtn);
+			
+			var _l:Label = new Label();
+			_l.percentWidth=100;
+			_l.text=_node.@alphaID+": "+_node.@userdescription;
+			_left.addElement(_l);
+			
+			
+			
+			var _ex:Label = new Label();
+			_ex.percentWidth=40;
+			_ex.text=_node.@example;
+			
+			
+			_entry.addElement(_left);
+			_entry.addElement(_ex); */
+			
+			protected function display_xml(source:XML):void
+			{
+				trace("DISPLAY::"+source.toXMLString());
+				var lvl:int=0;
+				var xlist:XMLList = source.children();
+				for each (var x:XML in xlist) 
+				{
+					switch(x.name().toString())
+					{
+						case "level":
+							if(x.name().toString().toLowerCase() == "einfach")lvl=0;
+							if(x.name().toString().toLowerCase() == "mittel") lvl=1;
+							if(x.name().toString().toLowerCase() == "schwer") lvl=2;
+							break;
+						case "eval":
+							if(x.@mode=="A1")
+							{
+								for each (var node:XML in x.children()) 
+								{
+									var example_string:String = String(node.@example);
+										example_string = example_string.length > 0 ? " z.B.: "+example_string : "";
+									cando_content.addElement(
+										ComplexComponentsFactory.createLabelLineGroup(false,true,String(node.@alphaID),String(node.@alphaID)+": "+String(node.@userdescription)+example_string,"",false, scriptUrl, _feedback_url,"KB_TN_"+String(node.@alphaID)+".mp3")
+										);
+									
+								}
+							}
+							if(x.@mode=="A2")
+							{
+								//if nothing to improve: tell aprticipants to switch to next level
+								if(x.children() == null || x.children().length()==0 && progress >=100)
+								{
+									to_improve_wrapper.visible = to_improve_wrapper.includeInLayout= false;
+									next_level_wrapper.visible = next_level_wrapper.includeInLayout= true;
+									
+									nextLevelLabel.text = Globals.instance().returnLabelValue("nextLevelLabel"+String(lvl));
+									nextLevelSound.scriptUrl = scriptUrl;
+									nextLevelSound.source = Globals.instance().returnSoundUrl("nextLevelLabel"+String(lvl)) || Globals.instance().returnSoundUrl("nextLevelLabel0");
+									
+									break;
+								}else{
+									to_improve_wrapper.visible = to_improve_wrapper.includeInLayout= true;
+									next_level_wrapper.visible = next_level_wrapper.includeInLayout= false;
+								}
+								
+								for each (var _node:XML in x.children()) 
+								{
+									var _example_string:String = String(_node.@example);
+										_example_string = _example_string.length > 0 ? " z.B.: "+_example_string : "";
+									impr_content.addElement(
+										ComplexComponentsFactory.createLabelLineGroup(false,true,String(_node.@alphaID),String(_node.@alphaID)+": "+String(_node.@userdescription)+_example_string,"",false, scriptUrl, _feedback_url,"KB_TN_"+String(_node.@alphaID)+".mp3")
+										);
+								}
+							}
+							break;
+					}
+				}
+			}
+			
+			
+			protected var _results_group_complete:Boolean=false;
+			
+
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<s:VGroup id="waitcircle" width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+		<utils:WaitCircle color="#60091a" label="Bitte warten Sie." width="250" height="250"  />
+	</s:VGroup>	
+	
+	<s:VGroup id="result_group" visible="false" includeInLayout="false"  width="100%" height="100%" top="15" bottom="15" left="15" right="15" horizontalAlign="center" verticalAlign="top" paddingTop="15" gap="15">
+	<!--	<s:Group id="congratsContainer"  width="100%" height="78">
+			<s:layout>
+				<s:HorizontalLayout verticalAlign="middle" horizontalAlign="left" gap="15" />
+			</s:layout>
+			<Sound
+			<s:Line id="congratsLine">
+				<s:stroke>
+					<s:SolidColorStroke color="0x000000" weight="2" alpha="0.2" joints="bevel" />
+				</s:stroke>
+			</s:Line>
+			<s:Label id="congrats" styleName="Text-large"/>	
+		</s:Group>
+	-->	
+		<s:Scroller id="result_scroller"  width="100%" height="100%">
+			<!-- list al result elements vertical -->
+			<s:VGroup width="100%" id="result_content" gap="15">
+				
+				<!-- HEADLINE: WHAT CAN I DO -->
+				<s:HGroup id="can_do_wrapper" width="100%" height="7%" >
+					<s:Group width="100%" height="100%">
+						<s:Rect width="100%" height="100%">
+							<s:fill>
+								<s:SolidColor color="0xf2eee5" />
+							</s:fill>
+						</s:Rect>
+						<s:HGroup width="100%" verticalAlign="middle">
+							<SkinnedComponents:SmallSoundButton id="candoSound" playClick="true" />
+							<s:Label id="candoLabel"  width="100%" />	
+						</s:HGroup>
+					</s:Group>
+				</s:HGroup>
+				
+				<s:VGroup width="100%" id="cando_content" verticalAlign="middle" paddingLeft="15">
+					
+				</s:VGroup>
+				
+				<!-- HEADLINE: WHAT CAN I LEARN -->
+				<s:HGroup id="to_improve_wrapper" width="100%" height="7%">
+					<s:Group width="100%" height="100%">
+						<s:Rect width="100%" height="100%">
+							<s:fill>
+								<s:SolidColor color="0xf2eee5" />
+							</s:fill>
+						</s:Rect>
+						<s:HGroup width="100%" verticalAlign="middle">
+							<SkinnedComponents:SmallSoundButton id="improveSound" playClick="true" />
+							<s:Label id="improveLabel" width="100%" />						
+						</s:HGroup>
+					</s:Group>
+				</s:HGroup>
+				
+				<s:HGroup id="next_level_wrapper" width="100%" height="7%">
+					<s:Group width="100%" height="100%">
+						<s:Rect width="100%" height="100%">
+							<s:fill>
+								<s:SolidColor color="0xf2eee5" />
+							</s:fill>
+						</s:Rect>
+						<s:HGroup width="100%" verticalAlign="middle">
+							<SkinnedComponents:SmallSoundButton id="nextLevelSound"  playClick="true"/>
+							<s:Label id="nextLevelLabel" width="100%" />						
+						</s:HGroup>
+					</s:Group>
+				</s:HGroup>
+				
+				
+				<s:VGroup id="impr_content" width="100%" verticalAlign="middle" paddingLeft="15">
+					
+				</s:VGroup>
+				
+				
+			</s:VGroup>
+		</s:Scroller>
+	</s:VGroup>
+</s:VGroup>

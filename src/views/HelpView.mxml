@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+
+"Rich E-Assesment (REA) Framework"
+A software framework for the use within the domain of e-assessment.
+
+Copyright (C) 2014  University of Bremen, 
+Working Group education media | media education 
+
+Prof. Dr. Karsten Wolf, wolf@uni-bremen.de
+Dipl.-Päd. Ilka Koppel, ikoppel@uni-bremen.de
+Dipl.-Math. Kai Schwedes, kais@zait.uni-bremen.de
+B.Sc. Jan Küster, jank87@tzi.de
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+-->
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+		 xmlns:s="library://ns.adobe.com/flex/spark"
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 xmlns:components="components.*"
+		 xmlns:SkinnedComponents="components.SkinnedComponents.*"
+		 width="100%" height="100%" contentBackgroundAlpha="0.6" contentBackgroundColor="#000000" >
+	<fx:Script>
+		<![CDATA[
+			import components.ReaButton;
+			
+			import mx.events.FlexEvent;
+			import mx.graphics.SolidColor;
+			
+			import org.osmf.events.MediaPlayerStateChangeEvent;
+			import org.osmf.events.TimeEvent;
+			
+			import spark.primitives.Rect;
+			
+			private var resized:Boolean;
+			private var _url:String;
+			
+			public static const VIDEO_READY:String = "videoReady";
+			public static const VIDEO_COMPLETE:String = "videoComplete";
+			public static const HELP_CLOSED:String = "helpClosed";
+
+			
+			
+			public function set_stop_ref(ref:ReaButton):void
+			{
+				ref.addEventListener(MouseEvent.CLICK, stopVideo);
+			}
+			
+			
+			
+			private function onStateChange(event:MediaPlayerStateChangeEvent):void
+			{
+				trace("[HelpView]: video display state changed "+event.state);
+				switch(event.state)
+				{
+					case "ready":
+					{
+						vid.removeEventListener(MediaPlayerStateChangeEvent.MEDIA_PLAYER_STATE_CHANGE, onStateChange);
+						vid.play();
+						break;
+					}
+					case "loading":
+						trace("[HelpView]: loading "+vid.bytesLoaded + " / " + vid.bytesTotal);
+						break;
+					default:
+					{
+						break;
+					}
+				}
+			}
+			
+			public function setSource(sourceUrl:String):void
+			{
+				trace("[HelpView]: video source: "+sourceUrl);
+				vid.source = sourceUrl;
+				vid.addEventListener(MediaPlayerStateChangeEvent.MEDIA_PLAYER_STATE_CHANGE, onStateChange);
+			}
+			
+			private function onPlayButtonClicked(event:MouseEvent):void
+			{
+				if(vid.playing)
+				{
+					vid.pause();
+				}else{
+					vid.play();
+				}
+			}
+			
+			private function onVideoFinished(event:TimeEvent):void
+			{
+				trace("[HelpView]: video complete");
+				vid.removeEventListener(TimeEvent.COMPLETE, onVideoFinished);
+				vid.stop();
+			}
+		
+			private function onVidPLayerCreationComplete():void
+			{
+				try
+				{
+					vid.addEventListener(TimeEvent.COMPLETE, onVideoFinished);
+					vid.playButton.addEventListener(MouseEvent.CLICK, onPlayButtonClicked);
+					vid.removeEventListener(FlexEvent.UPDATE_COMPLETE, onVidPLayerCreationComplete);
+					trace("[HelpView]: videoplayer complete");
+				} 
+				catch(error:Error) 
+				{
+					trace("[HelpView]: videoplayer still not complete");
+				}
+				
+			}
+			
+			public function stopVideo(event:MouseEvent):void
+			{
+				trace("[HelpView]: stop video");
+				ReaButton(event.target).removeEventListener(MouseEvent.CLICK, stopVideo);
+				vid.stop();
+				dispatchEvent(new Event(HELP_CLOSED));
+			}
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Platzieren Sie nichtvisuelle Elemente (z. B. Dienste, Wertobjekte) hier -->
+	</fx:Declarations>	
+		<s:Rect id="bgrect" x="0" y="0" width="{this.width}" height="{this.height}" radiusX="30" radiusY="30">
+		<s:fill>
+			<s:SolidColor alpha="0.5" color="0x000" />
+		</s:fill>
+	</s:Rect>
+
+		<s:VideoPlayer id="vid"  autoRewind="false" width="100%" height="100%"
+					   scaleMode="letterbox" updateComplete="onVidPLayerCreationComplete()"/>
+</s:Group>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+
+"Rich E-Assesment (REA) Framework"
+A software framework for the use within the domain of e-assessment.
+
+Copyright (C) 2014  University of Bremen, 
+Working Group education media | media education 
+
+Prof. Dr. Karsten Wolf, wolf@uni-bremen.de
+Dipl.-Päd. Ilka Koppel, ikoppel@uni-bremen.de
+Dipl.-Math. Kai Schwedes, kais@zait.uni-bremen.de
+B.Sc. Jan Küster, jank87@tzi.de
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+-->
+<views:AbstractView xmlns:fx="http://ns.adobe.com/mxml/2009"
+		 xmlns:s="library://ns.adobe.com/flex/spark"
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 xmlns:DisplayApplication="DisplayApplication.*"
+		 xmlns:iv="DisplayApplication.ItemView.*"
+		 xmlns:BaseComponents="BaseComponents.*"
+		 xmlns:SkinnedComponents1="components.SkinnedComponents.*"
+		 xmlns:utils="utils.*"
+		 xmlns:views="views.*"
+		 xmlns:components="components.*"
+		 width="990" height="690" currentState="prescreen" 
+		 stateChangeComplete="group1_stateChangeCompleteHandler(event)" 
+		>
+	
+	<views:layout>
+		<s:VerticalLayout  verticalAlign="middle" horizontalAlign="center"  gap="0" />
+	</views:layout>
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			
+			import utils.ExtendedTweener;
+			import utils.ReaVisualUtils;
+			
+			
+			
+			//----------------------------------------------
+			//
+			//	CONSTANTS
+			//
+			//----------------------------------------------		
+			
+			
+			public static const NORMAL:String = "normal";
+			
+			
+			public static const ABORT:String  = "abort";
+			
+			
+			public static const EVALUATE:String="evaluation";
+			
+			/**
+			 * Constant for prescreen state
+			 */
+			public static const PRESCREEN:String="prescreen";
+			
+			/**
+			 * Constant for help state
+			 */
+			public static const HELP:String = "help";
+			
+			/**
+			 * Dispatched when a user resumes from the help state
+			 */
+			public static const RESUME:String="resume";
+			
+			
+			//----------------------------------------------
+			//
+			//	VARIABLES
+			//
+			//----------------------------------------------		
+			
+			
+			private var _scriptUrl:String;
+
+			public function get scriptUrl():String
+			{
+				return _scriptUrl;
+			}
+
+			public function set scriptUrl(value:String):void
+			{
+				_scriptUrl = value;
+			}
+			
+			override public function unload():void
+			{
+				
+			}
+			
+			protected function group1_stateChangeCompleteHandler(event:FlexEvent):void
+			{
+				utils.ReaVisualUtils.fadeOutSound();
+				
+				//build_header_navigation();
+			}
+			
+			private function build_header_navigation():void
+			{
+				//BUTTONS SOUNDS CONNECT HERE
+				
+			}
+			
+			protected function header_group_mouseOverHandler(event:MouseEvent):void
+			{
+				ExtendedTweener.tween(header_group,0.5,{height:80,alpha:1.0});
+			}
+			
+			protected function header_group_mouseOutHandler(event:MouseEvent):void
+			{
+				ExtendedTweener.tween(header_group,0.5,{height:32,alpha:0.5});
+			}
+			
+			protected function over_header_button(event:MouseEvent):void
+			{
+				if(event.target is HelpButton)
+					ExtendedTweener.tween(event.target,0.5,{height:58,width:60});	
+				else
+					ExtendedTweener.tween(event.target,0.5,{height:77,width:149});	
+			}
+			
+			protected function out_header_button(event:MouseEvent):void
+			{
+				if(event.target is HelpButton)
+					ExtendedTweener.tween(event.target,0.5,{height:24,width:24});	
+				else
+					ExtendedTweener.tween(event.target,0.5,{height:24,width:48});
+			}
+			
+			
+			
+			public function enable_navigation():void
+			{
+				if(header_group)ExtendedTweener.tween(header_group, 0.2, {alpha:0.6});
+			}
+			
+			public function disable_navigation():void
+			{
+				if(header_group)
+					ExtendedTweener.tween(header_group,0.2,{alpha:0.15,enabled:false});
+			}
+		]]>
+	</fx:Script>
+	<views:states>
+		<s:State name="normal"/>
+		<s:State name="abort"/>
+		<s:State name="prescreen"/>
+		<s:State name="evaluation"/>
+		<s:State name="help" />
+	</views:states>
+	<fx:Declarations>
+		<!-- Platzieren Sie nichtvisuelle Elemente (z. B. Dienste, Wertobjekte) hier -->
+	</fx:Declarations>
+	
+	<!-- BACKGROUND GROUP -->
+	<s:Group width="1000" height="690" includeInLayout="false" includeIn="abort,normal,prescreen">
+		<s:Rect id="bg_rect"  width="100%" height="100%" alpha="0.36" radiusX="6" radiusY="6">
+			<s:fill>
+				<s:LinearGradient rotation="90">
+					<s:GradientEntry id="from_color" color="0xffffff"  />
+					<s:GradientEntry id="to_color"   color="0xffffff" />
+				</s:LinearGradient>
+			</s:fill>
+		</s:Rect>
+	</s:Group>
+
+	
+	
+	<!-- ======================================= -->
+	<!--  HEADER GROUP FOR GLOBAL NAVIGATION     -->
+	<!-- ======================================= -->
+	
+	<s:HGroup id="header_group" alpha="0.5" includeIn="prescreen,normal" width="100%" height="32" verticalAlign="middle" horizontalAlign="left" paddingLeft="10" paddingRight="10" mouseOver="header_group_mouseOverHandler(event)" mouseOut="header_group_mouseOutHandler(event)" >
+		<components:ReaProgressBar id="task_progress_bar" width="100%" height="24" labelPlacement="center" minimum="0" maximum="100" mode="manual" fontSize="12" />
+		<s:HGroup id="header_navigation" width="100%" height="100%" horizontalAlign="right" verticalAlign="middle">
+			<components:BasicSoundButton id="evaluation_button" skinClass="components.CustomSkins.CustomButtonSkin" 	playHover="true" fontSize="14" height="24" width="48" click="setCurrentState('evaluation')"  styleName="evalButton" mouseOver="over_header_button(event)" mouseOut="out_header_button(event)"/>
+			<components:BasicSoundButton id="abort_button" 	 	skinClass="components.CustomSkins.CustomButtonSkin"  playHover="true" fontSize="14" height="24" width="48" click="setCurrentState('abort')"  		styleName="abortButton" mouseOver="over_header_button(event)" mouseOut="out_header_button(event)"/>
+			<SkinnedComponents1:HelpButton id="help_button"				playHover="true" fontSize="22" height="24" width="24" click="setCurrentState('help')" 		label="?" mouseOver="over_header_button(event)" mouseOut="out_header_button(event)"/>
+		</s:HGroup>
+	</s:HGroup>
+	<s:Line includeIn="abort,normal,prescreen" width="100%" height="1">
+		<s:stroke>
+			<s:SolidColorStroke color="#716159" weight="2" />
+		</s:stroke>
+	</s:Line>
+	
+	<!-- content -->
+	<s:Group includeIn="abort,normal,prescreen,evaluation,help" width="100%" height="100%">
+	
+		
+		<!-- ======================================= -->
+		<!-- PRESCREEN GROUP    -->
+		<!-- ======================================= -->
+		
+		<s:VGroup id="preGroup" includeIn="prescreen" width="100%" height="100%" horizontalAlign="right" verticalAlign="middle" gap="5" paddingBottom="10" paddingLeft="10" paddingRight="10" paddingTop="45">
+			<s:VGroup width="100%" height="100%" id="pregroup_content" gap="25">
+			</s:VGroup>
+			<SkinnedComponents1:ForwardButton id="pregroup_forwardButton" visible="true" click="setCurrentState('normal')" />
+		</s:VGroup>
+		
+		
+		<!-- ======================================= -->
+		<!--  STANDARD GROUP    -->
+		<!-- ======================================= -->
+		
+		<!--<s:VGroup id="bgContainer" includeIn="normal" x="0" y="0" width="100%" height="100%" horizontalAlign="left" verticalAlign="top" gap="0">-->
+		<s:HGroup id="content_wrapper" includeIn="normal" width="100%" height="100%" gap="0" horizontalAlign="center" verticalAlign="bottom">
+			
+			<!-- INSTRUCTIONS GROUP -->
+			<s:VGroup   width="100%" height="100%" id="instrGroup" horizontalAlign="left" verticalAlign="top" gap="25" paddingLeft="8" paddingRight="5" paddingBottom="3" paddingTop="8">
+			</s:VGroup>
+			
+			<!-- ITEM CONTENT -->
+			<s:BorderContainer  width="100%" height="100%" visible="false" id="item_questionWrapperBox" cornerRadius="0" borderWeight="3" contentBackgroundColor="#FFFFFF" borderVisible="true" borderColor="#716159" />
+			
+		</s:HGroup>	
+		<!--</s:VGroup>-->
+		
+		
+		
+		
+		<!-- ======================================= -->
+		<!--  ABORT GROUP    -->
+		<!-- ======================================= -->
+		
+		<s:VGroup id="abort_group" includeIn="abort" width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+			<s:HGroup width="60%" verticalAlign="middle">
+				<SkinnedComponents1:SoundButton id="confirmAbortSound" playClick="true"/>
+				<s:Line height="100%">
+					<s:stroke>
+						<s:SolidColorStroke weight="1" />
+					</s:stroke>
+				</s:Line>
+				<s:Label id="confirmAbort" width="100%" text="" />
+			</s:HGroup>
+			<s:HGroup horizontalAlign="center" verticalAlign="middle">
+				<components:BasicSoundButton skinClass="components.CustomSkins.CustomButtonSkin" id="yesButton" playHover="true" label="Ja"   click="dispatchEvent(new Event(ABORT))" />
+				<components:BasicSoundButton skinClass="components.CustomSkins.CustomButtonSkin" id="noButton" playHover="true"  label="Nein" click="dispatchEvent(new Event(RESUME))" />
+			</s:HGroup>
+		</s:VGroup>
+		
+		<!-- ======================================= -->
+		<!--  HELP GROUP    -->
+		<!-- ======================================= -->
+		
+		<s:VGroup id="help_group" includeIn="help" width="100%" height="100%" verticalAlign="middle" horizontalAlign="center" >
+			<s:Group id="help_wrapper" width="80%" height="65%" />
+			
+			<s:HGroup horizontalAlign="right" verticalAlign="middle" width="100%" height="20%" paddingRight="45">
+				<SkinnedComponents1:ForwardButton id="stop_vid_ref" label="Weiter"   click="dispatchEvent(new Event(RESUME))" />
+			</s:HGroup>
+		</s:VGroup>
+		
+		<!-- ======================================= -->
+		<!--  EVALUATION GROUP    -->
+		<!-- ======================================= -->
+		
+		<s:VGroup id="evaluation_group" includeIn="evaluation" width="100%" height="100%" verticalAlign="middle" horizontalAlign="center" paddingBottom="20">
+			
+			<s:VGroup width="100%" height="100%" id="evaluation_content">
+				<!-- evaluation parts will be added here -->
+			</s:VGroup>
+			<s:HGroup horizontalAlign="center" verticalAlign="middle">
+				<components:BasicSoundButton id="endButton"  label="Ende" click="{setCurrentState(ABORT)}" playHover="true" />
+				<SkinnedComponents1:ForwardButton id="forwardButton" label="Weiter"   click="dispatchEvent(new Event(RESUME))" playHover="true"  />
+			</s:HGroup>
+		</s:VGroup>
+	</s:Group>
+	
+	
+	
+</views:AbstractView>

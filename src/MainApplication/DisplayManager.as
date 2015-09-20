@@ -1,80 +1,91 @@
+/*
+
+"Rich E-Assesment (REA) Framework"
+A software framework for the use within the domain of e-assessment.
+
+Copyright (C) 2014  University of Bremen, 
+Working Group education media | media education 
+
+Prof. Dr. Karsten Wolf, wolf@uni-bremen.de
+Dipl.-Päd. Ilka Koppel, ikoppel@uni-bremen.de
+Dipl.-Math. Kai Schwedes, kais@zait.uni-bremen.de
+B.Sc. Jan Küster, jank87@tzi.de
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
 package MainApplication
 {
-	import DisplayApplication.ErrorView;
+	import events.TrackingEvent;
 	
-	import Shared.ErrorDispatcher;
+	import flash.display.Bitmap;
+	import flash.display.BitmapData;
+	import flash.events.KeyboardEvent;
+	import flash.events.MouseEvent;
 	
-	import enumTypes.ErrorTypeEnum;
-	
-	import flash.events.Event;
-	import flash.events.TimerEvent;
-	import flash.utils.Timer;
-	
-	import mx.controls.Image;
 	import mx.core.IVisualElement;
-	import mx.managers.CursorManager;
+	import mx.core.UIComponent;
 	
 	import spark.components.BorderContainer;
+	import spark.components.Image;
 	
 	
 	/**
-	 * The DisplayManager is one of the core classes to provide a management all visual components.
-	 * This allows the <code>MainAppmanager</code> to include or remove specific view components of a module.
+	 * The DisplayManager is one of the core classes to provide a handler for all visual components, send from MainAppManager.
+	 * This allows the <code>MainAppManager</code> to include or remove specific view components of a module.
 	 * 
 	 * @see MainApplication.MainAppManager
 	 * 
 	 */
 	public class DisplayManager extends BorderContainer
 	{
-
-		//------------------------------------
-		//	VARIABLES
-		//------------------------------------
-
 		
 		/**
-		 * The target object, which will be dispalyed on the screen.
+		 * Constructor, empty.
 		 */
-		public var inheritedObj:Object;
+		public function DisplayManager()
+		{
+		}
 		
-		private var layer:Image = new Image();		//layer image for faking transition
-		private var title:Image = new Image();		//title image
-		private var timer:Timer;
-		private var timeCount:Number=100;
+		//----------------------------------------------------//
+		//
+		//		CONSTS AND VARIABLES
+		//
+		//----------------------------------------------------//	
 		
 		/**
-		 * Event Const for dispatching status of tweened out / fade out complete.
-		 * 
-		 * @eventType flash.events.Event
-		 * @see layer
+		 * @private The target view reference, which will be dispalyed on the screen.
 		 */
-		public static const DISPLAY_TWEENEDOUT:String = "displayTweenedOut";
+		private var viewReference:Object;
 		
-		public static const DISPLAY_ERROR:String = "dispalyError";
+		
 		
 		//----------------------------------------------------//
 		//
 		//			PUBLIC METHODS
 		//
 		//----------------------------------------------------//				
+
 		
 		/**
-		 * Constructor, no args. Set the default size of the wrapper.
+		 * Invokes display tracking procedure.
 		 */
-		public function DisplayManager()
+		public function startDisplayTracking(trackMouseDown:Boolean=true,trackMouseMove:Boolean=true,trackKeyPressed:Boolean=true):void
 		{
-			this.width = 1100;
-			this.minWidth = 1000;
-			this.height = 800;
-			this.minHeight=700;
-			trace("[displaymanager]: created");
-			layer.source="Assets/layer.png";
-			title.source="Assets/title.png";
-			title.x=0;
-			title.y=0;
-			layer.x=0;
-			layer.y=0;
-			timer=new Timer(20);
+			if(trackMouseDown)addEventListener(MouseEvent.MOUSE_DOWN, onGlobalMousePressed);
+			if(trackMouseMove)addEventListener(MouseEvent.MOUSE_MOVE, onGlobalMouseMove);
+			if(trackKeyPressed)addEventListener(KeyboardEvent.KEY_UP, onGlobalKeyPressed);
 		}
 		
 		/**
@@ -86,107 +97,134 @@ package MainApplication
 		 * @see layer the image which will be faded to alpha 0
 		 * @see #showDisplay() the tween animation
 		 */
-		public function setContent(ob:Object,_title:Boolean=false):void
+		public function applyView(ob:Object,_title:Boolean=false):void
 		{
-			//timer=new Timer(20);
-			
-			layer.width = 1500;
-			layer.height =1000;
-			layer.x = -20;
-			layer.y = -20;
-			layer.alpha=1;
-			inheritedObj = ob;
-			inheritedObj.visible=false;
-			this.addElement(inheritedObj as IVisualElement);			
-			if(_title)
-			{	
-				this.addElement(title);
-				timer.start();
-				CursorManager.setBusyCursor();
-				timer.addEventListener(TimerEvent.TIMER, showTitle);
-			}else{
-					this.addElement(layer);
-					timer.start();
-					CursorManager.setBusyCursor();
-					timer.addEventListener(TimerEvent.TIMER, showDisplay);				
-			}
-			inheritedObj.visible=true;
+
+			viewReference = ob;
+			viewReference.visible=true;
+			this.addElement(viewReference as IVisualElement);			
 			this.visible=true;
 		}
 		
 		/**
-		 * clears the screen.
+		 * Clears the screen.
 		 */
-		public function removeContent():void
+		public function removeView():void
 		{
-			trace("[displaymanager]: remove display object reference");
-			this.removeAllElements();
-			inheritedObj = null;
+			removeAllElements();
+			viewReference = null;
 		}
 		
-		
+
 		
 		//----------------------------------------------------//
 		//
-		//			PRIVATE METHODS
+		//	METHODS ON TRACKING
 		//
 		//----------------------------------------------------//
+
+		
+		/**
+		 * Makes a screenshot of the references view and injects it into an Image.
+		 * 
+		 * @return Image (spark image) with current screen as source data or null of an error occured 
+		 */
+		public function screenshot():Image
+		{
+			try
+			{
+				var target:UIComponent=viewReference as UIComponent;	
+				var bd:BitmapData = new BitmapData(target.width,target.height);
+					bd.draw(target);
+				var bitmap:Bitmap = new Bitmap(bd);
+				var im:Image = new Image();
+					im.source = bitmap;
+					im.visible=false;
+				this.addElement(im);
+				return im;
+			} 
+			catch(error:Error) 
+			{
+				
+			}
+			return null;
+		}
 		
 		/**
 		 * @private
 		 */
-		private function showDisplay(event:TimerEvent):void
+		private function onGlobalMousePressed(event:MouseEvent):void
+		{	
+			dispatchEvent(new TrackingEvent(TrackingEvent.INPUT_OCCURED,false,false,
+				event.stageX,
+				event.stageY,
+				"",
+				false,
+				true,
+				false,
+				event.target
+			));
+		}
+		
+		/**
+		 * @private
+		 */
+		private function onGlobalKeyPressed(event:KeyboardEvent):void
 		{
-			layer.alpha-=0.018;
-			if(layer.alpha <=0)
+			dispatchEvent(new TrackingEvent(TrackingEvent.INPUT_OCCURED,false,false,
+				stage.mouseX,
+				stage.mouseY,
+				returnKeyAsString(
+					event.altKey,
+					event.ctrlKey,
+					event.shiftKey,
+					event.charCode
+					),
+				false,
+				false,
+				true
+			));
+			
+		}
+		
+		/**
+		 * @private
+		 */
+		private function onGlobalMouseMove(event:MouseEvent):void
+		{
+			dispatchEvent(new TrackingEvent(TrackingEvent.INPUT_OCCURED,false,false,
+				event.stageX,
+				event.stageY,
+				"",
+				true,
+				false,
+				false,
+				event.target
+			));
+		}
+		
+		/**
+		 * @private
+		 */
+		private function returnKeyAsString(alt:Boolean,ctrl:Boolean,shift:Boolean,charCode:uint):String
+		{
+			var keyString:String="";
+			if(alt)keyString+="alt ";
+			if(ctrl)keyString+="ctrl ";
+			if(shift)keyString+="shift";
+			
+			if(charCode!=0)
 			{
-				CursorManager.removeAllCursors();
-				layer.alpha=1;
-				layer.width=0;
-				layer.height=0;
 				try
 				{
-					timer.stop();
-					timer.removeEventListener(TimerEvent.TIMER, showDisplay);
-					timer.reset();
-					trace("[displaymanager]:tween finished and removed");
-					dispatchEvent(new Event(DisplayManager.DISPLAY_TWEENEDOUT));
-				}catch(e:Error){
-					trace(e.message);
-				}
-			}
-		}
-		
-		/**
-		 * @private
-		 */
-		private function showTitle(event:TimerEvent):void
-		{
-			timeCount-=1;
-			if(timeCount<=0)
-			{
-				title.alpha-=0.005;
-				inheritedObj.visible=true;
-				if(title.alpha <=0)
+					keyString+=String.fromCharCode(charCode);	
+				} 
+				catch(error:Error) 
 				{
-					CursorManager.removeAllCursors();
-					title.alpha=1;
-					title.width=0;
-					title.height=0;
-					try
-					{
-						timer.stop();
-						timer.removeEventListener(TimerEvent.TIMER, showTitle);
-						timer.reset();
-						trace("[displaymanager]:tween finished and removed");
-						dispatchEvent(new Event(DisplayManager.DISPLAY_TWEENEDOUT));
-					}catch(e:Error){
-						trace(e.message);
-					}
+					keyString+=charCode.toString();	
 				}
 			}
-
+			return keyString;
 		}
-		
 	}
 }

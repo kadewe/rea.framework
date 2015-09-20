@@ -1,0 +1,652 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+
+
+@font-face{
+	src:url("/Assets/font/LiberationSans-Regular.ttf");
+	fontFamily: Liberation;
+	embedAsCFF: true;
+}
+
+
+s|Application
+{
+	background-color:#3a3a3a;
+	font-family: Liberation;
+	font-size: 26px;
+	color:#000000;
+	focus-color:#3a3a3a;
+}
+
+
+/**
+
+TEXT CLASSES
+
+**/
+
+.text-standard
+{
+	font-size: 22px;
+}
+
+
+.Text-1{
+	font-size: 26px;
+}
+
+.MeasureLabel
+{
+	fontFamily:Arial;
+	fontSize: 28px;
+}
+
+
+
+.Text-medium
+{
+	font-size: 22px;	
+}
+
+.Text-Monitor
+{
+	font-family: arial;
+	font-size: 14px;
+	font-weight: bold;
+	color: #3D8;
+}
+
+
+.Text-Bold	
+{
+	font-weight: bold;
+}
+
+
+.Text-18
+{
+	font-size: 18px;	
+}
+
+.Text-14
+{
+	font-size: 14px;	
+}
+
+.Text-20
+{
+	font-size: 20px;	
+}
+
+.Text-22
+{
+	font-size: 22px;	
+}
+
+.Text-24
+{
+	font-size: 24px;	
+}
+
+.Text-large
+{
+	font-size:32px;	
+}
+
+
+.Text-INSTR
+{
+	font-size:22px;
+	vertical-align:top;
+	text-align:left;
+}
+
+.Text-INSTR-medium
+{
+	font-size:22px;
+	text-align:left;
+}
+
+.Text-INSTR-small
+{
+	font-size:18px;
+	vertical-align:top;
+	text-align:left;
+}
+
+.Text-INSTR-smaller
+{
+	font-size:16px;
+	vertical-align:top;
+	text-align:left;
+}
+
+.bglabel
+{
+	verticalAlign: middle;
+}
+
+.Text-RedBG
+{
+	font-size:18px;
+	backgroundColor: #A22;
+	color: #FFF;
+}
+
+.Text-BlueBG
+{
+	font-size:18px;
+	backgroundColor: #22A;
+	color: #FFF;
+}
+
+.Text-GreenBG
+{
+	font-size:18px;
+	backgroundColor: #2A2;
+	color: #FFF;
+}
+
+
+
+.Headline
+{
+	font-size:26px;
+	font-family:Ideal-0;
+}
+/**
+* -----------------
+* Container-Styles
+* -----------------
+*/
+
+
+.container_standard{
+	borderAlpha: 1.0;
+	borderColor:#B7BABC;
+	borderStyle: solid;
+	borderVisible: true;
+	borderWeight:2;
+	cornerRadius: 1px;
+	dropShadowVisible:false;
+}
+
+.loginInputArea
+{
+	font-family:Ideal-0;
+	font-size:36px;
+	text-align:center;
+}
+
+.clozeGapArea
+{
+	text-align:center;
+}
+
+/**
+* --------------
+* Button-Styles
+* --------------
+*/
+
+/* CustomButton-Styles */
+s|Button{
+	color:#000000;
+	font-size:26px;
+	bgImageVisibility:true;
+	width: 164px;
+	height: 93px;
+	
+}
+
+s|Button:up {
+	backgroundImage:Embed(source="/Assets/button.png");
+}
+s|Button:over{
+	backgroundImage:Embed(source="/Assets/button-over.png");
+}
+s|Button:down{
+	backgroundImage:Embed(source="/Assets/button-down.png");
+}
+
+
+
+/**
+* --------------
+* HELP BUTTON
+* --------------
+*/
+.helpButton{
+	color:#000000;
+	bgImageVisibility:true;
+	dropShadowColor: #FFD799;
+	bgAlpha: 1.0;
+	textAlign: center;
+	fontFamily: Liberation;
+	verticalAlign: middle;
+}
+
+
+.helpButton:up{
+	backgroundImage:Embed(source="/Assets/button-help.png");
+}
+
+.helpButton:over{
+	backgroundImage:Embed(source="/Assets/button-help-over.png");
+	dropShadowAlpha: 0.8;
+}
+.helpButton:down{
+	backgroundImage:Embed(source="/Assets/button-help-down.png");
+	dropShadowAlpha: 0.4;
+}
+
+/**
+* --------------
+* EVALUATION BUTTON
+* --------------
+*/
+
+.evalButton
+{
+	color:#000000;
+	bgImageVisibility:true;
+	bgColor: #716159;
+	dropShadowColor: #FFD799;
+	bgAlpha: 1.0;
+}
+
+.evalButton:up
+{
+	backgroundImage:Embed(source="/Assets/button-eval.png");	
+	dropShadowAlpha: 0.4;
+}
+
+.evalButton:over
+{
+	backgroundImage:Embed(source="/Assets/button-eval-over.png");
+	bgAlpha: 0.6;
+}
+
+.evalButton:down
+{	
+	backgroundImage:Embed(source="/Assets/button-eval-down.png");
+	bgAlpha: 0.6;
+}
+
+
+/**
+* --------------
+* ABORT BUTTON
+* --------------
+*/
+
+.abortButton
+{
+	color:#FFFFFF;
+	bgImageVisibility:true;
+	bgColor: #716159;
+	dropShadowColor: #FFD799;
+	bgAlpha: 1.0;
+}
+
+.abortButton:up
+{
+	backgroundImage:Embed(source="/Assets/button-overview.png");
+}
+
+.abortButton:over
+{
+	backgroundImage:Embed(source="/Assets/button-overview-over.png");
+	bgAlpha: 0.6;
+}
+
+.abortButton:down
+{	
+	backgroundImage:Embed(source="/Assets/button-overview-down.png");
+	bgAlpha: 0.6;
+}
+
+/**
+* --------------
+* STARTAPP BUTTON
+* --------------
+*/
+
+
+.startApplicationButton{
+	color:#000000;
+	font-size:26px;
+	bgImageVisibility:true;
+	width: 164px;
+	height:  93px;
+	focusColor: #716159;
+}
+.startApplicationButton:up{
+backgroundImage:Embed(source="/Assets/button-start.png");
+}
+.startApplicationButton:over{
+	backgroundImage:Embed(source="/Assets/button-start-over.png");
+}.startApplicationButton:down{
+	backgroundImage:Embed(source="/Assets/button-start-down.png");
+}
+
+
+
+/* SoundButton-Styles */
+.soundButton
+{
+	bgImageVisibility:true;
+	width: 96px;
+	height: 92px;
+}
+.soundButton:up{
+	backgroundImage:Embed(source="/Assets/button-sound.png");
+}
+.soundButton:over{
+	backgroundImage:Embed(source="/Assets/button-sound-over.png");
+}
+.soundButton:down{
+	backgroundImage:Embed(source="/Assets/button-sound-down.png");
+}
+
+
+.smallSoundButton{
+	bgImageVisibility:true;
+	width: 63px;
+	height: 60px;
+}
+.smallSoundButton:up{
+	backgroundImage:Embed(source="/Assets/button-small-sound.png");
+}
+.smallSoundButton:over{
+	backgroundImage:Embed(source="/Assets/button-small-sound-over.png");
+}
+.smallSoundButton:down{
+	backgroundImage:Embed(source="/Assets/button-small-sound-down.png");
+}
+
+.miniSoundButton{
+	bgImageVisibility:true;
+	width: 30px;
+	height: 29px;
+}
+.miniSoundButton:up{
+	backgroundImage:Embed(source="/Assets/button-mini-sound.png");
+}
+.miniSoundButton:over{
+	backgroundImage:Embed(source="/Assets/button-mini-sound-over.png");
+}
+.miniSoundButton:down{
+	backgroundImage:Embed(source="/Assets/button-mini-sound-down.png");
+}
+
+
+.RadioButton_1
+{
+	focus-color:#FFFFFF;
+}
+
+/* Reading Icon - or eyeButton called */
+
+.smallEyeButton
+{
+	bgImageVisibility:true;
+	width: 63px;
+	height: 60px;	
+}
+
+.smallEyeButton:up
+{
+	backgroundImage:Embed(source="/Assets/readButtonUp.png");
+}
+
+.smallEyeButton:over
+{
+	backgroundImage:Embed(source="/Assets/readButtonOver.png");
+}
+
+.smallEyeButton:down
+{
+	backgroundImage:Embed(source="/Assets/readButtonDown.png");
+}
+
+/* ForwardButton-Styles */
+.forwardButton{
+	color:#000000;
+	bgImageVisibility:true;
+	width: 141px;
+	height: 62px;
+	fontSize: 20px;
+}
+.forwardButton:up{
+	backgroundImage:Embed(source="/Assets/button-forward.png");
+}
+.forwardButton:over{
+	backgroundImage:Embed(source="/Assets/button-forward-over.png");
+}
+.forwardButton:down{
+	backgroundImage:Embed(source="/Assets/button-forward-down.png");
+}
+
+
+/* BackButton-Styles */
+.backButton{
+	color:#000000;
+	bgImageVisibility:true;
+	width: 141px;
+	height: 62px;
+	fontSize: 20px;
+}
+.backButton:up{
+	backgroundImage:Embed(source="/Assets/button-back.png");
+}
+.backButton:over{
+	backgroundImage:Embed(source="/Assets/button-back-over.png");
+}
+.backButton:down{
+	backgroundImage:Embed(source="/Assets/button-back-down.png");
+}
+
+/* DimesionButton-Styles */
+.readingButton{
+	color:#000000;
+	bgImageVisibility:true;
+	width: 164px;
+	height: 156px;
+}
+.readingButton:up{
+	backgroundImage:Embed(source="/Assets/button-reading.png");
+}
+.readingButton:over{
+	backgroundImage:Embed(source="/Assets/button-reading-over.png");
+}
+.readingButton:down{
+	backgroundImage:Embed(source="/Assets/button-reading-down.png");
+}
+
+.writingButton{
+	color:#000000;
+	bgImageVisibility:true;
+	width: 164px;
+	height: 156px;
+}
+.writingButton:up{
+	backgroundImage:Embed(source="/Assets/button-writing.png");
+}
+.writingButton:over{
+	backgroundImage:Embed(source="/Assets/button-writing-over.png");
+}
+.writingButton:down{
+	backgroundImage:Embed(source="/Assets/button-writing-down.png");
+}
+
+.languageButton{
+	color:#000000;
+	font-size:24px;
+	bgImageVisibility:true;
+	width: 164px;
+	height: 156px;
+}
+.languageButton:up{
+	backgroundImage:Embed(source="/Assets/button-language.png");
+}
+.languageButton:over{
+	backgroundImage:Embed(source="/Assets/button-language-over.png");
+}
+.languageButton:down{
+	backgroundImage:Embed(source="/Assets/button-language-down.png");
+}
+
+.mathButton{
+	color:#000000;
+	font-size:24px;
+	bgImageVisibility:true;
+	width: 164px;
+	height: 156px;
+}
+.mathButton:up{
+	backgroundImage:Embed(source="/Assets/button-math.png");
+}
+.mathButton:over{
+	backgroundImage:Embed(source="/Assets/button-math-over.png");
+}
+.mathButton:down{
+	backgroundImage:Embed(source="/Assets/button-math-down.png");
+}
+
+/* ForgotCodeButton-Styles */
+.forgotButton{
+	color:#000000;
+	bgImageVisibility:true;
+	width: 219px;
+	height: 60px;
+}
+.forgotButton:up{
+	backgroundImage:Embed(source="/Assets/button-lostcode.png");
+}
+.forgotButton:over{
+	backgroundImage:Embed(source="/Assets/button-lostcode-over.png");
+}
+.forgotButton:down{
+	backgroundImage:Embed(source="/Assets/button-lostcode-down.png");
+}
+
+global
+{
+	font-family: Liberation;
+	content-background-color: #FFFFFF;
+	content-background-alpha: 0.0;
+}
+
+
+/*
+
+TextInput-Styles
+
+*/
+
+/*FALLBACK CLASS FOR WHITE LABEL WITH BLACK TEXT*/
+
+.editable_textinput
+{
+	inputBorderColor: #FFF;
+	shadowColor: #FFF;
+	color:#000;
+	font-size:22px;
+	newAlign: left;		
+}
+
+
+.TextInput_default
+{
+	inputBackground:#FFF;
+	color:#000;
+	inputBorderColor: #000;
+	newAlign: center;
+	shadowColor: #000;
+	font-size:22px;
+	height: 24px;
+}
+
+.TextInput_locked_22
+{
+	inputBackground:#FFF;
+	color:#000;
+	inputBorderColor: #000;
+	shadowColor: #000;
+	font-size:22px;
+	height: 24px;
+}
+
+
+.TextInput_blue_22
+{
+	inputBorderColor: #BDF;
+	inputBorderWeight: 6;
+	inputBackground:#BDF;
+	color:#000;
+	font-size:22px;
+	newAlign: left;			
+}
+
+.TextInput_yellow
+{
+	inputBackground:#AA2;
+	color:#000;
+}
+
+
+.TextInput_red
+{
+	inputBackground:#F00;
+	color:#FFF;
+}
+
+
+.TextInput_blue
+{
+	inputBorderColor: #66AEFF;
+	inputBorderWeight: 6;
+	inputBackground: #66AEFF;
+	color:#000;
+	newAlign: left;
+}
+
+.TextInput_grey
+{
+	inputBorderColor: #606A70;
+	inputBorderWeight: 6;
+	inputBackground: #BBBBBB;
+	color:#000;
+	newAlign: left;
+}
+
+
+.TextInput-center-big
+{
+	inputBorderWeight: 6;
+	inputBackground:#BDF;
+	font-size:60px;
+	newAlign: center;
+}
+/*
+	Border Container
+*/
+.roundesBG-5
+{
+	cornerRadius: 5;
+}
+
+.roundesBG-15
+{
+	cornerRadius: 15;
+}
+/*
+@font-face
+{
+	fontFamily: IDEAL-0;
+	src: url("C:\lea\Itementwicklung\xmlTest\src\Assets\IDEAL-0.TTF");
+	embedAsCFF: true;
+}
+*/

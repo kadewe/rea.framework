@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+/*
+
+"Rich E-Assesment (REA) Framework"
+A software framework for the use within the domain of e-assessment.
+
+Copyright (C) 2014  University of Bremen, 
+Working Group education media | media education 
+
+Prof. Dr. Karsten Wolf, wolf@uni-bremen.de
+Dipl.-Päd. Ilka Koppel, ikoppel@uni-bremen.de
+Dipl.-Math. Kai Schwedes, kais@zait.uni-bremen.de
+B.Sc. Jan Küster, jank87@tzi.de
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+
+-->
+
+<s:TextInput xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			 xmlns:s="library://ns.adobe.com/flex/spark" 
+			 xmlns:mx="library://ns.adobe.com/flex/mx" skinClass="components.CustomSkins.CustomTextInputSkin" implements="interfaces.IWritable,interfaces.IInteractiveVisual" text="Beispiel" textAlign="left" styleName="TextInput_default" change="updateMetrics()" creationComplete="setSizes()">
+	<fx:Script>
+		<![CDATA[
+			import flashx.textLayout.formats.LineBreak;
+			
+			import spark.components.Label;
+			import spark.components.RichEditableText;
+			import spark.components.RichText;
+			
+			private var oldwidth:Number,oldheight:Number=0;
+			private var lineWidth:Number=0;
+			private var overLap:Boolean=false;
+			private var line_breaks:int=0;
+			
+			//----------------------------------
+			//
+			//	Public functions
+			//
+			//----------------------------------
+			
+			/**
+			 * implements IInteractiveVisual
+			 */
+			public function getFiltersArray():Array
+			{
+				return filters;
+			}
+			
+			/**
+			 * implements IInteractiveVisual
+			 */
+			public function setFiltersArray(newFilters:Array=null):void
+			{
+				this.filters = newFilters;
+			}
+			
+			public function initMeasure():void
+			{
+				setSizes();
+				setMetrics();
+				setSizes();
+				updateMetrics();
+			}
+			
+			public function set overlap(value:Boolean):void
+			{
+				overLap=true;
+			}
+			
+			/**
+			 * 
+			 */
+			public function setLineWidth(newwidth:Number):void
+			{
+				if(newwidth<=0)return;
+				this.lineWidth=newwidth;
+			}
+	
+			public function setAutoResizeEnabled(value:Boolean):void
+			{
+				if(!value)
+				{
+					autoresize=false;
+					overLap=false;
+				}
+			}
+			
+			
+			//----------------------------------
+			//
+			//	Private functions
+			//
+			//----------------------------------
+			
+			private function setSizes():void
+			{
+				oldwidth = this.width;	
+				this.explicitWidth = oldwidth>0?oldwidth:undefined;
+				oldheight=this.height;
+				this.explicitHeight = oldheight>0?oldheight:undefined;
+				
+				setMetrics();
+			}
+			
+
+			public function setMetrics():void
+			{
+				var fieldLen:int = 28;// assume 28px per char for textfields, todo: dynamic detect at runtime
+				var txtwidth:Number;
+				var defaultlen:Number=maxChars*(fieldLen/2);
+				if(text.length>0) //measure textfield length if text is as already included
+				{
+					trace("CustomTextinput: use previous text->"+text);
+					var measure:Label = new Label();
+						measure.styleName="MeasureLabel";
+						measure.text = text;
+						measure.regenerateStyleCache(false)
+					var tm:TextLineMetrics = measure.measureText(measure.text);
+					txtwidth = tm.width>defaultlen?txtwidth:defaultlen;
+					
+					
+					
+					var brk:int = Math.round(txtwidth / lineWidth);
+					if(width >0 && tm.width < width)brk=0;
+					//trace(tm.width+" " +brk + " "+ oldwidth+ " "+oldheight);
+					if(oldheight >0 && oldwidth >0)this.height = brk>0?brk*oldwidth:oldheight;
+					this.explicitHeight=this.height;
+				}else{
+					txtwidth =defaultlen;
+					trace("CustomTextinput: use maxchars->"+txtwidth + "= "+fieldLen + " * "+maxChars);
+				}
+	
+				if(txtwidth>=lineWidth)
+				{
+					this.width=lineWidth>0?lineWidth:width;
+					this.autoresize=false;
+				}else{
+					this.width=txtwidth>0?txtwidth:width;
+					this.autoresize=true;
+				}
+				if(maxChars*fieldLen > lineWidth)
+				{
+					this.overlap=true;
+				}
+				trace(this.width);
+				trace(this.height);
+			}
+			
+			private function updateMetrics():void
+			{
+				var l:Label = new Label();
+					l.styleName="MeasureLabel";
+					l.text = this.text;
+					l.regenerateStyleCache(false)
+				widthInChars=this.maxChars;
+				var tm:TextLineMetrics = l.measureText(l.text);
+				if(autoresize)
+				{
+					if(tm.width >= oldwidth && this.text.length <= maxChars )
+					{
+						this.width = tm.width;
+					}
+					if(tm.width >= lineWidth)
+					{
+						autoresize = false;
+						overlap=true;
+					}
+				}
+				
+				if(overLap)
+				{
+					var brk:int = Math.floor(tm.width / lineWidth);
+					if(line_breaks < brk)
+					{
+						this.height += oldheight;
+						line_breaks++;
+					}
+					if(line_breaks > brk)
+					{
+						this.height -= oldheight;
+						line_breaks--;
+					}
+				}
+				invalidateSize();
+			}
+			
+
+			
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Platzieren Sie nichtvisuelle Elemente (z. B. Dienste, Wertobjekte) hier -->
+		<fx:Boolean id="autoresize" >false</fx:Boolean>
+	</fx:Declarations>
+</s:TextInput>

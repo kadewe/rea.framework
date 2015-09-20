@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+
+"Rich E-Assesment (REA) Framework"
+A software framework for the use within the domain of e-assessment.
+
+Copyright (C) 2014  University of Bremen, 
+Working Group education media | media education 
+
+Prof. Dr. Karsten Wolf, wolf@uni-bremen.de
+Dipl.-Päd. Ilka Koppel, ikoppel@uni-bremen.de
+Dipl.-Math. Kai Schwedes, kais@zait.uni-bremen.de
+B.Sc. Jan Küster, jank87@tzi.de
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+-->
+<views:AbstractView xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 xmlns:main="MainApplication.*" 
+		 xmlns:display="display.*"
+		 xmlns:SkinnedComponents="components.SkinnedComponents.*"
+		 xmlns:components="components.*"
+		 xmlns:views="views.*"
+		 width="1000" height="700" currentState="overview"   
+		 stateChangeComplete="onViewStateChanged(event)"
+		 creationComplete="abstractview1_creationCompleteHandler(event)" >
+	
+	<fx:Script>
+		<![CDATA[
+			import components.CustomSkins.CustomButtonSkin;
+			import components.factories.ComponentsFactory;
+			import components.factories.DisplayFactory;
+			
+			import models.Collection;
+			import models.Globals;
+			import models.TestCollection;
+			
+			import mx.collections.ArrayList;
+			import mx.events.FlexEvent;
+			
+			
+			//----------------------------------------------
+			//
+			//	CONSTANTS
+			//
+			//----------------------------------------------			
+			
+			/**
+			 * Dispatched when the retstart collection button has been clicked
+			 **/ 
+			public static const RESTART_COLLECTION:String="restartCollection";
+			
+			/**
+			 * Dispatched when the dimension / subject has been selected
+			 **/
+			public static const DIMENSION_SELECTED:String="diensionSelected";
+			
+			/**
+			 * Dispatched when the difficulty level has been selected
+			 **/
+			public static const LEVEL_SELECTED:String="levelSelected";
+			
+			/**
+			 * Dispatched when the continue collection button has been clicked
+			 **/
+			public static const CONTINUE:String = "continue";
+			
+			/**
+			 * Dispatched when the end button has been clicked
+			 **/
+			public static const END:String = "end";
+			
+			//----------------------------------------------
+			//
+			//	VARIABLES
+			//
+			//----------------------------------------------	
+			
+			/**
+			 * Reference to a testcollection for internal processing
+			 **/
+			protected var _tc:TestCollection;
+			
+			/**
+			 * Passes the current testcollection.
+			 */
+			public function setTestCollection(tc:TestCollection):void
+			{
+				_tc = tc;
+			}
+			
+			/**
+			 * Reference to a globalsetting class for internal processing
+			 **/
+			protected var _globals:Globals;
+			
+			/**
+			 * Passes the current globalsettings
+			 */
+			public function setGlobals(globals:Globals):void
+			{
+				_globals = globals;
+				scriptUrl = globals.returnPathValue("rootUrl")+globals.returnPathValue("includeScript");
+				soundUrl = globals.returnPathValue("soundPath");
+				
+			}
+			
+			/**
+			 * Url to the include script
+			 **/
+			protected var scriptUrl:String;
+			
+			/**
+			 * Relative url to sounds on the server
+			 **/
+			protected var soundUrl:String;
+			
+		
+			/**
+			 * Index of the chosen subject. The index derives from the order in the testcolleciton.
+			 */
+			protected var _chosenSubject:int;
+			
+			/**
+			 * Name of the chosen subject.
+			 */
+			public function get chosenSubject():String
+			{
+				return _tc.getDimensionName(_chosenSubject);
+			}
+
+			/**
+			 * Index of the chosen level. The index derives from the order in the testcolleciton.
+			 */
+			protected var _chosenLevel:String;
+			
+			/**
+			 * Name of the chosen level.
+			 */
+			public function get chosenLevel():String
+			{
+				return _chosenLevel;
+			}
+			
+			//----------------------------------------------
+			//
+			//	PUBLIC
+			//
+			//----------------------------------------------	
+			
+			/**
+			 * Updates the progressbar, if previous tests were made in the past.
+			 * 
+			 * @param lastItem the id of the item which has been proceeded before the abort
+			 * @param percent the percentage of the last proceeding
+			 */
+			public function updateProgressbar(lastItem:String, percent:Number):void
+			{
+				task_progress_bar.label = lastItem;
+				task_progress_bar.setProgress(  percent, 100);
+			}
+	
+	
+			override public function unload():void
+			{
+				flush();
+				_references = null;
+				removeAllEventListeners();
+				removeAllElements();
+				_tc = null;
+				_globals = null;
+			}
+			
+			protected function flush():void
+			{
+				
+				if(_references != null)
+				{
+					for (var i:int = 0; i < _references.length; i++) 
+					{
+						var obj:Object = _references.getItemAt(i);
+						if(obj is BasicSoundButton)
+						{
+							BasicSoundButton(obj).unload();
+							BasicSoundButton(obj).referringTo = null;
+						}
+					
+						obj=null;
+					}
+					_references.removeAll();
+					_references = new ArrayList();
+				}
+				
+			}
+			
+			/**
+			 * @private
+			 */
+			protected function abstractview1_creationCompleteHandler(event:FlexEvent):void
+			{
+				loadDimensionButton(0, reading_button);
+				loadDimensionButton(1, writing_button);
+				loadDimensionButton(2, calc_button);
+				loadDimensionButton(3, language_button);
+			}
+			
+			/**
+			 * Initializes a dimension button with the appropriate labeling and sound references.
+			 * @param index the index to search for tha name in the testcollection
+			 * @param target the button to be loaded
+			 */
+			protected function loadDimensionButton(index:int,target:BasicSoundButton):void
+			{
+				target.label = _tc.getDimensionAt(index).getName();
+				target.scriptUrl = scriptUrl;
+				target.source = soundUrl + _tc.getDimensionAt(index).getSoundUrl();
+			}
+			
+			
+			/**
+			 * @protected
+			 * 
+			 * called by clicking a view button. changes the view state to levels and saves the chosen dimension.
+			 * rads the levels and creates for each level a new button and sets up events for dragging and clicking them.
+			 */
+			protected function showLevel(event:MouseEvent):void
+			{
+				//utils.ReaVisualUtils.fadeOutSound();
+				o_description.removeAllElements();
+				buildLevel(_tc.getDimensionIndexByName(event.target.label));
+			}
+			
+
+			/**
+			 * Searches in the testcollection for the chosen dimension index and builds the optional levels on the screen.
+			 * 
+			 * @param chosen The dimension index of the chosen one
+			 * 
+			 */
+			protected function buildLevel(chosen:int):void
+			{
+				setCurrentState("levels");
+				_chosenSubject = chosen;
+				levelLine = ComponentsFactory.createLine(1,1);
+				
+				//backButton.addEventListener(MouseEvent.CLICK, backToOverview);
+				
+				var levels:Array = _tc.getDimensionAt(_chosenSubject).returnCollection();
+				levelButtonsContainer.removeAllElements();
+				l_description.removeAllElements();
+				for each (var c:Collection in levels) 
+				{
+					var b:BasicSoundButton = ComponentsFactory.createBasicSoundButton(
+						c.getName(),
+						scriptUrl,
+						soundUrl+c.getSound(),
+						true,
+						false,
+						ComponentsFactory.createLabe(c.getDescription(),null),
+						null) as BasicSoundButton;
+					b.setStyle("skinClass",CustomButtonSkin);
+					b.addEventListener(MouseEvent.MOUSE_OVER, showLevelDescription);
+					b.addEventListener(MouseEvent.CLICK, onLevelSelected);
+					levelButtonsContainer.addElement( b );
+				}
+			}
+			
+
+
+			/**
+			 * @private
+			 */
+			protected function onLevelSelected(event:MouseEvent):void
+			{
+				_chosenLevel = BasicSoundButton(event.target).label;
+				
+				dispatchEvent(new Event(LEVEL_SELECTED));
+			}
+			
+
+			
+			/**
+			 * @private
+			 * By dragging a level Button, a detailed description will appear at the bottom of the screen as well as a sound object wil be created
+			 */
+			protected function showLevelDescription(event:MouseEvent):void
+			{
+ 				//utils.ReaVisualUtils.fadeOutSound();
+				l_description.removeAllElements();
+				
+				var bs:BasicSoundButton = event.target as BasicSoundButton;
+				var dlabel:Label = bs.referringTo ==null ?  new Label() : Label(bs.referringTo);
+					//dlabel.percentWidth = 100;
+				l_description.addElement(dlabel);
+				
+			}
+			
+			/**
+			 * @private
+			 */
+			protected function onViewStateChanged(event:FlexEvent):void
+			{
+				flush();
+				switch(currentState)
+				{
+					case "help":
+						help_wrapper.addElement(DisplayFactory.helpDisplay("OverviewModule",last_state, forwardButton));
+						break;
+					default:
+						last_state = currentState;
+						break;
+				}
+			}	
+			
+		]]>
+	</fx:Script>
+	<views:states>
+		<s:State name="overview" />
+		<s:State name="levels" />
+		<s:State name="itemlist"/>
+		<s:State name="help" />
+		<s:State name="continue"/>
+	</views:states>		
+
+	
+	<!-- ======================================= -->
+	<!--  HEADER GROUP FOR GLOBAL NAVIGATION     -->
+	<!-- ======================================= -->
+	
+	<s:VGroup width="100%" includeIn="overview,levels,itemlist">
+		<s:HGroup id="header_group"  width="100%" height="32" verticalAlign="middle" horizontalAlign="left" paddingLeft="10" paddingRight="10">
+			<s:HGroup id="header_navigation" width="100%" height="100%" horizontalAlign="right" verticalAlign="middle">
+				<SkinnedComponents:HelpButton id="help_button"	playHover="true" fontSize="22" height="24" width="24" click="setCurrentState('help')" 		label="?" />
+			</s:HGroup>
+		</s:HGroup>
+
+	</s:VGroup>
+	
+	<!-- ======================================= -->
+	<!--  HELP GROUP    -->
+	<!-- ======================================= -->
+	
+	<s:VGroup id="help_group" includeIn="help" width="100%" height="100%" verticalAlign="middle" horizontalAlign="center" >
+		<s:Group id="help_wrapper" width="80%" height="65%" />
+		
+		<s:HGroup horizontalAlign="right" verticalAlign="middle" width="100%" height="20%" paddingRight="45">
+			<SkinnedComponents:ForwardButton id="forwardButton" label="Weiter"   click="setCurrentState(last_state)" />
+		</s:HGroup>
+	</s:VGroup>
+	
+	
+	<!-- OVERVIEW STATE -->
+	<!-- -->
+	<!-- -->
+	<s:VGroup id="overviewVerticalGroup" horizontalAlign="center" gap="40" verticalAlign="middle" includeIn="overview" width="100%" height="100%">
+		
+		<!-- instruction -->
+		<s:Group id="chooseSubjectInstructionGroup" width="800">
+			<s:layout>
+				<s:HorizontalLayout verticalAlign="middle" horizontalAlign="center" gap="10" />
+			</s:layout>
+			<SkinnedComponents:SoundButton id="chooseSubjectSnd" playClick="true" referringTo="{chooseSubject}"/>
+			<s:Line id="chooseSbjLine" height="100%">
+				<s:stroke>
+					<s:SolidColorStroke color="0x000000" weight="2" alpha="0.2" joints="bevel" />
+				</s:stroke>
+			</s:Line>
+			<s:Label id="chooseSubject"/>
+		</s:Group>
+		
+		<!-- DIMENSION BUTTONS -->
+		<s:HGroup gap="50" horizontalAlign="center" verticalAlign="middle">
+			<components:BasicSoundButton id="writing_button"
+					  skinClass="components.CustomSkins.CustomDimesionButtonSkin"
+					  styleName="writingButton"
+					  playHover="true"
+					  click="showLevel(event)"/>
+			<components:BasicSoundButton id="reading_button" 
+					  skinClass="components.CustomSkins.CustomDimesionButtonSkin"
+					  styleName="readingButton"
+					  playHover="true"
+					  click="showLevel(event)"/>
+			<components:BasicSoundButton id="calc_button"
+					  skinClass="components.CustomSkins.CustomDimesionButtonSkin"
+					  styleName="mathButton"
+					  playHover="true"
+					  click="showLevel(event)"/>
+			<components:BasicSoundButton id="language_button"
+					  skinClass="components.CustomSkins.CustomDimesionButtonSkin" 
+					  styleName="languageButton"
+					  playHover="true"
+					  click="showLevel(event)"/>	
+		</s:HGroup>
+		
+		<!-- description -->
+		<s:Group id="o_description" width="800" height="100">
+			<s:layout>
+				<s:HorizontalLayout verticalAlign="middle" horizontalAlign="center" gap="10" />
+			</s:layout>
+		</s:Group>
+	</s:VGroup>
+	
+	
+	<!-- LEVELS STATE -->
+	<!-- -->
+	<!-- -->
+	<s:VGroup id="levelsGroup" horizontalAlign="center" verticalAlign="middle" gap="50" includeIn="levels" width="100%" height="100%">
+		
+		<!-- instruction -->
+		<s:Group id="chooseLevelInstructionGroup" width="800">
+			<s:layout>
+				<s:HorizontalLayout verticalAlign="middle" horizontalAlign="center" gap="10"  />
+			</s:layout>
+			<SkinnedComponents:SoundButton id="levelSoundButton"  playClick="true" referringTo="{whatLevel}"/>
+			<s:Line id="levelLine" height="100%">
+				<s:stroke>
+					<s:SolidColorStroke color="0x000000" weight="2" alpha="0.2" joints="bevel" />
+				</s:stroke>
+			</s:Line>
+			<s:Label id="whatLevel" width="100%" text=""/>
+		</s:Group>	
+		
+		<!-- level buttons -->
+		<s:Group id="levelButtonsContainer" width="800">
+			<s:layout>
+				<s:HorizontalLayout verticalAlign="middle" horizontalAlign="center" gap="50" />
+			</s:layout>
+		</s:Group>
+		
+		<!-- description -->
+		<s:Group id="l_description" width="800" height="100">
+			<s:layout>
+				<s:HorizontalLayout verticalAlign="middle" horizontalAlign="center" />
+			</s:layout>
+		</s:Group>
+	</s:VGroup>
+	
+	
+
+	
+
+	<s:HGroup includeIn="help,itemlist,levels,overview,continue" width="100%" height="100%"
+			  horizontalAlign="center" paddingBottom="35" paddingLeft="45" paddingRight="45"
+			  verticalAlign="bottom">
+		<SkinnedComponents:BackButton id="backButton" includeIn="levels,continue"
+									  skinClass="components.CustomSkins.CustomBackButtonSkin"
+									  styleName="backButton" playHover="true"
+									  click="setCurrentState('overview')"/>
+		<s:Group width="100%" />
+		<components:BasicSoundButton id="mainAppEndButton" skinClass="components.CustomSkins.CustomButtonSkin" playHover="true" includeIn="overview" click="dispatchEvent(new Event(END));" />
+	</s:HGroup>
+
+	<!-- ======================================= -->
+	<!--  CONTINUE PREVIOUS COLLECTION GROUP    -->
+	<!-- ======================================= -->
+	
+	<s:VGroup includeIn="continue" width="100%" height="100%" gap="25" verticalAlign="middle" horizontalAlign="center">
+		<s:HGroup width="80%">
+			<SkinnedComponents:SoundButton id="youCanContinueSound" playClick="true" referringTo="{youCanContinue}"/>
+			<s:Line height="100%">
+				<s:stroke>
+					<s:SolidColorStroke alpha="0.2" weight="1" color="0x000000" />
+				</s:stroke>
+			</s:Line>
+			<s:Label id="youCanContinue" width="100%" />
+		</s:HGroup>
+		<components:ReaProgressBar id="task_progress_bar" width="70%" height="24" labelPlacement="center" minimum="0" maximum="100" mode="manual" fontSize="12" />
+		<s:HGroup width="80%" horizontalAlign="center" verticalAlign="middle">
+			<components:BasicSoundButton id="restart_collection_button"   playHover="true" click="dispatchEvent(new Event(RESTART_COLLECTION))"  />
+			<components:BasicSoundButton id="continue_collection_button"  playHover="true" click="dispatchEvent(new Event(CONTINUE))" />
+		</s:HGroup>
+	</s:VGroup>
+	
+</views:AbstractView>

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+"Rich E-Assesment (REA) Framework"
+A software framework for the use within the domain of e-assessment.
+
+Copyright (C) 2014  University of Bremen, 
+Working Group education media | media education 
+
+Prof. Dr. Karsten Wolf, wolf@uni-bremen.de
+Dipl.-Päd. Ilka Koppel, ikoppel@uni-bremen.de
+Dipl.-Math. Kai Schwedes, kais@zait.uni-bremen.de
+B.Sc. Jan Küster, jank87@tzi.de
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!--- This application is a serverside service for teacher reports -->
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" 
+			   width="1000" height="700" minWidth="1000" minHeight="700" backgroundColor="#F2EEE5"
+			   creationComplete="application1_creationCompleteHandler(event)" xmlns:components="components.*">
+	<fx:Script>
+		<![CDATA[
+			
+
+			
+			import models.Globals;
+			
+			import mx.events.FlexEvent;
+			import mx.graphics.SolidColor;
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+			import mx.rpc.http.HTTPService;
+			
+			import report.ReportHandler;
+			
+			import spark.components.BorderContainer;
+			import spark.events.TextOperationEvent;
+			
+			import views.EvaluationView;
+			
+			private var user_login:HTTPService;
+			
+			private var _scriptUrl:String;
+			
+			
+			protected function application1_creationCompleteHandler(event:FlexEvent):void
+			{
+				Globals.instance().initializeData();
+				Globals.instance().addEventListener(Globals.GLOBALS_LOADED, onGlobalsLoaded);
+				Globals.instance().addEventListener(Globals.GLOBALS_FAULT, onGlobalsFault);	
+
+			}
+			
+			protected function usercode_input_keyDownHandler(event:KeyboardEvent):void
+			{
+				if(event.keyCode != Keyboard.ENTER)return;
+				call_report();
+			}
+			
+			protected function usercode_input_focusInHandler(event:FocusEvent):void
+			{
+				usercode_input.selectAll();
+			}
+			
+			protected function start_report_clickHandler(event:MouseEvent):void
+			{
+				call_report();
+			}
+			
+			
+			protected function call_report():void
+			{
+				display_content.removeAllElements();
+				check_user();
+			}
+			
+			protected function check_user():void
+			{
+				
+				
+				var a:Object = {
+					param:'login',
+					password:usercode_input.text.toUpperCase()};
+				user_login.request = a;
+				user_login.send(a);
+			}
+			
+			protected function complete_call():void
+			{
+				
+				var rh:ReportHandler = new ReportHandler();
+					rh.addEventListener(ResultEvent.RESULT, onResult);
+					rh.addEventListener(FaultEvent.FAULT, onFault);
+				
+				if(teacher_report_mode.selected)
+				{
+					rh.prepare(_scriptUrl,true);
+					rh.callReport(
+						usercode_input.text,
+						100,
+						""
+						,3,true);
+				}else{
+					rh.prepare(_scriptUrl,false);
+					rh.callReport(
+						usercode_input.text,
+						100,
+						"lesen"
+						,3,true);
+					
+					
+				}
+				
+
+			}
+			
+			
+			protected var download_target:String="";
+			private function onResult(event:ResultEvent):void
+			{
+				//var event_result:String = String(event.result);
+				
+				/* if(event_result == null || event_result == "" || event_result.indexOf("error")>-1 )
+				{
+					display_error( "Fehler: XML nicht valide \nDetails:"+event.statusCode+" "+event.message);
+					return;
+				}
+				 */
+				
+				
+				
+				
+				
+				var ending:Array = String(event.result).split(".");
+				
+				if(ending!=null && ending[ending.length-1]=="pdf")
+				{
+					download_target = String(event.result);
+				}else{
+					
+					var res:XML = XML(event.result);
+					
+					
+					download_target = String(res.print.@file);
+					
+					var hg:HGroup = new HGroup();
+						hg.percentWidth  = 100;
+						hg.percentHeight = 100;
+						hg.verticalAlign="middle";
+						
+					var ev:EvaluationView = new EvaluationView();
+						ev.load("lesen",_scriptUrl,usercode_input.text,Globals.instance().returnPathValue("feedbackSounds"),100,false);
+						ev.process_result(String(event.result));
+					hg.addElement(ev);
+					
+					var f:Function = 
+						function(e:MouseEvent):void
+						{
+							Button(e.target).removeEventListener(MouseEvent.CLICK, f);
+							display_content.removeAllElements();
+							
+						}
+					
+					var download:Button = new Button();
+						download.label="Download PDF";
+						download.addEventListener(MouseEvent.CLICK, downloadPDF);
+					hg.addElement(download);
+						
+				
+					var b:Button = new Button();
+					b.label="Ok";
+					b.addEventListener(MouseEvent.CLICK, f);
+					
+					hg.addElement(b);
+						
+					display_content.addElement(hg);
+					
+				}
+				if(download_target.length>0)
+				{
+					downloadPDF();
+				}
+				
+			}
+			
+			
+			protected function downloadPDF(event:Event=null):void
+			{
+				var v:URLVariables = new URLVariables();
+					v.param = "download";
+					v.type  = "application/pdf";
+					v.file  = download_target;
+					v.display="attachment";
+					v.user	= usercode_input.text.replace(/\s+/g,"").toUpperCase();
+				
+				
+				var req:URLRequest = new URLRequest();
+					req.data = v;
+					req.url = _scriptUrl;
+					req.method= URLRequestMethod.POST;
+					
+				navigateToURL(req,"_self");
+				//var loader:URLLoader = new URLLoader(req);
+				//	loader.load(req);
+				//loader.addEventListener(Event.COMPLETE,onPDFLoadComplete);
+				//loader.addEventListener(IOErrorEvent.IO_ERROR, pdfLoaderIOError);
+				
+				
+			}
+			
+			
+			
+			private function onFault(event:FaultEvent):void
+			{
+				display_error( "Fehler: Problem mit der Kommunikation zum Server\nDetails:"+event.statusCode+" "+event.message);
+
+			}
+			
+			protected function display_error(message:String):void
+			{
+				var bc:BorderContainer = new BorderContainer();
+					bc.backgroundFill = new SolidColor(0xff9999);
+					bc.setStyle("cornerRadius",5);
+					bc.percentWidth=100;
+					
+				var hg:HGroup = new HGroup();
+					hg.percentWidth = 100;
+					hg.paddingBottom = hg.paddingLeft = hg.paddingRight = hg.paddingTop = 15;
+					hg.verticalAlign = "middle";
+					
+				var attention:Label = new Label();
+					attention.text="!";
+					attention.setStyle("fontWeight","bold");
+					attention.setStyle("fontSize","48");
+				hg.addElement(attention);
+				
+					
+				var l:Label = new Label();
+					l.setStyle("fontSize",18);
+					l.setStyle("fontWeight","bold");
+					l.text = message;
+					l.percentWidth=100;
+				
+				hg.addElement( l );
+				
+				var f:Function = 
+					function(e:MouseEvent):void
+					{
+						Button(e.target).removeEventListener(MouseEvent.CLICK, f);
+						display_content.removeAllElements();
+						
+					}
+				
+				var b:Button = new Button();
+					b.label="Ok";
+					b.addEventListener(MouseEvent.CLICK, f);
+				
+				hg.addElement(b);
+					
+					
+				bc.addElement(hg);
+				
+				display_content.addElement( bc );
+				usercode_input.setFocus();	
+			}
+			
+			
+			
+			private function onLoginResult(event:ResultEvent):void
+			{
+				if(event.result.loginsuccess=="yes")
+				{
+					complete_call();
+				}else{
+					display_error( "Fehler: Teilnehmer nicht vorhanden");
+				}
+			}
+			
+			private function onLoginFault(event:FaultEvent):void
+			{
+				display_error( "Fehler: Problem mit der Kommunikation zum Server\nDetails:"+event.statusCode+" "+event.message);
+			}
+
+	
+			
+			protected function onGlobalsLoaded(event:Event):void
+			{
+				_scriptUrl = Globals.instance().returnPathValue("rootUrl")+Globals.instance().returnPathValue("includeScript");
+				user_login = new HTTPService();
+				user_login.url = _scriptUrl;
+				user_login.useProxy = false;
+				user_login.method = "POST";
+				user_login.addEventListener(ResultEvent.RESULT, onLoginResult);
+				user_login.addEventListener(FaultEvent.FAULT, onLoginFault);
+				
+			}
+			
+			protected function onGlobalsFault(event:Event):void
+			{
+				display_error("Fatal: globals nicht gefunden. Kontaktieren Sie den technischen Administrator");
+			}
+
+			protected function usercode_input_changeHandler(event:TextOperationEvent):void
+			{
+				// TODO Auto-generated method stub
+				usercode_input.text = usercode_input.text.toUpperCase().replace(/\s+/g,"");
+			}
+			
+		]]>
+	</fx:Script>
+	<s:layout>
+		<s:VerticalLayout horizontalAlign="center" verticalAlign="middle" gap="10" paddingBottom="10" paddingLeft="10" paddingRight="10" paddingTop="10" />
+	</s:layout>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<s:BorderContainer width="100%" height="75" cornerRadius="5" backgroundColor="0xBBBBBB">
+		<s:layout>
+			<s:HorizontalLayout verticalAlign="middle" paddingLeft="15" paddingRight="15" paddingBottom="15" paddingTop="15" horizontalAlign="left" />
+		</s:layout>
+		
+		<s:Label text="Otu.lea Kursleitenden Bereich" fontSize="18" fontWeight="bold" width="100%" />
+		<s:Image source="Assets/lea_Logo_bunt.png" height="100%" smooth="true" />
+	</s:BorderContainer>
+	<s:HGroup  width="100%" verticalAlign="middle" gap="15">
+		<s:Label width="100%" text="Bitte geben Sie die fünf stellige Nutzer-Kennziffer ein und rufen Sie entweder den Kursleiter Report (vollständig) oder den Teilnehmenden Report (reduziert) ab. Standardmäßig wird automatisch der Kursleiter Report abgerufen." />
+		<s:TextInput id="usercode_input" borderVisible="true" width="100%" height="63" fontSize="48" text="Code eingeben..." keyDown="usercode_input_keyDownHandler(event)" focusIn="usercode_input_focusInHandler(event)" change="usercode_input_changeHandler(event)" />
+		<s:VGroup>
+			<s:RadioButton id="teacher_report_mode" label="Kursleitenden Report" selected="true" />
+			<s:RadioButton id="student_report_mode" label="Teilnehmenden Report" selected="false"/>	
+		</s:VGroup>
+		<s:Button id="start_report" height="49" label="Daten Abrufen" click="start_report_clickHandler(event)"/>
+	</s:HGroup>
+	
+	<s:Line width="100%">
+		<s:stroke>
+			<s:SolidColorStroke color="0xcccccc" weight="1" />
+		</s:stroke>
+	</s:Line>
+	
+	<s:Scroller  height="100%" width="100%">
+		<s:Group id="display_content" width="100%" height="100%" />
+	</s:Scroller>
+</s:Application>
