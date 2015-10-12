@@ -30,19 +30,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-##Installation##
+## Installation
 
-###Requirements####
+### Requirements
 
 Server:
 
-- Apache Webserver
-- php / mysql (you need the simple_xml library)
+* Apache Webserver
+* php / mysql (you need the simple_xml library)
 
-- Adobe Flex Sdk 4.6 (Better: Apache Flex current Build)
-- A Flex IDE for development
+* Adobe Flex Sdk 4.6 (Better: Apache Flex current Build)
+* A Flex IDE for development
 
-###Procedure###
+### Procedure
 
 1. Extract the 'server_env' folder's content on your server environment and set the following rights (recursively):
 ```
@@ -89,10 +89,10 @@ to reaplce it with your values.
 3. Compile your client application and copy the exported files into your wwwroot folder.
 The client application 
 
-###Further Reading###
+### Further Reading
 
 We aimed to provide a comprehensive Actionscript Documentation, which can be viewed in the browser. Try to open the asdoc-outpu/index.html page
 
-###Notes for Apache Flex Users###
+### Notes for Apache Flex Users
 
 This framework has been build using Flex 4.6. If you intend to build with Apache Flex, beware, that there were recent changes in basic classes like ArrayList! Errors may occur and need to be fixed before you can run.
